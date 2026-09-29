@@ -1,0 +1,37 @@
+/* Generated design tokens. Exported at :root; report specimens use a scoped copy. */
+:root {
+  --color-page: rgb(15, 14, 13);
+  --color-frame: rgb(13, 12, 11);
+  --color-panel: rgb(20, 20, 20);
+  --color-field: rgb(12, 12, 12);
+  --color-card: rgb(23, 23, 23);
+  --color-selected-pill: rgb(38, 38, 38);
+  --color-display: rgb(246, 237, 224);
+  --color-ui-primary: rgb(212, 212, 212);
+  --color-ui-muted: rgb(163, 163, 163);
+  --color-form-text: rgb(228, 232, 244);
+  --color-step-one: rgb(226, 255, 160);
+  --color-step-two: rgb(250, 161, 213);
+  --color-step-three: rgb(237, 190, 81);
+  --color-positive: rgb(111, 222, 163);
+  --color-step-one-wash: rgba(226, 255, 160, 0.07);
+  --color-step-two-wash: rgba(250, 161, 213, 0.07);
+  --color-step-three-wash: rgba(237, 190, 81, 0.07);
+  --color-chrome-line: rgb(214, 217, 230);
+  --font-display: "FK Raster Grotesk Compact Blended", sans-serif;
+  --font-display-alt: "New Title Bold", sans-serif;
+  --font-mono-display: "IBM Plex Mono", monospace;
+  --font-mono-data: "JetBrains Mono", monospace;
+  --font-ui: "Clash Grotesk", sans-serif;
+  --space-6: 6px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-14: 14px;
+  --space-16: 16px;
+  --space-32: 32px;
+  --radius-card: 6px;
+  --radius-segment: 18px;
+  --radius-pill: 24px;
+  --size-action-height: 44px;
+  --shadow-panel: rgba(0, 0, 0, 0.25) 0px 1px 2px 0px;
+}

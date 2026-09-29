@@ -1,0 +1,639 @@
+{
+  "color-page": {
+    "$type": "color",
+    "$value": {
+      "colorSpace": "srgb",
+      "components": [
+        0.058824,
+        0.054902,
+        0.05098
+      ],
+      "alpha": 1,
+      "hex": "#0f0e0d"
+    },
+    "$description": "Measured body surface; local export name.",
+    "$extensions": {
+      "design-system-reverse-engineer": {
+        "sourceName": "color-page",
+        "status": "observed",
+        "evidence": [
+          "home-desktop",
+          "home-mobile"
+        ],
+        "cssValue": "rgb(15, 14, 13)"
+      }
+    }
+  },
+  "color-frame": {
+    "$type": "color",
+    "$value": {
+      "colorSpace": "srgb",
+      "components": [
+        0.05098,
+        0.047059,
+        0.043137
+      ],
+      "alpha": 1,
+      "hex": "#0d0c0b"
+    },
+    "$description": "Darker 13px edge/frame strips on the mobile hero.",
+    "$extensions": {
+      "design-system-reverse-engineer": {
+        "sourceName": "color-frame",
+        "status": "observed",
+        "evidence": [
+          "home-mobile"
+        ],
+        "cssValue": "rgb(13, 12, 11)"
+      }
+    }
+  },
+  "color-panel": {
+    "$type": "color",
+    "$value": {
+      "colorSpace": "srgb",
+      "components": [
+        0.078431,
+        0.078431,
+        0.078431
+      ],
+      "alpha": 1,
+      "hex": "#141414"
+    },
+    "$description": "Waitlist form surface.",
+    "$extensions": {
+      "design-system-reverse-engineer": {
+        "sourceName": "color-panel",
+        "status": "observed",
+        "evidence": [
+          "waitlist-desktop-open",
+          "waitlist-mobile-open"
+        ],
+        "cssValue": "rgb(20, 20, 20)"
+      }
+    }
+  },
+  "color-field": {
+    "$type": "color",
+    "$value": {
+      "colorSpace": "srgb",
+      "components": [
+        0.047059,
+        0.047059,
+        0.047059
+      ],
+      "alpha": 1,
+      "hex": "#0c0c0c"
+    },
+    "$description": "Waitlist field wrapper surface.",
+    "$extensions": {
+      "design-system-reverse-engineer": {
+        "sourceName": "color-field",
+        "status": "observed",
+        "evidence": [
+          "waitlist-desktop-open",
+          "waitlist-mobile-open"
+        ],
+        "cssValue": "rgb(12, 12, 12)"
+      }
+    }
+  },
+  "color-card": {
+    "$type": "color",
+    "$value": {
+      "colorSpace": "srgb",
+      "components": [
+        0.090196,
+        0.090196,
+        0.090196
+      ],
+      "alpha": 1,
+      "hex": "#171717"
+    },
+    "$description": "Transaction card surface.",
+    "$extensions": {
+      "design-system-reverse-engineer": {
+        "sourceName": "color-card",
+        "status": "observed",
+        "evidence": [
+          "home-mobile"
+        ],
+        "cssValue": "rgb(23, 23, 23)"
+      }
+    }
+  },
+  "color-selected-pill": {
+    "$type": "color",
+    "$value": {
+      "colorSpace": "srgb",
+      "components": [
+        0.14902,
+        0.14902,
+        0.14902
+      ],
+      "alpha": 1,
+      "hex": "#262626"
+    },
+    "$description": "Selected segment surface moves between the live and simulated options.",
+    "$extensions": {
+      "design-system-reverse-engineer": {
+        "sourceName": "color-selected-pill",
+        "status": "observed",
+        "evidence": [
+          "home-mobile",
+          "performance-simulated-selected"
+        ],
+        "cssValue": "rgb(38, 38, 38)"
+      }
+    }
+  },
+  "color-display": {
+    "$type": "color",
+    "$value": {
+      "colorSpace": "srgb",
+      "components": [
+        0.964706,
+        0.929412,
+        0.878431
+      ],
+      "alpha": 1,
+      "hex": "#f6ede0"
+    },
+    "$description": "Primary cream display text.",
+    "$extensions": {
+      "design-system-reverse-engineer": {
+        "sourceName": "color-display",
+        "status": "observed",
+        "evidence": [
+          "home-desktop",
+          "home-mobile"
+        ],
+        "cssValue": "rgb(246, 237, 224)"
+      }
+    }
+  },
+  "color-ui-primary": {
+    "$type": "color",
+    "$value": {
+      "colorSpace": "srgb",
+      "components": [
+        0.831373,
+        0.831373,
+        0.831373
+      ],
+      "alpha": 1,
+      "hex": "#d4d4d4"
+    },
+    "$description": "Primary product-simulation UI text.",
+    "$extensions": {
+      "design-system-reverse-engineer": {
+        "sourceName": "color-ui-primary",
+        "status": "observed",
+        "evidence": [
+          "home-mobile"
+        ],
+        "cssValue": "rgb(212, 212, 212)"
+      }
+    }
+  },
+  "color-ui-muted": {
+    "$type": "color",
+    "$value": {
+      "colorSpace": "srgb",
+      "components": [
+        0.639216,
+        0.639216,
+        0.639216
+      ],
+      "alpha": 1,
+      "hex": "#a3a3a3"
+    },
+    "$description": "Muted product-simulation metadata.",
+    "$extensions": {
+      "design-system-reverse-engineer": {
+        "sourceName": "color-ui-muted",
+        "status": "observed",
+        "evidence": [
+          "home-mobile"
+        ],
+        "cssValue": "rgb(163, 163, 163)"
+      }
+    }
+  },
+  "color-form-text": {
+    "$type": "color",
+    "$value": {
+      "colorSpace": "srgb",
+      "components": [
+        0.894118,
+        0.909804,
+        0.956863
+      ],
+      "alpha": 1,
+      "hex": "#e4e8f4"
+    },
+    "$description": "Waitlist labels and action text.",
+    "$extensions": {
+      "design-system-reverse-engineer": {
+        "sourceName": "color-form-text",
+        "status": "observed",
+        "evidence": [
+          "waitlist-desktop-open"
+        ],
+        "cssValue": "rgb(228, 232, 244)"
+      }
+    }
+  },
+  "color-step-one": {
+    "$type": "color",
+    "$value": {
+      "colorSpace": "srgb",
+      "components": [
+        0.886275,
+        1,
+        0.627451
+      ],
+      "alpha": 1,
+      "hex": "#e2ffa0"
+    },
+    "$description": "Imagine/step-one chartreuse accent.",
+    "$extensions": {
+      "design-system-reverse-engineer": {
+        "sourceName": "color-step-one",
+        "status": "observed",
+        "evidence": [
+          "home-mobile"
+        ],
+        "cssValue": "rgb(226, 255, 160)"
+      }
+    }
+  },
+  "color-step-two": {
+    "$type": "color",
+    "$value": {
+      "colorSpace": "srgb",
+      "components": [
+        0.980392,
+        0.631373,
+        0.835294
+      ],
+      "alpha": 1,
+      "hex": "#faa1d5"
+    },
+    "$description": "Research/step-two pink accent.",
+    "$extensions": {
+      "design-system-reverse-engineer": {
+        "sourceName": "color-step-two",
+        "status": "observed",
+        "evidence": [
+          "home-mobile"
+        ],
+        "cssValue": "rgb(250, 161, 213)"
+      }
+    }
+  },
+  "color-step-three": {
+    "$type": "color",
+    "$value": {
+      "colorSpace": "srgb",
+      "components": [
+        0.929412,
+        0.745098,
+        0.317647
+      ],
+      "alpha": 1,
+      "hex": "#edbe51"
+    },
+    "$description": "Execute/step-three amber accent.",
+    "$extensions": {
+      "design-system-reverse-engineer": {
+        "sourceName": "color-step-three",
+        "status": "observed",
+        "evidence": [
+          "home-mobile"
+        ],
+        "cssValue": "rgb(237, 190, 81)"
+      }
+    }
+  },
+  "color-positive": {
+    "$type": "color",
+    "$value": {
+      "colorSpace": "srgb",
+      "components": [
+        0.435294,
+        0.870588,
+        0.639216
+      ],
+      "alpha": 1,
+      "hex": "#6fdea3"
+    },
+    "$description": "Positive outcome and chart accent in the product-simulation UI.",
+    "$extensions": {
+      "design-system-reverse-engineer": {
+        "sourceName": "color-positive",
+        "status": "observed",
+        "evidence": [
+          "home-mobile"
+        ],
+        "cssValue": "rgb(111, 222, 163)"
+      }
+    }
+  },
+  "color-chrome-line": {
+    "$type": "color",
+    "$value": {
+      "colorSpace": "srgb",
+      "components": [
+        0.839216,
+        0.85098,
+        0.901961
+      ],
+      "alpha": 1,
+      "hex": "#d6d9e6"
+    },
+    "$description": "Stroke used by the SVG corner-frame treatment around the waitlist action.",
+    "$extensions": {
+      "design-system-reverse-engineer": {
+        "sourceName": "color-chrome-line",
+        "status": "observed",
+        "evidence": [
+          "waitlist-desktop-open"
+        ],
+        "cssValue": "rgb(214, 217, 230)"
+      }
+    }
+  },
+  "font-display": {
+    "$type": "fontFamily",
+    "$value": [
+      "FK Raster Grotesk Compact Blended",
+      "sans-serif"
+    ],
+    "$description": "Primary display face. Font licensing was not established.",
+    "$extensions": {
+      "design-system-reverse-engineer": {
+        "sourceName": "font-display",
+        "status": "observed",
+        "evidence": [
+          "home-desktop",
+          "home-mobile"
+        ],
+        "cssValue": "\"FK Raster Grotesk Compact Blended\", sans-serif"
+      }
+    }
+  },
+  "font-display-alt": {
+    "$type": "fontFamily",
+    "$value": [
+      "New Title Bold",
+      "sans-serif"
+    ],
+    "$description": "Secondary editorial display face used for the ON ITS OWN statement.",
+    "$extensions": {
+      "design-system-reverse-engineer": {
+        "sourceName": "font-display-alt",
+        "status": "observed",
+        "evidence": [
+          "home-desktop"
+        ],
+        "cssValue": "\"New Title Bold\", sans-serif"
+      }
+    }
+  },
+  "font-mono-display": {
+    "$type": "fontFamily",
+    "$value": [
+      "IBM Plex Mono",
+      "monospace"
+    ],
+    "$description": "Waitlist form labels and actions.",
+    "$extensions": {
+      "design-system-reverse-engineer": {
+        "sourceName": "font-mono-display",
+        "status": "observed",
+        "evidence": [
+          "waitlist-desktop-open"
+        ],
+        "cssValue": "\"IBM Plex Mono\", monospace"
+      }
+    }
+  },
+  "font-mono-data": {
+    "$type": "fontFamily",
+    "$value": [
+      "JetBrains Mono",
+      "monospace"
+    ],
+    "$description": "Step labels, symbols, and compact metadata.",
+    "$extensions": {
+      "design-system-reverse-engineer": {
+        "sourceName": "font-mono-data",
+        "status": "observed",
+        "evidence": [
+          "home-mobile"
+        ],
+        "cssValue": "\"JetBrains Mono\", monospace"
+      }
+    }
+  },
+  "font-ui": {
+    "$type": "fontFamily",
+    "$value": [
+      "Clash Grotesk",
+      "sans-serif"
+    ],
+    "$description": "Product-simulation interface face.",
+    "$extensions": {
+      "design-system-reverse-engineer": {
+        "sourceName": "font-ui",
+        "status": "observed",
+        "evidence": [
+          "home-mobile"
+        ],
+        "cssValue": "\"Clash Grotesk\", sans-serif"
+      }
+    }
+  },
+  "space-6": {
+    "$type": "dimension",
+    "$value": {
+      "value": 6,
+      "unit": "px"
+    },
+    "$description": "Step-label block padding.",
+    "$extensions": {
+      "design-system-reverse-engineer": {
+        "sourceName": "space-6",
+        "status": "observed",
+        "evidence": [
+          "home-mobile"
+        ],
+        "cssValue": "6px"
+      }
+    }
+  },
+  "space-8": {
+    "$type": "dimension",
+    "$value": {
+      "value": 8,
+      "unit": "px"
+    },
+    "$description": "Common transaction-card gap and step-label inline padding.",
+    "$extensions": {
+      "design-system-reverse-engineer": {
+        "sourceName": "space-8",
+        "status": "observed",
+        "evidence": [
+          "home-mobile"
+        ],
+        "cssValue": "8px"
+      }
+    }
+  },
+  "space-12": {
+    "$type": "dimension",
+    "$value": {
+      "value": 12,
+      "unit": "px"
+    },
+    "$description": "Waitlist field padding.",
+    "$extensions": {
+      "design-system-reverse-engineer": {
+        "sourceName": "space-12",
+        "status": "observed",
+        "evidence": [
+          "waitlist-desktop-open"
+        ],
+        "cssValue": "12px"
+      }
+    }
+  },
+  "space-14": {
+    "$type": "dimension",
+    "$value": {
+      "value": 14,
+      "unit": "px"
+    },
+    "$description": "Transaction-card padding.",
+    "$extensions": {
+      "design-system-reverse-engineer": {
+        "sourceName": "space-14",
+        "status": "observed",
+        "evidence": [
+          "home-mobile"
+        ],
+        "cssValue": "14px"
+      }
+    }
+  },
+  "space-16": {
+    "$type": "dimension",
+    "$value": {
+      "value": 16,
+      "unit": "px"
+    },
+    "$description": "Repeated structural offset in the stacked narrative.",
+    "$extensions": {
+      "design-system-reverse-engineer": {
+        "sourceName": "space-16",
+        "status": "observed",
+        "evidence": [
+          "home-mobile"
+        ],
+        "cssValue": "16px"
+      }
+    }
+  },
+  "space-32": {
+    "$type": "dimension",
+    "$value": {
+      "value": 32,
+      "unit": "px"
+    },
+    "$description": "Desktop waitlist form padding.",
+    "$extensions": {
+      "design-system-reverse-engineer": {
+        "sourceName": "space-32",
+        "status": "observed",
+        "evidence": [
+          "waitlist-desktop-open"
+        ],
+        "cssValue": "32px"
+      }
+    }
+  },
+  "radius-card": {
+    "$type": "dimension",
+    "$value": {
+      "value": 6,
+      "unit": "px"
+    },
+    "$description": "Transaction-card corner radius.",
+    "$extensions": {
+      "design-system-reverse-engineer": {
+        "sourceName": "radius-card",
+        "status": "observed",
+        "evidence": [
+          "home-mobile"
+        ],
+        "cssValue": "6px"
+      }
+    }
+  },
+  "radius-segment": {
+    "$type": "dimension",
+    "$value": {
+      "value": 18,
+      "unit": "px"
+    },
+    "$description": "Performance segment option radius.",
+    "$extensions": {
+      "design-system-reverse-engineer": {
+        "sourceName": "radius-segment",
+        "status": "observed",
+        "evidence": [
+          "home-mobile",
+          "performance-simulated-selected"
+        ],
+        "cssValue": "18px"
+      }
+    }
+  },
+  "radius-pill": {
+    "$type": "dimension",
+    "$value": {
+      "value": 24,
+      "unit": "px"
+    },
+    "$description": "Compact metadata pill radius.",
+    "$extensions": {
+      "design-system-reverse-engineer": {
+        "sourceName": "radius-pill",
+        "status": "observed",
+        "evidence": [
+          "home-mobile"
+        ],
+        "cssValue": "24px"
+      }
+    }
+  },
+  "size-action-height": {
+    "$type": "dimension",
+    "$value": {
+      "value": 44,
+      "unit": "px"
+    },
+    "$description": "Authored waitlist action height before transform scaling.",
+    "$extensions": {
+      "design-system-reverse-engineer": {
+        "sourceName": "size-action-height",
+        "status": "observed",
+        "evidence": [
+          "waitlist-desktop-open"
+        ],
+        "cssValue": "44px"
+      }
+    }
+  }
+}

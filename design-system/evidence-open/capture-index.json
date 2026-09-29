@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-09-29T22:10:51.340Z",
+  "browser": "chromium",
+  "channel": "chrome",
+  "page": "https://catalyst.app/",
+  "records": [
+    {
+      "id": "desktop-waitlist-open",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "state": "open",
+      "status": "captured"
+    },
+    {
+      "id": "desktop-waitlist-email-focus",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "state": "focus",
+      "status": "captured"
+    },
+    {
+      "id": "mobile-waitlist-open",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "state": "open",
+      "status": "captured"
+    },
+    {
+      "id": "mobile-waitlist-email-focus",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "state": "focus",
+      "status": "captured"
+    }
+  ]
+}

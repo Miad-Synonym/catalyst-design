@@ -1,0 +1,39 @@
+{
+  "pages": [
+    {
+      "url": "https://catalyst.app/",
+      "probes": [
+        {
+          "selector": ".framer-hrdnT",
+          "action": "hover"
+        },
+        {
+          "selector": ".framer-hrdnT",
+          "action": "focus"
+        },
+        {
+          "selector": ".framer-KOpNN",
+          "action": "hover"
+        },
+        {
+          "selector": ".framer-KOpNN",
+          "action": "focus"
+        }
+      ]
+    }
+  ],
+  "viewports": [
+    {
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "width": 390,
+      "height": 844
+    }
+  ],
+  "colorSchemes": [
+    "light"
+  ],
+  "reducedMotion": "no-preference"
+}

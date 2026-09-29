@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-09-29T22:06:23.272Z",
+  "browser": "chromium",
+  "browserVersion": "152.0.7977.83",
+  "collectorSha256": "3ba3448546c8fd0b289c8023cbde38e3dc4fe0b946e47fdcb612237bc7ec9d90",
+  "channel": "chrome",
+  "plan": {
+    "pages": [
+      {
+        "url": "https://catalyst.app/"
+      }
+    ],
+    "viewports": [
+      {
+        "width": 1440,
+        "height": 1000
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "colorSchemes": [
+      "light",
+      "dark"
+    ],
+    "reducedMotion": "no-preference"
+  },
+  "captures": [
+    {
+      "id": "c001",
+      "requestedUrl": "https://catalyst.app/",
+      "finalUrl": "https://catalyst.app/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "colorScheme": "light",
+      "state": "default",
+      "status": "captured",
+      "json": "c001.json",
+      "screenshot": "c001.png",
+      "httpStatus": 200
+    },
+    {
+      "id": "c002",
+      "requestedUrl": "https://catalyst.app/",
+      "finalUrl": "https://catalyst.app/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "colorScheme": "dark",
+      "state": "default",
+      "status": "captured",
+      "json": "c002.json",
+      "screenshot": "c002.png",
+      "httpStatus": 200
+    },
+    {
+      "id": "c003",
+      "requestedUrl": "https://catalyst.app/",
+      "finalUrl": "https://catalyst.app/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "colorScheme": "light",
+      "state": "default",
+      "status": "captured",
+      "json": "c003.json",
+      "screenshot": "c003.png",
+      "httpStatus": 200
+    },
+    {
+      "id": "c004",
+      "requestedUrl": "https://catalyst.app/",
+      "finalUrl": "https://catalyst.app/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "colorScheme": "dark",
+      "state": "default",
+      "status": "captured",
+      "json": "c004.json",
+      "screenshot": "c004.png",
+      "httpStatus": 200
+    }
+  ]
+}

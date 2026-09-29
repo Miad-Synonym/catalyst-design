@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "generator": "design-system-reverse-engineer",
+  "input": {
+    "path": "design-system.json",
+    "sha256": "f6c4afa3dae42b3c06c977737ff31cff8d14d4f2f7a46525c338afedd3cbcc8a"
+  },
+  "outputs": {
+    "index.html": "a245810b6a5bb403dcf84392feec124434d0372db3b48802486dce167e8c8d83",
+    "design.md": "be298023fc04ea4a9e34204c1bd074d3cdd86a87e901e3fcc1a9831c04e3f618",
+    "tokens.css": "59347d79bb165366d9475b6481f404e4aa16fe41c0ca9f31e13da44317d5b46e",
+    "tokens.dtcg.json": "91de452ff672f0cf9a78c12aa49a7f847c80d16b25c34d006baa1fe1f5cbc02c"
+  },
+  "evidence": {
+    "evidence-discovery/c001.json": "b3be17e331f0a445305888f10ab34cacb52eec9b55feeeefed41eb0363cd7b75",
+    "evidence-discovery/c001.png": "e460821c1e98a8fc4db46bb6086d1641ed8eb480b4ed49884e54b99014dcf5f1",
+    "evidence-discovery/c002.json": "50d34cc08bd12ece42b6ef1647d7be5d4b96fedc3b4378da8f9642a6693adca1",
+    "evidence-discovery/c002.png": "7dd3b75b410eb2e59ef5687e6a7650f0188c8faf4839cc0a0bf75ff1733d29f9",
+    "evidence-mid/c001.json": "76fbaffc58b2764308cb60e8e8798939ee806e55d1550e42a7e555e80c645bb3",
+    "evidence-mid/c001.png": "c4b94762412aef84d692d6a5d1d8e4ab5345ecb65f0d42278e8eb17f2b91166f",
+    "evidence-discovery/c003.json": "fe15fb0ef31bd350d0a247967de1fa8e78ed254acbbf00068c10cd8148417b05",
+    "evidence-discovery/c003.png": "84272b42185e26d0774282b03abbf9e19003b251205802dc326576e50fca4fb4",
+    "evidence-discovery/c004.json": "e343a35bda17fdaabc8cbe646380ff09f932690f1de4032def9998ea9ead805d",
+    "evidence-discovery/c004.png": "211069143f5feaf3cfbf6602ab7024eac8f2b6f514766ef6250fc125154a376e",
+    "evidence-states/c002-p1.json": "5bafbde91ab307c04bb4543d32c3a9d6807d0a62061e4b6a98062883f6aada12",
+    "evidence-states/c002-p1.png": "66a79f4722cd52a0cdf315b4cd70668cdff0e3e6b57c4c46e1d678f1abb12e8a",
+    "evidence-states/c002-p2.json": "108e0563928a84491f433ea4b6d70b004a39afa612e6a1c2bb64ffe34c0ca4e2",
+    "evidence-states/c002-p2.png": "1d8f2679e5a9e6d2c60b0ca7916ac0e895b289fe75f7cfa5105a3ef8ab23da9d",
+    "evidence-open/desktop-waitlist-open.json": "f90baccc37b8aa813c394a6db3040f4ae7fce64f4fee105343c8dbf11c5a8ddb",
+    "evidence-open/desktop-waitlist-open.png": "aa607f100dcfb427a7c1ecfc5c92d2a9b206480d3027f924f5dd2196256bb950",
+    "evidence-open/mobile-waitlist-open.json": "a6dd8631ba1c71cade2aed62b94e8e0f246fdbfee00d158bb11955bb2e66cc70",
+    "evidence-open/mobile-waitlist-open.png": "f88c5b07959eb7a04d75ba9cf1a356b6b8c43d16a17e038ac81c994bd055a27a",
+    "evidence-open/mobile-waitlist-email-focus.json": "a9a13ac11e5bec15a17eecd238ee43f17271fd3a3592fac7dd5e1fc56c51c3da",
+    "evidence-open/mobile-waitlist-email-focus.png": "cf79be83a8b71650f8fe0bb8109f92a5d2acb46e9de9278b7afb15bd56aa1047",
+    "evidence-selected/mobile-performance-simulated-selected.json": "7eacf5549c3f6ebc6e9f970cc0d7387a8bcc8450a72c3e4097af3d04c69fc011",
+    "evidence-selected/mobile-performance-simulated-selected.png": "83bf4bd87342274b52bb0275d360202616cf6205ea191fcf6c162aea977329fa"
+  },
+  "sourceUrl": "https://catalyst.app/",
+  "capturedAt": "2026-09-29T22:15:48.828Z",
+  "status": "partial",
+  "scope": {
+    "summary": "The single public catalyst.app entry page at 1440x1000, 1280x900, and 390x844, including fixed light/dark preference observations, waitlist trigger hover/focus, the open waitlist form, its email-focus state, and the live/simulated performance selection state.",
+    "pages": [
+      "https://catalyst.app/"
+    ],
+    "viewports": [
+      {
+        "width": 1440,
+        "height": 1000
+      },
+      {
+        "width": 1280,
+        "height": 900
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "limitations": [
+      "No same-origin subpages were discovered from the public entry page; authenticated product surfaces were not accessed.",
+      "The 1440px desktop collector reached its 1,800-node cap out of 3,124 visible elements; screenshots preserve the full rendered page, but some late DOM nodes are absent from raw JSON.",
+      "Light and dark OS preference captures rendered the same fixed dark presentation; no user-facing theme toggle was found.",
+      "Canvas scenes, scripted scroll behavior, and animation timing were not measured as motion sequences.",
+      "Loading, error, empty, success, and disabled form states were not safely reachable without submitting the waitlist form.",
+      "Font licensing and the private product design system remain unknown."
+    ]
+  },
+  "qa": {
+    "checks": [
+      {
+        "name": "Capture completion",
+        "status": "pass",
+        "detail": "Four homepage theme/preference captures, one intermediate viewport, eight hover/focus probe captures, four waitlist open/focus captures, and one selected-state capture succeeded; two mobile probes for the desktop-only main CTA were explicitly blocked."
+      },
+      {
+        "name": "Source visual review",
+        "status": "pass",
+        "detail": "Desktop, intermediate, mobile, open-overlay, and hover captures were visually inspected; the horizontal-to-vertical layout change and fixed dark presentation were confirmed."
+      },
+      {
+        "name": "Responsive coverage",
+        "status": "pass",
+        "detail": "Samples cover the authored below-1000px, 1000–1439.98px, and 1440px+ media bands."
+      },
+      {
+        "name": "State coverage",
+        "status": "pass",
+        "detail": "Waitlist trigger hover/focus/open, email focus, and both performance selections were captured without form submission."
+      },
+      {
+        "name": "Contrast spot check",
+        "status": "pass",
+        "detail": "WCAG 2.x relative-luminance calculations on seven measured solid/composited foreground/background pairs were 7.11:1 or higher; textured and canvas regions were not assessed."
+      },
+      {
+        "name": "Reference build and manifest",
+        "status": "pass",
+        "detail": "The deterministic emitter built four reference files and --check matched the canonical JSON, evidence hashes, outputs, and manifest."
+      },
+      {
+        "name": "Generated reference visual review",
+        "status": "pass",
+        "detail": "Desktop and 390px local HTTP checks passed with no document-level horizontal overflow, zero broken evidence images after eager loading, all seven sections present, disclosures opening, and a visible 3px keyboard focus ring."
+      },
+      {
+        "name": "Portability composition",
+        "status": "pass",
+        "detail": "An independent agent built a responsive Strategy signal card from design.md and tokens.css only. Desktop and 390px visual review passed with no horizontal overflow or external resources; the sample is explicitly static and simulated."
+      }
+    ],
+    "visualReview": "reviewed",
+    "notes": [
+      "Partial is intentional because the public site exposes one page and several required product/form states remain unknown.",
+      "The HTML specimen must be reviewed with the disclosed fallback fonts; it is not expected to reproduce the proprietary raster display face offline."
+    ]
+  },
+  "dtcgExport": {
+    "status": "exported-subset",
+    "exportedTokenCount": 30,
+    "omissions": [
+      {
+        "token": "color-step-one-wash",
+        "reason": "No explicit DTCG annotation; no automatic CSS conversion"
+      },
+      {
+        "token": "color-step-two-wash",
+        "reason": "No explicit DTCG annotation; no automatic CSS conversion"
+      },
+      {
+        "token": "color-step-three-wash",
+        "reason": "No explicit DTCG annotation; no automatic CSS conversion"
+      },
+      {
+        "token": "shadow-panel",
+        "reason": "No explicit DTCG annotation; no automatic CSS conversion"
+      }
+    ],
+    "limitation": "Only explicit supported annotations are exported. CSS/DTCG semantic equivalence is not inferred or independently verified."
+  },
+  "generation": {
+    "generatedBy": "Codex",
+    "generatedModel": "gpt-5",
+    "createdAt": "2026-09-29T22:16:22Z"
+  }
+}

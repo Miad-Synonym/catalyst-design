@@ -1,0 +1,2316 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'unsafe-inline'; font-src 'none'; base-uri 'none'; form-action 'none'; connect-src 'none'"><title>Catalyst public launch site, observed system | Design system reference</title><style>
+:root{color-scheme:dark;font-family:Geist,Inter,ui-sans-serif,system-ui,sans-serif;background:#0b0c0e;color:#e6e8ed;font-size:16px;line-height:1.6;letter-spacing:0}*{box-sizing:border-box}body{margin:0;font-size:14px}a{color:#b9d4ff;text-underline-offset:.2em}a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #adcaff;outline-offset:4px}.skip{position:absolute;left:1rem;top:-5rem}.skip:focus{top:1rem}main{max-width:1180px;margin:auto;padding:3rem 1.4rem 6rem}header{border-bottom:1px solid #34373d;padding-bottom:2rem;margin-bottom:2rem}h1{font-size:clamp(28px,4vw,34px);line-height:1.2;letter-spacing:0;margin:.5rem 0 1rem}h2{font-size:1.65rem;margin:3rem 0 1rem;letter-spacing:0}h3{font-size:1.1rem;margin:1.6rem 0 .7rem}p,li,td{overflow-wrap:anywhere}nav{display:flex;gap:.8rem 1.2rem;flex-wrap:wrap;margin:1.3rem 0}.meta{color:#a9aeb9}.pill{display:inline-block;border:1px solid #515865;border-radius:999px;padding:.1rem .6rem;font:600 .78rem ui-monospace,monospace}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:1rem}.panel{background:#14161a;border:1px solid #34373d;border-radius:8px;padding:1.2rem;min-width:0}.table-wrap{overflow-x:auto;border:1px solid #34373d;border-radius:8px}table{width:100%;border-collapse:collapse;text-align:left}caption{text-align:left;padding:1rem;font-weight:600}th,td{padding:.8rem 1rem;border-top:1px solid #34373d;vertical-align:top}th{color:#abb1bd;font-size:.85rem}code,pre{font-family:ui-monospace,SFMono-Regular,monospace;font-size:.86rem}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#090a0c;border:1px solid #34373d;border-radius:8px;padding:1rem;max-height:32rem;overflow:auto}details{margin:1rem 0}summary{cursor:pointer;font-weight:600;padding:.6rem 0}.ds-specimen{contain:layout paint style;isolation:isolate;overflow:auto;max-height:22rem;min-height:5rem;padding:1rem;margin:.8rem 0;background:#fff;color:#111;color-scheme:light;border-radius:6px;font-family:system-ui,sans-serif;line-height:normal}.ds-specimen button,.ds-specimen input{font:inherit}.ds-specimen input{display:block;max-width:100%}.ds-specimen :focus-visible{outline:3px solid #2563eb!important;outline-offset:3px!important}.swatch{height:4rem;border:1px solid #888;border-radius:4px}.evidence-image{display:block;max-width:100%;max-height:18rem;object-fit:contain;object-position:left top;border:1px solid #34373d}.notice{border-left:3px solid #8e9bad;padding-left:1rem}.empty{color:#a9aeb9}@media(max-width:600px){main{padding:2rem 1rem 4rem}th,td{padding:.65rem}h1{font-size:28px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+
+/* Generated design tokens. Exported at :root; report specimens use a scoped copy. */
+.ds-specimen {
+  --color-page: rgb(15, 14, 13);
+  --color-frame: rgb(13, 12, 11);
+  --color-panel: rgb(20, 20, 20);
+  --color-field: rgb(12, 12, 12);
+  --color-card: rgb(23, 23, 23);
+  --color-selected-pill: rgb(38, 38, 38);
+  --color-display: rgb(246, 237, 224);
+  --color-ui-primary: rgb(212, 212, 212);
+  --color-ui-muted: rgb(163, 163, 163);
+  --color-form-text: rgb(228, 232, 244);
+  --color-step-one: rgb(226, 255, 160);
+  --color-step-two: rgb(250, 161, 213);
+  --color-step-three: rgb(237, 190, 81);
+  --color-positive: rgb(111, 222, 163);
+  --color-step-one-wash: rgba(226, 255, 160, 0.07);
+  --color-step-two-wash: rgba(250, 161, 213, 0.07);
+  --color-step-three-wash: rgba(237, 190, 81, 0.07);
+  --color-chrome-line: rgb(214, 217, 230);
+  --font-display: "FK Raster Grotesk Compact Blended", sans-serif;
+  --font-display-alt: "New Title Bold", sans-serif;
+  --font-mono-display: "IBM Plex Mono", monospace;
+  --font-mono-data: "JetBrains Mono", monospace;
+  --font-ui: "Clash Grotesk", sans-serif;
+  --space-6: 6px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-14: 14px;
+  --space-16: 16px;
+  --space-32: 32px;
+  --radius-card: 6px;
+  --radius-segment: 18px;
+  --radius-pill: 24px;
+  --size-action-height: 44px;
+  --shadow-panel: rgba(0, 0, 0, 0.25) 0px 1px 2px 0px;
+}
+</style></head><body><a class="skip" href="#main">Skip to reference</a><main id="main"><header><p class="meta">Evidence-backed design system reference</p><h1>Catalyst public launch site, observed system</h1><p><span class="pill">partial</span></p><p>Source: <a rel="noreferrer noopener" href="https://catalyst.app/">https://catalyst.app/</a></p><p class="meta">Captured 2026-09-29T22:15:48.828Z. Schema 1.</p><p>The single public catalyst.app entry page at 1440x1000, 1280x900, and 390x844, including fixed light/dark preference observations, waitlist trigger hover/focus, the open waitlist form, its email-focus state, and the live/simulated performance selection state.</p><nav aria-label="Reference sections"><a href="#tokens">Tokens</a><a href="#typography">Typography</a><a href="#components">Components</a><a href="#coverage">Coverage</a><a href="#agent-rules">Agent rules</a><a href="#evidence">Evidence</a><a href="#qa">QA</a></nav><p class="notice">Observed values cite captured evidence. Inferences and proposals remain labeled. Specimens illustrate supplied styles; their browser defaults, keyboard focus ring and light preview canvas are reference affordances. Component interactions are not reconstructed here.</p><nav aria-label="Reference files"><a href="design-system.json">Canonical JSON</a><a href="design.md">Agent contract</a><a href="tokens.css">CSS tokens</a></nav><p class="meta">Generated 2026-09-29T22:16:22Z · Codex · gpt-5</p></header>
+<section aria-labelledby="scope-title"><h2 id="scope-title">Declared scope</h2><h3>Pages</h3><ul><li>https://catalyst.app/</li></ul>
+<h3>Viewports</h3><ul><li>1440 × 1000</li><li>1280 × 900</li><li>390 × 844</li></ul>
+<h3>Limitations</h3><ul><li>No same-origin subpages were discovered from the public entry page; authenticated product surfaces were not accessed.</li><li>The 1440px desktop collector reached its 1,800-node cap out of 3,124 visible elements; screenshots preserve the full rendered page, but some late DOM nodes are absent from raw JSON.</li><li>Light and dark OS preference captures rendered the same fixed dark presentation; no user-facing theme toggle was found.</li><li>Canvas scenes, scripted scroll behavior, and animation timing were not measured as motion sequences.</li><li>Loading, error, empty, success, and disabled form states were not safely reachable without submitting the waitlist form.</li><li>Font licensing and the private product design system remain unknown.</li></ul></section>
+<section id="tokens"><h2>Tokens</h2><div class="grid">
+<article class="panel"><h3>color-page</h3><span class="pill">observed</span><div class="ds-specimen"><div class="swatch" style="background:rgb(15, 14, 13)"></div></div><p><code>rgb(15, 14, 13)</code></p><p class="meta">color · color · <code>--color-page</code></p><p>Measured body surface; local export name.</p><p>Evidence: <a href="#evidence-home-desktop">home-desktop</a>, <a href="#evidence-home-mobile">home-mobile</a></p><details><summary>DTCG annotation</summary><pre>{
+  &quot;$type&quot;: &quot;color&quot;,
+  &quot;$value&quot;: {
+    &quot;colorSpace&quot;: &quot;srgb&quot;,
+    &quot;components&quot;: [
+      0.058824,
+      0.054902,
+      0.05098
+    ],
+    &quot;alpha&quot;: 1,
+    &quot;hex&quot;: &quot;#0f0e0d&quot;
+  }
+}</pre></details></article>
+<article class="panel"><h3>color-frame</h3><span class="pill">observed</span><div class="ds-specimen"><div class="swatch" style="background:rgb(13, 12, 11)"></div></div><p><code>rgb(13, 12, 11)</code></p><p class="meta">color · color · <code>--color-frame</code></p><p>Darker 13px edge/frame strips on the mobile hero.</p><p>Evidence: <a href="#evidence-home-mobile">home-mobile</a></p><details><summary>DTCG annotation</summary><pre>{
+  &quot;$type&quot;: &quot;color&quot;,
+  &quot;$value&quot;: {
+    &quot;colorSpace&quot;: &quot;srgb&quot;,
+    &quot;components&quot;: [
+      0.05098,
+      0.047059,
+      0.043137
+    ],
+    &quot;alpha&quot;: 1,
+    &quot;hex&quot;: &quot;#0d0c0b&quot;
+  }
+}</pre></details></article>
+<article class="panel"><h3>color-panel</h3><span class="pill">observed</span><div class="ds-specimen"><div class="swatch" style="background:rgb(20, 20, 20)"></div></div><p><code>rgb(20, 20, 20)</code></p><p class="meta">color · color · <code>--color-panel</code></p><p>Waitlist form surface.</p><p>Evidence: <a href="#evidence-waitlist-desktop-open">waitlist-desktop-open</a>, <a href="#evidence-waitlist-mobile-open">waitlist-mobile-open</a></p><details><summary>DTCG annotation</summary><pre>{
+  &quot;$type&quot;: &quot;color&quot;,
+  &quot;$value&quot;: {
+    &quot;colorSpace&quot;: &quot;srgb&quot;,
+    &quot;components&quot;: [
+      0.078431,
+      0.078431,
+      0.078431
+    ],
+    &quot;alpha&quot;: 1,
+    &quot;hex&quot;: &quot;#141414&quot;
+  }
+}</pre></details></article>
+<article class="panel"><h3>color-field</h3><span class="pill">observed</span><div class="ds-specimen"><div class="swatch" style="background:rgb(12, 12, 12)"></div></div><p><code>rgb(12, 12, 12)</code></p><p class="meta">color · color · <code>--color-field</code></p><p>Waitlist field wrapper surface.</p><p>Evidence: <a href="#evidence-waitlist-desktop-open">waitlist-desktop-open</a>, <a href="#evidence-waitlist-mobile-open">waitlist-mobile-open</a></p><details><summary>DTCG annotation</summary><pre>{
+  &quot;$type&quot;: &quot;color&quot;,
+  &quot;$value&quot;: {
+    &quot;colorSpace&quot;: &quot;srgb&quot;,
+    &quot;components&quot;: [
+      0.047059,
+      0.047059,
+      0.047059
+    ],
+    &quot;alpha&quot;: 1,
+    &quot;hex&quot;: &quot;#0c0c0c&quot;
+  }
+}</pre></details></article>
+<article class="panel"><h3>color-card</h3><span class="pill">observed</span><div class="ds-specimen"><div class="swatch" style="background:rgb(23, 23, 23)"></div></div><p><code>rgb(23, 23, 23)</code></p><p class="meta">color · color · <code>--color-card</code></p><p>Transaction card surface.</p><p>Evidence: <a href="#evidence-home-mobile">home-mobile</a></p><details><summary>DTCG annotation</summary><pre>{
+  &quot;$type&quot;: &quot;color&quot;,
+  &quot;$value&quot;: {
+    &quot;colorSpace&quot;: &quot;srgb&quot;,
+    &quot;components&quot;: [
+      0.090196,
+      0.090196,
+      0.090196
+    ],
+    &quot;alpha&quot;: 1,
+    &quot;hex&quot;: &quot;#171717&quot;
+  }
+}</pre></details></article>
+<article class="panel"><h3>color-selected-pill</h3><span class="pill">observed</span><div class="ds-specimen"><div class="swatch" style="background:rgb(38, 38, 38)"></div></div><p><code>rgb(38, 38, 38)</code></p><p class="meta">color · color · <code>--color-selected-pill</code></p><p>Selected segment surface moves between the live and simulated options.</p><p>Evidence: <a href="#evidence-home-mobile">home-mobile</a>, <a href="#evidence-performance-simulated-selected">performance-simulated-selected</a></p><details><summary>DTCG annotation</summary><pre>{
+  &quot;$type&quot;: &quot;color&quot;,
+  &quot;$value&quot;: {
+    &quot;colorSpace&quot;: &quot;srgb&quot;,
+    &quot;components&quot;: [
+      0.14902,
+      0.14902,
+      0.14902
+    ],
+    &quot;alpha&quot;: 1,
+    &quot;hex&quot;: &quot;#262626&quot;
+  }
+}</pre></details></article>
+<article class="panel"><h3>color-display</h3><span class="pill">observed</span><div class="ds-specimen"><div class="swatch" style="background:rgb(246, 237, 224)"></div></div><p><code>rgb(246, 237, 224)</code></p><p class="meta">color · color · <code>--color-display</code></p><p>Primary cream display text.</p><p>Evidence: <a href="#evidence-home-desktop">home-desktop</a>, <a href="#evidence-home-mobile">home-mobile</a></p><details><summary>DTCG annotation</summary><pre>{
+  &quot;$type&quot;: &quot;color&quot;,
+  &quot;$value&quot;: {
+    &quot;colorSpace&quot;: &quot;srgb&quot;,
+    &quot;components&quot;: [
+      0.964706,
+      0.929412,
+      0.878431
+    ],
+    &quot;alpha&quot;: 1,
+    &quot;hex&quot;: &quot;#f6ede0&quot;
+  }
+}</pre></details></article>
+<article class="panel"><h3>color-ui-primary</h3><span class="pill">observed</span><div class="ds-specimen"><div class="swatch" style="background:rgb(212, 212, 212)"></div></div><p><code>rgb(212, 212, 212)</code></p><p class="meta">color · color · <code>--color-ui-primary</code></p><p>Primary product-simulation UI text.</p><p>Evidence: <a href="#evidence-home-mobile">home-mobile</a></p><details><summary>DTCG annotation</summary><pre>{
+  &quot;$type&quot;: &quot;color&quot;,
+  &quot;$value&quot;: {
+    &quot;colorSpace&quot;: &quot;srgb&quot;,
+    &quot;components&quot;: [
+      0.831373,
+      0.831373,
+      0.831373
+    ],
+    &quot;alpha&quot;: 1,
+    &quot;hex&quot;: &quot;#d4d4d4&quot;
+  }
+}</pre></details></article>
+<article class="panel"><h3>color-ui-muted</h3><span class="pill">observed</span><div class="ds-specimen"><div class="swatch" style="background:rgb(163, 163, 163)"></div></div><p><code>rgb(163, 163, 163)</code></p><p class="meta">color · color · <code>--color-ui-muted</code></p><p>Muted product-simulation metadata.</p><p>Evidence: <a href="#evidence-home-mobile">home-mobile</a></p><details><summary>DTCG annotation</summary><pre>{
+  &quot;$type&quot;: &quot;color&quot;,
+  &quot;$value&quot;: {
+    &quot;colorSpace&quot;: &quot;srgb&quot;,
+    &quot;components&quot;: [
+      0.639216,
+      0.639216,
+      0.639216
+    ],
+    &quot;alpha&quot;: 1,
+    &quot;hex&quot;: &quot;#a3a3a3&quot;
+  }
+}</pre></details></article>
+<article class="panel"><h3>color-form-text</h3><span class="pill">observed</span><div class="ds-specimen"><div class="swatch" style="background:rgb(228, 232, 244)"></div></div><p><code>rgb(228, 232, 244)</code></p><p class="meta">color · color · <code>--color-form-text</code></p><p>Waitlist labels and action text.</p><p>Evidence: <a href="#evidence-waitlist-desktop-open">waitlist-desktop-open</a></p><details><summary>DTCG annotation</summary><pre>{
+  &quot;$type&quot;: &quot;color&quot;,
+  &quot;$value&quot;: {
+    &quot;colorSpace&quot;: &quot;srgb&quot;,
+    &quot;components&quot;: [
+      0.894118,
+      0.909804,
+      0.956863
+    ],
+    &quot;alpha&quot;: 1,
+    &quot;hex&quot;: &quot;#e4e8f4&quot;
+  }
+}</pre></details></article>
+<article class="panel"><h3>color-step-one</h3><span class="pill">observed</span><div class="ds-specimen"><div class="swatch" style="background:rgb(226, 255, 160)"></div></div><p><code>rgb(226, 255, 160)</code></p><p class="meta">color · color · <code>--color-step-one</code></p><p>Imagine/step-one chartreuse accent.</p><p>Evidence: <a href="#evidence-home-mobile">home-mobile</a></p><details><summary>DTCG annotation</summary><pre>{
+  &quot;$type&quot;: &quot;color&quot;,
+  &quot;$value&quot;: {
+    &quot;colorSpace&quot;: &quot;srgb&quot;,
+    &quot;components&quot;: [
+      0.886275,
+      1,
+      0.627451
+    ],
+    &quot;alpha&quot;: 1,
+    &quot;hex&quot;: &quot;#e2ffa0&quot;
+  }
+}</pre></details></article>
+<article class="panel"><h3>color-step-two</h3><span class="pill">observed</span><div class="ds-specimen"><div class="swatch" style="background:rgb(250, 161, 213)"></div></div><p><code>rgb(250, 161, 213)</code></p><p class="meta">color · color · <code>--color-step-two</code></p><p>Research/step-two pink accent.</p><p>Evidence: <a href="#evidence-home-mobile">home-mobile</a></p><details><summary>DTCG annotation</summary><pre>{
+  &quot;$type&quot;: &quot;color&quot;,
+  &quot;$value&quot;: {
+    &quot;colorSpace&quot;: &quot;srgb&quot;,
+    &quot;components&quot;: [
+      0.980392,
+      0.631373,
+      0.835294
+    ],
+    &quot;alpha&quot;: 1,
+    &quot;hex&quot;: &quot;#faa1d5&quot;
+  }
+}</pre></details></article>
+<article class="panel"><h3>color-step-three</h3><span class="pill">observed</span><div class="ds-specimen"><div class="swatch" style="background:rgb(237, 190, 81)"></div></div><p><code>rgb(237, 190, 81)</code></p><p class="meta">color · color · <code>--color-step-three</code></p><p>Execute/step-three amber accent.</p><p>Evidence: <a href="#evidence-home-mobile">home-mobile</a></p><details><summary>DTCG annotation</summary><pre>{
+  &quot;$type&quot;: &quot;color&quot;,
+  &quot;$value&quot;: {
+    &quot;colorSpace&quot;: &quot;srgb&quot;,
+    &quot;components&quot;: [
+      0.929412,
+      0.745098,
+      0.317647
+    ],
+    &quot;alpha&quot;: 1,
+    &quot;hex&quot;: &quot;#edbe51&quot;
+  }
+}</pre></details></article>
+<article class="panel"><h3>color-positive</h3><span class="pill">observed</span><div class="ds-specimen"><div class="swatch" style="background:rgb(111, 222, 163)"></div></div><p><code>rgb(111, 222, 163)</code></p><p class="meta">color · color · <code>--color-positive</code></p><p>Positive outcome and chart accent in the product-simulation UI.</p><p>Evidence: <a href="#evidence-home-mobile">home-mobile</a></p><details><summary>DTCG annotation</summary><pre>{
+  &quot;$type&quot;: &quot;color&quot;,
+  &quot;$value&quot;: {
+    &quot;colorSpace&quot;: &quot;srgb&quot;,
+    &quot;components&quot;: [
+      0.435294,
+      0.870588,
+      0.639216
+    ],
+    &quot;alpha&quot;: 1,
+    &quot;hex&quot;: &quot;#6fdea3&quot;
+  }
+}</pre></details></article>
+<article class="panel"><h3>color-step-one-wash</h3><span class="pill">observed</span><div class="ds-specimen"><div class="swatch" style="background:rgba(226, 255, 160, 0.07)"></div></div><p><code>rgba(226, 255, 160, 0.07)</code></p><p class="meta">color · color · <code>--color-step-one-wash</code></p><p>Large step-one panel fill. Equal rendered colors do not imply source aliases.</p><p>Evidence: <a href="#evidence-home-mobile">home-mobile</a></p></article>
+<article class="panel"><h3>color-step-two-wash</h3><span class="pill">observed</span><div class="ds-specimen"><div class="swatch" style="background:rgba(250, 161, 213, 0.07)"></div></div><p><code>rgba(250, 161, 213, 0.07)</code></p><p class="meta">color · color · <code>--color-step-two-wash</code></p><p>Large step-two panel fill.</p><p>Evidence: <a href="#evidence-home-mobile">home-mobile</a></p></article>
+<article class="panel"><h3>color-step-three-wash</h3><span class="pill">observed</span><div class="ds-specimen"><div class="swatch" style="background:rgba(237, 190, 81, 0.07)"></div></div><p><code>rgba(237, 190, 81, 0.07)</code></p><p class="meta">color · color · <code>--color-step-three-wash</code></p><p>Large step-three panel fill.</p><p>Evidence: <a href="#evidence-home-mobile">home-mobile</a></p></article>
+<article class="panel"><h3>color-chrome-line</h3><span class="pill">observed</span><div class="ds-specimen"><div class="swatch" style="background:rgb(214, 217, 230)"></div></div><p><code>rgb(214, 217, 230)</code></p><p class="meta">color · color · <code>--color-chrome-line</code></p><p>Stroke used by the SVG corner-frame treatment around the waitlist action.</p><p>Evidence: <a href="#evidence-waitlist-desktop-open">waitlist-desktop-open</a></p><details><summary>DTCG annotation</summary><pre>{
+  &quot;$type&quot;: &quot;color&quot;,
+  &quot;$value&quot;: {
+    &quot;colorSpace&quot;: &quot;srgb&quot;,
+    &quot;components&quot;: [
+      0.839216,
+      0.85098,
+      0.901961
+    ],
+    &quot;alpha&quot;: 1,
+    &quot;hex&quot;: &quot;#d6d9e6&quot;
+  }
+}</pre></details></article>
+<article class="panel"><h3>font-display</h3><span class="pill">observed</span><p><code>&quot;FK Raster Grotesk Compact Blended&quot;, sans-serif</code></p><p class="meta">typography · fontFamily · <code>--font-display</code></p><p>Primary display face. Font licensing was not established.</p><p>Evidence: <a href="#evidence-home-desktop">home-desktop</a>, <a href="#evidence-home-mobile">home-mobile</a></p><details><summary>DTCG annotation</summary><pre>{
+  &quot;$type&quot;: &quot;fontFamily&quot;,
+  &quot;$value&quot;: [
+    &quot;FK Raster Grotesk Compact Blended&quot;,
+    &quot;sans-serif&quot;
+  ]
+}</pre></details></article>
+<article class="panel"><h3>font-display-alt</h3><span class="pill">observed</span><p><code>&quot;New Title Bold&quot;, sans-serif</code></p><p class="meta">typography · fontFamily · <code>--font-display-alt</code></p><p>Secondary editorial display face used for the ON ITS OWN statement.</p><p>Evidence: <a href="#evidence-home-desktop">home-desktop</a></p><details><summary>DTCG annotation</summary><pre>{
+  &quot;$type&quot;: &quot;fontFamily&quot;,
+  &quot;$value&quot;: [
+    &quot;New Title Bold&quot;,
+    &quot;sans-serif&quot;
+  ]
+}</pre></details></article>
+<article class="panel"><h3>font-mono-display</h3><span class="pill">observed</span><p><code>&quot;IBM Plex Mono&quot;, monospace</code></p><p class="meta">typography · fontFamily · <code>--font-mono-display</code></p><p>Waitlist form labels and actions.</p><p>Evidence: <a href="#evidence-waitlist-desktop-open">waitlist-desktop-open</a></p><details><summary>DTCG annotation</summary><pre>{
+  &quot;$type&quot;: &quot;fontFamily&quot;,
+  &quot;$value&quot;: [
+    &quot;IBM Plex Mono&quot;,
+    &quot;monospace&quot;
+  ]
+}</pre></details></article>
+<article class="panel"><h3>font-mono-data</h3><span class="pill">observed</span><p><code>&quot;JetBrains Mono&quot;, monospace</code></p><p class="meta">typography · fontFamily · <code>--font-mono-data</code></p><p>Step labels, symbols, and compact metadata.</p><p>Evidence: <a href="#evidence-home-mobile">home-mobile</a></p><details><summary>DTCG annotation</summary><pre>{
+  &quot;$type&quot;: &quot;fontFamily&quot;,
+  &quot;$value&quot;: [
+    &quot;JetBrains Mono&quot;,
+    &quot;monospace&quot;
+  ]
+}</pre></details></article>
+<article class="panel"><h3>font-ui</h3><span class="pill">observed</span><p><code>&quot;Clash Grotesk&quot;, sans-serif</code></p><p class="meta">typography · fontFamily · <code>--font-ui</code></p><p>Product-simulation interface face.</p><p>Evidence: <a href="#evidence-home-mobile">home-mobile</a></p><details><summary>DTCG annotation</summary><pre>{
+  &quot;$type&quot;: &quot;fontFamily&quot;,
+  &quot;$value&quot;: [
+    &quot;Clash Grotesk&quot;,
+    &quot;sans-serif&quot;
+  ]
+}</pre></details></article>
+<article class="panel"><h3>space-6</h3><span class="pill">observed</span><p><code>6px</code></p><p class="meta">spacing · dimension · <code>--space-6</code></p><p>Step-label block padding.</p><p>Evidence: <a href="#evidence-home-mobile">home-mobile</a></p><details><summary>DTCG annotation</summary><pre>{
+  &quot;$type&quot;: &quot;dimension&quot;,
+  &quot;$value&quot;: {
+    &quot;value&quot;: 6,
+    &quot;unit&quot;: &quot;px&quot;
+  }
+}</pre></details></article>
+<article class="panel"><h3>space-8</h3><span class="pill">observed</span><p><code>8px</code></p><p class="meta">spacing · dimension · <code>--space-8</code></p><p>Common transaction-card gap and step-label inline padding.</p><p>Evidence: <a href="#evidence-home-mobile">home-mobile</a></p><details><summary>DTCG annotation</summary><pre>{
+  &quot;$type&quot;: &quot;dimension&quot;,
+  &quot;$value&quot;: {
+    &quot;value&quot;: 8,
+    &quot;unit&quot;: &quot;px&quot;
+  }
+}</pre></details></article>
+<article class="panel"><h3>space-12</h3><span class="pill">observed</span><p><code>12px</code></p><p class="meta">spacing · dimension · <code>--space-12</code></p><p>Waitlist field padding.</p><p>Evidence: <a href="#evidence-waitlist-desktop-open">waitlist-desktop-open</a></p><details><summary>DTCG annotation</summary><pre>{
+  &quot;$type&quot;: &quot;dimension&quot;,
+  &quot;$value&quot;: {
+    &quot;value&quot;: 12,
+    &quot;unit&quot;: &quot;px&quot;
+  }
+}</pre></details></article>
+<article class="panel"><h3>space-14</h3><span class="pill">observed</span><p><code>14px</code></p><p class="meta">spacing · dimension · <code>--space-14</code></p><p>Transaction-card padding.</p><p>Evidence: <a href="#evidence-home-mobile">home-mobile</a></p><details><summary>DTCG annotation</summary><pre>{
+  &quot;$type&quot;: &quot;dimension&quot;,
+  &quot;$value&quot;: {
+    &quot;value&quot;: 14,
+    &quot;unit&quot;: &quot;px&quot;
+  }
+}</pre></details></article>
+<article class="panel"><h3>space-16</h3><span class="pill">observed</span><p><code>16px</code></p><p class="meta">spacing · dimension · <code>--space-16</code></p><p>Repeated structural offset in the stacked narrative.</p><p>Evidence: <a href="#evidence-home-mobile">home-mobile</a></p><details><summary>DTCG annotation</summary><pre>{
+  &quot;$type&quot;: &quot;dimension&quot;,
+  &quot;$value&quot;: {
+    &quot;value&quot;: 16,
+    &quot;unit&quot;: &quot;px&quot;
+  }
+}</pre></details></article>
+<article class="panel"><h3>space-32</h3><span class="pill">observed</span><p><code>32px</code></p><p class="meta">spacing · dimension · <code>--space-32</code></p><p>Desktop waitlist form padding.</p><p>Evidence: <a href="#evidence-waitlist-desktop-open">waitlist-desktop-open</a></p><details><summary>DTCG annotation</summary><pre>{
+  &quot;$type&quot;: &quot;dimension&quot;,
+  &quot;$value&quot;: {
+    &quot;value&quot;: 32,
+    &quot;unit&quot;: &quot;px&quot;
+  }
+}</pre></details></article>
+<article class="panel"><h3>radius-card</h3><span class="pill">observed</span><p><code>6px</code></p><p class="meta">radius · dimension · <code>--radius-card</code></p><p>Transaction-card corner radius.</p><p>Evidence: <a href="#evidence-home-mobile">home-mobile</a></p><details><summary>DTCG annotation</summary><pre>{
+  &quot;$type&quot;: &quot;dimension&quot;,
+  &quot;$value&quot;: {
+    &quot;value&quot;: 6,
+    &quot;unit&quot;: &quot;px&quot;
+  }
+}</pre></details></article>
+<article class="panel"><h3>radius-segment</h3><span class="pill">observed</span><p><code>18px</code></p><p class="meta">radius · dimension · <code>--radius-segment</code></p><p>Performance segment option radius.</p><p>Evidence: <a href="#evidence-home-mobile">home-mobile</a>, <a href="#evidence-performance-simulated-selected">performance-simulated-selected</a></p><details><summary>DTCG annotation</summary><pre>{
+  &quot;$type&quot;: &quot;dimension&quot;,
+  &quot;$value&quot;: {
+    &quot;value&quot;: 18,
+    &quot;unit&quot;: &quot;px&quot;
+  }
+}</pre></details></article>
+<article class="panel"><h3>radius-pill</h3><span class="pill">observed</span><p><code>24px</code></p><p class="meta">radius · dimension · <code>--radius-pill</code></p><p>Compact metadata pill radius.</p><p>Evidence: <a href="#evidence-home-mobile">home-mobile</a></p><details><summary>DTCG annotation</summary><pre>{
+  &quot;$type&quot;: &quot;dimension&quot;,
+  &quot;$value&quot;: {
+    &quot;value&quot;: 24,
+    &quot;unit&quot;: &quot;px&quot;
+  }
+}</pre></details></article>
+<article class="panel"><h3>size-action-height</h3><span class="pill">observed</span><p><code>44px</code></p><p class="meta">size · dimension · <code>--size-action-height</code></p><p>Authored waitlist action height before transform scaling.</p><p>Evidence: <a href="#evidence-waitlist-desktop-open">waitlist-desktop-open</a></p><details><summary>DTCG annotation</summary><pre>{
+  &quot;$type&quot;: &quot;dimension&quot;,
+  &quot;$value&quot;: {
+    &quot;value&quot;: 44,
+    &quot;unit&quot;: &quot;px&quot;
+  }
+}</pre></details></article>
+<article class="panel"><h3>shadow-panel</h3><span class="pill">observed</span><p><code>rgba(0, 0, 0, 0.25) 0px 1px 2px 0px</code></p><p class="meta">elevation · shadow · <code>--shadow-panel</code></p><p>Waitlist form shadow. Retained in canonical JSON and CSS; no DTCG shadow export is declared.</p><p>Evidence: <a href="#evidence-waitlist-desktop-open">waitlist-desktop-open</a>, <a href="#evidence-waitlist-mobile-open">waitlist-mobile-open</a></p></article>
+</div></section><section id="typography"><h2>Typography</h2>
+<article class="panel"><h3>Hero display, desktop</h3><span class="pill">observed</span><div class="ds-specimen" style="background-color:rgb(15, 14, 13)"><p style="font-family:Arial, sans-serif;font-size:137px;font-weight:400;line-height:123.3px;color:rgb(246, 237, 224)">The quick brown fox jumps over the lazy dog. 0123456789</p></div><p class="meta">Declared preview overrides: <code>{&quot;backgroundColor&quot;: &quot;rgb(15, 14, 13)&quot;, &quot;fontFamily&quot;: &quot;Arial, sans-serif&quot;}</code></p><pre>{
+  &quot;font-family&quot;: &quot;\&quot;FK Raster Grotesk Compact Blended\&quot;, sans-serif&quot;,
+  &quot;font-size&quot;: &quot;137px&quot;,
+  &quot;font-weight&quot;: &quot;400&quot;,
+  &quot;line-height&quot;: &quot;123.3px&quot;,
+  &quot;color&quot;: &quot;rgb(246, 237, 224)&quot;
+}</pre><p>Measured hero role. Preview uses Arial only as an explicit offline fallback; exact raster-grotesk fidelity requires the source font.</p><p>Evidence: <a href="#evidence-home-desktop">home-desktop</a></p></article>
+<article class="panel"><h3>Hero display, mobile</h3><span class="pill">observed</span><div class="ds-specimen" style="background-color:rgb(15, 14, 13)"><p style="font-family:Arial, sans-serif;font-size:40px;font-weight:400;line-height:36px;color:rgb(246, 237, 224)">The quick brown fox jumps over the lazy dog. 0123456789</p></div><p class="meta">Declared preview overrides: <code>{&quot;backgroundColor&quot;: &quot;rgb(15, 14, 13)&quot;, &quot;fontFamily&quot;: &quot;Arial, sans-serif&quot;}</code></p><pre>{
+  &quot;font-family&quot;: &quot;\&quot;FK Raster Grotesk Compact Blended\&quot;, sans-serif&quot;,
+  &quot;font-size&quot;: &quot;40px&quot;,
+  &quot;font-weight&quot;: &quot;400&quot;,
+  &quot;line-height&quot;: &quot;36px&quot;,
+  &quot;color&quot;: &quot;rgb(246, 237, 224)&quot;
+}</pre><p>Measured 390px hero role.</p><p>Evidence: <a href="#evidence-home-mobile">home-mobile</a></p></article>
+<article class="panel"><h3>Feature display, desktop</h3><span class="pill">observed</span><div class="ds-specimen" style="background-color:rgb(15, 14, 13)"><p style="font-family:Arial, sans-serif;font-size:104px;font-weight:400;line-height:93.6px;color:rgb(222, 237, 196)">The quick brown fox jumps over the lazy dog. 0123456789</p></div><p class="meta">Declared preview overrides: <code>{&quot;backgroundColor&quot;: &quot;rgb(15, 14, 13)&quot;, &quot;fontFamily&quot;: &quot;Arial, sans-serif&quot;}</code></p><pre>{
+  &quot;font-family&quot;: &quot;\&quot;FK Raster Grotesk Compact Blended\&quot;, sans-serif&quot;,
+  &quot;font-size&quot;: &quot;104px&quot;,
+  &quot;font-weight&quot;: &quot;400&quot;,
+  &quot;line-height&quot;: &quot;93.6px&quot;,
+  &quot;color&quot;: &quot;rgb(222, 237, 196)&quot;
+}</pre><p>Measured FETCH SIGNALS role; other desktop feature statements vary from 98px to 154px.</p><p>Evidence: <a href="#evidence-home-desktop">home-desktop</a></p></article>
+<article class="panel"><h3>Feature display, mobile</h3><span class="pill">observed</span><div class="ds-specimen" style="background-color:rgb(15, 14, 13)"><p style="font-family:Arial, sans-serif;font-size:46px;font-weight:400;line-height:41.4px;color:rgb(232, 215, 224)">The quick brown fox jumps over the lazy dog. 0123456789</p></div><p class="meta">Declared preview overrides: <code>{&quot;backgroundColor&quot;: &quot;rgb(15, 14, 13)&quot;, &quot;fontFamily&quot;: &quot;Arial, sans-serif&quot;}</code></p><pre>{
+  &quot;font-family&quot;: &quot;\&quot;FK Raster Grotesk Compact Blended\&quot;, sans-serif&quot;,
+  &quot;font-size&quot;: &quot;46px&quot;,
+  &quot;font-weight&quot;: &quot;400&quot;,
+  &quot;line-height&quot;: &quot;41.4px&quot;,
+  &quot;color&quot;: &quot;rgb(232, 215, 224)&quot;
+}</pre><p>Measured IMAGINE role; other mobile feature statements use 34px, 43px, and 32px roles.</p><p>Evidence: <a href="#evidence-home-mobile">home-mobile</a></p></article>
+<article class="panel"><h3>Editorial display</h3><span class="pill">observed</span><div class="ds-specimen" style="background-color:rgb(15, 14, 13)"><p style="font-family:Georgia, serif;font-size:160px;font-weight:700;line-height:144px;color:rgb(240, 226, 197)">The quick brown fox jumps over the lazy dog. 0123456789</p></div><p class="meta">Declared preview overrides: <code>{&quot;backgroundColor&quot;: &quot;rgb(15, 14, 13)&quot;, &quot;fontFamily&quot;: &quot;Georgia, serif&quot;}</code></p><pre>{
+  &quot;font-family&quot;: &quot;\&quot;New Title Bold\&quot;, sans-serif&quot;,
+  &quot;font-size&quot;: &quot;160px&quot;,
+  &quot;font-weight&quot;: &quot;700&quot;,
+  &quot;line-height&quot;: &quot;144px&quot;,
+  &quot;color&quot;: &quot;rgb(240, 226, 197)&quot;
+}</pre><p>Measured ON ITS OWN statement. Georgia is only an explicit offline specimen fallback.</p><p>Evidence: <a href="#evidence-home-desktop">home-desktop</a></p></article>
+<article class="panel"><h3>Step label</h3><span class="pill">observed</span><div class="ds-specimen" style="background-color:rgb(15, 14, 13);color:rgb(226, 255, 160)"><p style="font-family:&quot;JetBrains Mono&quot;, monospace;font-size:12px;font-weight:400;line-height:14.4px">The quick brown fox jumps over the lazy dog. 0123456789</p></div><p class="meta">Declared preview overrides: <code>{&quot;backgroundColor&quot;: &quot;rgb(15, 14, 13)&quot;, &quot;color&quot;: &quot;rgb(226, 255, 160)&quot;}</code></p><pre>{
+  &quot;font-family&quot;: &quot;\&quot;JetBrains Mono\&quot;, monospace&quot;,
+  &quot;font-size&quot;: &quot;12px&quot;,
+  &quot;font-weight&quot;: &quot;400&quot;,
+  &quot;line-height&quot;: &quot;14.4px&quot;
+}</pre><p>Step numbering swaps color by narrative phase.</p><p>Evidence: <a href="#evidence-home-mobile">home-mobile</a></p></article>
+<article class="panel"><h3>Product UI body</h3><span class="pill">observed</span><div class="ds-specimen" style="background-color:rgb(23, 23, 23)"><p style="font-family:Arial, sans-serif;font-size:14px;font-weight:500;line-height:16.8px;letter-spacing:0.28px;color:rgb(212, 212, 212)">The quick brown fox jumps over the lazy dog. 0123456789</p></div><p class="meta">Declared preview overrides: <code>{&quot;backgroundColor&quot;: &quot;rgb(23, 23, 23)&quot;, &quot;fontFamily&quot;: &quot;Arial, sans-serif&quot;}</code></p><pre>{
+  &quot;font-family&quot;: &quot;\&quot;Clash Grotesk\&quot;, sans-serif&quot;,
+  &quot;font-size&quot;: &quot;14px&quot;,
+  &quot;font-weight&quot;: &quot;500&quot;,
+  &quot;line-height&quot;: &quot;16.8px&quot;,
+  &quot;letter-spacing&quot;: &quot;0.28px&quot;,
+  &quot;color&quot;: &quot;rgb(212, 212, 212)&quot;
+}</pre><p>Dominant transaction-row type.</p><p>Evidence: <a href="#evidence-home-mobile">home-mobile</a></p></article>
+<article class="panel"><h3>Product UI title</h3><span class="pill">observed</span><div class="ds-specimen" style="background-color:rgb(23, 23, 23)"><p style="font-family:Arial, sans-serif;font-size:16px;font-weight:500;line-height:19.2px;letter-spacing:0.32px;color:rgb(245, 245, 245)">The quick brown fox jumps over the lazy dog. 0123456789</p></div><p class="meta">Declared preview overrides: <code>{&quot;backgroundColor&quot;: &quot;rgb(23, 23, 23)&quot;, &quot;fontFamily&quot;: &quot;Arial, sans-serif&quot;}</code></p><pre>{
+  &quot;font-family&quot;: &quot;\&quot;Clash Grotesk\&quot;, sans-serif&quot;,
+  &quot;font-size&quot;: &quot;16px&quot;,
+  &quot;font-weight&quot;: &quot;500&quot;,
+  &quot;line-height&quot;: &quot;19.2px&quot;,
+  &quot;letter-spacing&quot;: &quot;0.32px&quot;,
+  &quot;color&quot;: &quot;rgb(245, 245, 245)&quot;
+}</pre><p>Measured Transactions heading.</p><p>Evidence: <a href="#evidence-home-mobile">home-mobile</a></p></article>
+<article class="panel"><h3>Form label</h3><span class="pill">observed</span><div class="ds-specimen" style="background-color:rgb(20, 20, 20)"><p style="font-family:&quot;IBM Plex Mono&quot;, monospace;font-size:14px;font-weight:400;line-height:16.8px;letter-spacing:-0.28px;color:rgb(228, 232, 244)">The quick brown fox jumps over the lazy dog. 0123456789</p></div><p class="meta">Declared preview overrides: <code>{&quot;backgroundColor&quot;: &quot;rgb(20, 20, 20)&quot;}</code></p><pre>{
+  &quot;font-family&quot;: &quot;\&quot;IBM Plex Mono\&quot;, monospace&quot;,
+  &quot;font-size&quot;: &quot;14px&quot;,
+  &quot;font-weight&quot;: &quot;400&quot;,
+  &quot;line-height&quot;: &quot;16.8px&quot;,
+  &quot;letter-spacing&quot;: &quot;-0.28px&quot;,
+  &quot;color&quot;: &quot;rgb(228, 232, 244)&quot;
+}</pre><p>Measured waitlist field label.</p><p>Evidence: <a href="#evidence-waitlist-desktop-open">waitlist-desktop-open</a></p></article>
+<article class="panel"><h3>Action label</h3><span class="pill">observed</span><div class="ds-specimen" style="background-color:rgb(20, 20, 20)"><p style="font-family:&quot;IBM Plex Mono&quot;, monospace;font-size:15px;font-weight:600;line-height:18px;letter-spacing:-0.15px;color:rgb(228, 232, 244)">The quick brown fox jumps over the lazy dog. 0123456789</p></div><p class="meta">Declared preview overrides: <code>{&quot;backgroundColor&quot;: &quot;rgb(20, 20, 20)&quot;}</code></p><pre>{
+  &quot;font-family&quot;: &quot;\&quot;IBM Plex Mono\&quot;, monospace&quot;,
+  &quot;font-size&quot;: &quot;15px&quot;,
+  &quot;font-weight&quot;: &quot;600&quot;,
+  &quot;line-height&quot;: &quot;18px&quot;,
+  &quot;letter-spacing&quot;: &quot;-0.15px&quot;,
+  &quot;color&quot;: &quot;rgb(228, 232, 244)&quot;
+}</pre><p>Measured waitlist action label.</p><p>Evidence: <a href="#evidence-waitlist-desktop-open">waitlist-desktop-open</a></p></article>
+</section><section id="components"><h2>Components</h2>
+<article class="panel"><h3>Framed waitlist action</h3><p class="meta">Kind: button</p><h4>Anatomy</h4><ul><li>Transparent 237x44 hit target</li><li>195x47 corner-frame SVG segment</li><li>IBM Plex Mono label</li><li>46x46 arrow-end SVG segment</li></ul><div class="grid">
+<div><h4>Default</h4><span class="pill">observed</span><div class="ds-specimen" style="background-color:rgb(15, 14, 13)"><button type="button" style="width:237px;height:44px;display:flex;align-items:center;justify-content:center;background-color:rgba(0, 0, 0, 0);color:rgb(228, 232, 244);font-family:&quot;IBM Plex Mono&quot;, monospace;font-size:15px;font-weight:600;line-height:18px;letter-spacing:-0.15px;border:1px solid rgb(214, 217, 230);border-radius:0px">JOIN WAITLIST</button></div><p class="meta">Declared preview overrides: <code>{&quot;backgroundColor&quot;: &quot;rgb(15, 14, 13)&quot;}</code></p><p>Evidence: <a href="#evidence-waitlist-desktop-open">waitlist-desktop-open</a></p><details><summary>Supplied styles</summary><pre>{
+  &quot;width&quot;: &quot;237px&quot;,
+  &quot;height&quot;: &quot;44px&quot;,
+  &quot;display&quot;: &quot;flex&quot;,
+  &quot;align-items&quot;: &quot;center&quot;,
+  &quot;justify-content&quot;: &quot;center&quot;,
+  &quot;background-color&quot;: &quot;rgba(0, 0, 0, 0)&quot;,
+  &quot;color&quot;: &quot;rgb(228, 232, 244)&quot;,
+  &quot;font-family&quot;: &quot;\&quot;IBM Plex Mono\&quot;, monospace&quot;,
+  &quot;font-size&quot;: &quot;15px&quot;,
+  &quot;font-weight&quot;: &quot;600&quot;,
+  &quot;line-height&quot;: &quot;18px&quot;,
+  &quot;letter-spacing&quot;: &quot;-0.15px&quot;,
+  &quot;border&quot;: &quot;1px solid rgb(214, 217, 230)&quot;,
+  &quot;border-radius&quot;: &quot;0px&quot;
+}</pre></details></div>
+</div><div class="table-wrap"><table><caption>Framed waitlist action state coverage</caption><thead><tr><th scope="col">State</th><th scope="col">Status</th><th scope="col">Description</th><th scope="col">Evidence</th></tr></thead><tbody><tr><td>Hover</td><td>observed</td><td>Hover was activated and captured; no stable outer-node computed-style delta was isolated from the dynamic page.</td><td><a href="#evidence-waitlist-trigger-hover">waitlist-trigger-hover</a></td></tr><tr><td>Keyboard focus</td><td>observed</td><td>The tabindex div trigger receives a browser outline of rgb(0, 95, 204) auto 1px in the mobile capture.</td><td><a href="#evidence-waitlist-trigger-focus">waitlist-trigger-focus</a></td></tr><tr><td>Open</td><td>observed</td><td>Activating the trigger opens the waitlist overlay without navigation.</td><td><a href="#evidence-waitlist-desktop-open">waitlist-desktop-open</a>, <a href="#evidence-waitlist-mobile-open">waitlist-mobile-open</a></td></tr><tr><td>Disabled</td><td>unknown</td><td>No disabled trigger state was exposed.</td><td>None declared</td></tr></tbody></table></div><h4>Usage rules</h4><ul><li>Preserve the split corner-frame and arrow-cell anatomy when implementing the source treatment.</li><li>Use a semantic button even though the observed launch-page triggers are tabindex divs.</li><li>Do not infer loading or success behavior from the decorative frame.</li></ul></article>
+<article class="panel"><h3>Waitlist field</h3><p class="meta">Kind: input</p><h4>Anatomy</h4><ul><li>IBM Plex Mono label</li><li>Square #0c0c0c field wrapper</li><li>Transparent text input</li></ul><div class="grid">
+<div><h4>Default desktop</h4><span class="pill">observed</span><div class="ds-specimen" style="background-color:rgb(20, 20, 20)"><label>Waitlist field<input type="text" value="" style="width:366.78px;height:49.61px;padding:12px;background-color:rgb(12, 12, 12);color:rgb(255, 255, 255);font-family:&quot;IBM Plex Mono&quot;, monospace;font-size:14px;font-weight:400;line-height:16.8px;border:0px solid rgb(0, 0, 0);border-radius:0px" readonly></label></div><p class="meta">Declared preview overrides: <code>{&quot;backgroundColor&quot;: &quot;rgb(20, 20, 20)&quot;}</code></p><p>Evidence: <a href="#evidence-waitlist-desktop-open">waitlist-desktop-open</a></p><details><summary>Supplied styles</summary><pre>{
+  &quot;width&quot;: &quot;366.78px&quot;,
+  &quot;height&quot;: &quot;49.61px&quot;,
+  &quot;padding&quot;: &quot;12px&quot;,
+  &quot;background-color&quot;: &quot;rgb(12, 12, 12)&quot;,
+  &quot;color&quot;: &quot;rgb(255, 255, 255)&quot;,
+  &quot;font-family&quot;: &quot;\&quot;IBM Plex Mono\&quot;, monospace&quot;,
+  &quot;font-size&quot;: &quot;14px&quot;,
+  &quot;font-weight&quot;: &quot;400&quot;,
+  &quot;line-height&quot;: &quot;16.8px&quot;,
+  &quot;border&quot;: &quot;0px solid rgb(0, 0, 0)&quot;,
+  &quot;border-radius&quot;: &quot;0px&quot;
+}</pre></details></div>
+</div><div class="table-wrap"><table><caption>Waitlist field state coverage</caption><thead><tr><th scope="col">State</th><th scope="col">Status</th><th scope="col">Description</th><th scope="col">Evidence</th></tr></thead><tbody><tr><td>Focus</td><td>observed</td><td>Programmatic focus was captured; the input itself retained no computed border, shadow, or outline delta.</td><td><a href="#evidence-waitlist-email-focus">waitlist-email-focus</a></td></tr><tr><td>Error</td><td>unknown</td><td>Submission was not attempted, so validation styling is unknown.</td><td>None declared</td></tr><tr><td>Disabled</td><td>unknown</td><td>No disabled field was exposed.</td><td>None declared</td></tr></tbody></table></div><h4>Usage rules</h4><ul><li>Keep labels explicit and visible above each field.</li><li>Do not use the empty appearance as evidence of placeholder behavior.</li><li>Add an authored focus-visible treatment in a new implementation only as a proposed accessibility improvement, not as an observed source rule.</li></ul></article>
+<article class="panel"><h3>Waitlist form panel</h3><p class="meta">Kind: card</p><h4>Anatomy</h4><ul><li>Raster-grotesk heading</li><li>Close mark</li><li>Two labeled fields</li><li>Framed submit action</li></ul><div class="grid">
+<div><h4>Desktop open</h4><span class="pill">observed</span><div class="ds-specimen" style="background-color:rgb(15, 14, 13)"><article aria-label="Waitlist form panel" style="width:423.48px;min-height:426.66px;padding:32px;display:flex;flex-direction:column;gap:24px;background-color:rgb(20, 20, 20);color:rgb(228, 232, 244);border-radius:0px;box-shadow:rgba(0, 0, 0, 0.25) 0px 1px 2px 0px">JOIN THE LIST · EMAIL ADDRESS · X / TWITTER USERNAME</article></div><p class="meta">Declared preview overrides: <code>{&quot;backgroundColor&quot;: &quot;rgb(15, 14, 13)&quot;}</code></p><p>Evidence: <a href="#evidence-waitlist-desktop-open">waitlist-desktop-open</a></p><details><summary>Supplied styles</summary><pre>{
+  &quot;width&quot;: &quot;423.48px&quot;,
+  &quot;min-height&quot;: &quot;426.66px&quot;,
+  &quot;padding&quot;: &quot;32px&quot;,
+  &quot;display&quot;: &quot;flex&quot;,
+  &quot;flex-direction&quot;: &quot;column&quot;,
+  &quot;gap&quot;: &quot;24px&quot;,
+  &quot;background-color&quot;: &quot;rgb(20, 20, 20)&quot;,
+  &quot;color&quot;: &quot;rgb(228, 232, 244)&quot;,
+  &quot;border-radius&quot;: &quot;0px&quot;,
+  &quot;box-shadow&quot;: &quot;rgba(0, 0, 0, 0.25) 0px 1px 2px 0px&quot;
+}</pre></details></div>
+<div><h4>Mobile open</h4><span class="pill">observed</span><div class="ds-specimen" style="background-color:rgb(15, 14, 13)"><article aria-label="Waitlist form panel" style="width:299.57px;min-height:340.88px;padding-block:40px;padding-inline:10px;display:flex;flex-direction:column;background-color:rgb(20, 20, 20);color:rgb(228, 232, 244);border-radius:0px;box-shadow:rgba(0, 0, 0, 0.25) 0px 1px 2px 0px">JOIN THE LIST · EMAIL ADDRESS · X / TWITTER USERNAME</article></div><p class="meta">Declared preview overrides: <code>{&quot;backgroundColor&quot;: &quot;rgb(15, 14, 13)&quot;}</code></p><p>Evidence: <a href="#evidence-waitlist-mobile-open">waitlist-mobile-open</a></p><details><summary>Supplied styles</summary><pre>{
+  &quot;width&quot;: &quot;299.57px&quot;,
+  &quot;min-height&quot;: &quot;340.88px&quot;,
+  &quot;padding-block&quot;: &quot;40px&quot;,
+  &quot;padding-inline&quot;: &quot;10px&quot;,
+  &quot;display&quot;: &quot;flex&quot;,
+  &quot;flex-direction&quot;: &quot;column&quot;,
+  &quot;background-color&quot;: &quot;rgb(20, 20, 20)&quot;,
+  &quot;color&quot;: &quot;rgb(228, 232, 244)&quot;,
+  &quot;border-radius&quot;: &quot;0px&quot;,
+  &quot;box-shadow&quot;: &quot;rgba(0, 0, 0, 0.25) 0px 1px 2px 0px&quot;
+}</pre></details></div>
+</div><div class="table-wrap"><table><caption>Waitlist form panel state coverage</caption><thead><tr><th scope="col">State</th><th scope="col">Status</th><th scope="col">Description</th><th scope="col">Evidence</th></tr></thead><tbody><tr><td>Open</td><td>observed</td><td>The form overlays the current page while preserving the narrative beneath it.</td><td><a href="#evidence-waitlist-desktop-open">waitlist-desktop-open</a>, <a href="#evidence-waitlist-mobile-open">waitlist-mobile-open</a></td></tr><tr><td>Submitting</td><td>unknown</td><td>Submission was not attempted.</td><td>None declared</td></tr><tr><td>Success</td><td>unknown</td><td>Submission was not attempted.</td><td>None declared</td></tr></tbody></table></div><h4>Usage rules</h4><ul><li>Keep the modal visually subordinate to the page by using a near-black panel instead of a bright modal surface.</li><li>Preserve square geometry and compact monochrome typography.</li><li>Verify focus trapping, escape behavior, and close control semantics in implementation; this capture only proves the open visual state.</li></ul></article>
+<article class="panel"><h3>Step label badge</h3><p class="meta">Kind: badge</p><h4>Anatomy</h4><ul><li>Phase-colored translucent wash</li><li>JetBrains Mono label</li></ul><div class="grid">
+<div><h4>Step one</h4><span class="pill">observed</span><div class="ds-specimen" style="background-color:rgb(15, 14, 13)"><span style="padding-block:6px;padding-inline:8px;background-color:rgba(226, 255, 160, 0.1);color:rgb(226, 255, 160);font-family:&quot;JetBrains Mono&quot;, monospace;font-size:12px;font-weight:400;line-height:14.4px;border-radius:0px">STEP NO.1</span></div><p class="meta">Declared preview overrides: <code>{&quot;backgroundColor&quot;: &quot;rgb(15, 14, 13)&quot;}</code></p><p>Evidence: <a href="#evidence-home-mobile">home-mobile</a></p><details><summary>Supplied styles</summary><pre>{
+  &quot;padding-block&quot;: &quot;6px&quot;,
+  &quot;padding-inline&quot;: &quot;8px&quot;,
+  &quot;background-color&quot;: &quot;rgba(226, 255, 160, 0.1)&quot;,
+  &quot;color&quot;: &quot;rgb(226, 255, 160)&quot;,
+  &quot;font-family&quot;: &quot;\&quot;JetBrains Mono\&quot;, monospace&quot;,
+  &quot;font-size&quot;: &quot;12px&quot;,
+  &quot;font-weight&quot;: &quot;400&quot;,
+  &quot;line-height&quot;: &quot;14.4px&quot;,
+  &quot;border-radius&quot;: &quot;0px&quot;
+}</pre></details></div>
+<div><h4>Step two</h4><span class="pill">observed</span><div class="ds-specimen" style="background-color:rgb(15, 14, 13)"><span style="padding-block:6px;padding-inline:8px;background-color:rgba(250, 161, 213, 0.1);color:rgb(250, 161, 213);font-family:&quot;JetBrains Mono&quot;, monospace;font-size:12px;font-weight:400;line-height:14.4px;border-radius:0px">STEP NO.2</span></div><p class="meta">Declared preview overrides: <code>{&quot;backgroundColor&quot;: &quot;rgb(15, 14, 13)&quot;}</code></p><p>Evidence: <a href="#evidence-home-mobile">home-mobile</a></p><details><summary>Supplied styles</summary><pre>{
+  &quot;padding-block&quot;: &quot;6px&quot;,
+  &quot;padding-inline&quot;: &quot;8px&quot;,
+  &quot;background-color&quot;: &quot;rgba(250, 161, 213, 0.1)&quot;,
+  &quot;color&quot;: &quot;rgb(250, 161, 213)&quot;,
+  &quot;font-family&quot;: &quot;\&quot;JetBrains Mono\&quot;, monospace&quot;,
+  &quot;font-size&quot;: &quot;12px&quot;,
+  &quot;font-weight&quot;: &quot;400&quot;,
+  &quot;line-height&quot;: &quot;14.4px&quot;,
+  &quot;border-radius&quot;: &quot;0px&quot;
+}</pre></details></div>
+<div><h4>Step three</h4><span class="pill">observed</span><div class="ds-specimen" style="background-color:rgb(15, 14, 13)"><span style="padding-block:6px;padding-inline:8px;background-color:rgba(237, 190, 81, 0.1);color:rgb(237, 190, 81);font-family:&quot;JetBrains Mono&quot;, monospace;font-size:12px;font-weight:400;line-height:14.4px;border-radius:0px">STEP NO.3</span></div><p class="meta">Declared preview overrides: <code>{&quot;backgroundColor&quot;: &quot;rgb(15, 14, 13)&quot;}</code></p><p>Evidence: <a href="#evidence-home-mobile">home-mobile</a></p><details><summary>Supplied styles</summary><pre>{
+  &quot;padding-block&quot;: &quot;6px&quot;,
+  &quot;padding-inline&quot;: &quot;8px&quot;,
+  &quot;background-color&quot;: &quot;rgba(237, 190, 81, 0.1)&quot;,
+  &quot;color&quot;: &quot;rgb(237, 190, 81)&quot;,
+  &quot;font-family&quot;: &quot;\&quot;JetBrains Mono\&quot;, monospace&quot;,
+  &quot;font-size&quot;: &quot;12px&quot;,
+  &quot;font-weight&quot;: &quot;400&quot;,
+  &quot;line-height&quot;: &quot;14.4px&quot;,
+  &quot;border-radius&quot;: &quot;0px&quot;
+}</pre></details></div>
+</div><div class="table-wrap"><table><caption>Step label badge state coverage</caption><thead><tr><th scope="col">State</th><th scope="col">Status</th><th scope="col">Description</th><th scope="col">Evidence</th></tr></thead><tbody></tbody></table></div><h4>Usage rules</h4><ul><li>Use the accent family as narrative sequencing, not as generic success, warning, and error semantics.</li><li>Keep the badge square and low-contrast except for the phase label.</li></ul></article>
+<article class="panel"><h3>Performance segmented control</h3><p class="meta">Kind: button</p><h4>Anatomy</h4><ul><li>#171717 rounded rail</li><li>Live option</li><li>Simulated option</li><li>Movable #262626 selected pill</li></ul><div class="grid">
+<div><h4>Live selected</h4><span class="pill">observed</span><div class="ds-specimen" style="background-color:rgb(15, 14, 13)"><button type="button" style="height:42px;padding:3px;display:flex;align-items:center;gap:3px;background-color:rgb(23, 23, 23);color:rgb(245, 245, 245);font-family:Arial, sans-serif;font-size:11px;font-weight:500;line-height:13.2px;letter-spacing:0.22px;border-radius:24px">Live performance · Simulated performance</button></div><p class="meta">Declared preview overrides: <code>{&quot;backgroundColor&quot;: &quot;rgb(15, 14, 13)&quot;, &quot;fontFamily&quot;: &quot;Arial, sans-serif&quot;}</code></p><p>Evidence: <a href="#evidence-home-mobile">home-mobile</a></p><details><summary>Supplied styles</summary><pre>{
+  &quot;height&quot;: &quot;42px&quot;,
+  &quot;padding&quot;: &quot;3px&quot;,
+  &quot;display&quot;: &quot;flex&quot;,
+  &quot;align-items&quot;: &quot;center&quot;,
+  &quot;gap&quot;: &quot;3px&quot;,
+  &quot;background-color&quot;: &quot;rgb(23, 23, 23)&quot;,
+  &quot;color&quot;: &quot;rgb(245, 245, 245)&quot;,
+  &quot;font-family&quot;: &quot;\&quot;Clash Grotesk\&quot;, sans-serif&quot;,
+  &quot;font-size&quot;: &quot;11px&quot;,
+  &quot;font-weight&quot;: &quot;500&quot;,
+  &quot;line-height&quot;: &quot;13.2px&quot;,
+  &quot;letter-spacing&quot;: &quot;0.22px&quot;,
+  &quot;border-radius&quot;: &quot;24px&quot;
+}</pre></details></div>
+</div><div class="table-wrap"><table><caption>Performance segmented control state coverage</caption><thead><tr><th scope="col">State</th><th scope="col">Status</th><th scope="col">Description</th><th scope="col">Evidence</th></tr></thead><tbody><tr><td>Live selected</td><td>observed</td><td>The 138.39x36px live segment has the #262626 selected surface; simulated text is #a3a3a3.</td><td><a href="#evidence-home-mobile">home-mobile</a></td></tr><tr><td>Simulated selected</td><td>observed</td><td>After safe local activation, the live segment becomes transparent and the 169.11x36px simulated segment receives the #262626 surface.</td><td><a href="#evidence-performance-simulated-selected">performance-simulated-selected</a></td></tr><tr><td>Keyboard focus</td><td>unknown</td><td>The options are tabindex divs, but focus-visible styling was not independently captured for this control.</td><td>None declared</td></tr></tbody></table></div><h4>Usage rules</h4><ul><li>Move the selected surface with the selected option and keep the rail stable.</li><li>Implement as an accessible tablist or radio group after verifying product semantics; the launch page does not declare a semantic role.</li></ul></article>
+<article class="panel"><h3>Transaction card</h3><p class="meta">Kind: card</p><h4>Anatomy</h4><ul><li>Operation label</li><li>Primary values and asset</li><li>Mono ticker/source metadata</li><li>Muted timestamp</li></ul><div class="grid">
+<div><h4>Standard row</h4><span class="pill">observed</span><div class="ds-specimen" style="background-color:rgb(15, 14, 13)"><article aria-label="Transaction card" style="width:322px;min-height:88px;padding:14px;display:flex;flex-direction:column;gap:8px;background-color:rgb(23, 23, 23);color:rgb(212, 212, 212);font-family:Arial, sans-serif;font-size:14px;font-weight:500;line-height:16.8px;letter-spacing:0.28px;border-radius:6px">LONG · 6.7 CRUDE OIL · $CL · @ $86.66</article></div><p class="meta">Declared preview overrides: <code>{&quot;backgroundColor&quot;: &quot;rgb(15, 14, 13)&quot;, &quot;fontFamily&quot;: &quot;Arial, sans-serif&quot;}</code></p><p>Evidence: <a href="#evidence-home-mobile">home-mobile</a></p><details><summary>Supplied styles</summary><pre>{
+  &quot;width&quot;: &quot;322px&quot;,
+  &quot;min-height&quot;: &quot;88px&quot;,
+  &quot;padding&quot;: &quot;14px&quot;,
+  &quot;display&quot;: &quot;flex&quot;,
+  &quot;flex-direction&quot;: &quot;column&quot;,
+  &quot;gap&quot;: &quot;8px&quot;,
+  &quot;background-color&quot;: &quot;rgb(23, 23, 23)&quot;,
+  &quot;color&quot;: &quot;rgb(212, 212, 212)&quot;,
+  &quot;font-family&quot;: &quot;\&quot;Clash Grotesk\&quot;, sans-serif&quot;,
+  &quot;font-size&quot;: &quot;14px&quot;,
+  &quot;font-weight&quot;: &quot;500&quot;,
+  &quot;line-height&quot;: &quot;16.8px&quot;,
+  &quot;letter-spacing&quot;: &quot;0.28px&quot;,
+  &quot;border-radius&quot;: &quot;6px&quot;
+}</pre></details></div>
+</div><div class="table-wrap"><table><caption>Transaction card state coverage</caption><thead><tr><th scope="col">State</th><th scope="col">Status</th><th scope="col">Description</th><th scope="col">Evidence</th></tr></thead><tbody><tr><td>Default</td><td>observed</td><td>Dense dark transaction rows are visible in the product-simulation panel.</td><td><a href="#evidence-home-mobile">home-mobile</a></td></tr><tr><td>Loading</td><td>unknown</td><td>The public page exposes only a filled simulated data state.</td><td>None declared</td></tr><tr><td>Empty</td><td>unknown</td><td>The public page exposes only a filled simulated data state.</td><td>None declared</td></tr><tr><td>Error</td><td>unknown</td><td>No error state was exposed.</td><td>None declared</td></tr></tbody></table></div><h4>Usage rules</h4><ul><li>Use Clash Grotesk for values and descriptive labels, JetBrains Mono for tickers and compact system metadata.</li><li>Preserve the 14px padding, 8px internal rhythm, and 6px corner radius before adding more density.</li><li>Do not treat the launch-page sample values as live product data.</li></ul></article>
+</section><section id="coverage"><h2>Coverage and findings</h2>
+<article id="coverage-identity" class="panel"><h3>Identity</h3><span class="pill">inferred</span><p>A dark, cinematic trading narrative combines rasterized display type, near-black surfaces, monochrome particle imagery, sparse neon phase accents, and dense product-simulation UI.</p><ul><li>The visual grammar alternates oversized editorial statements with compact mono system labels and believable trading-interface fragments.</li><li>Color is mostly restrained to cream/gray on near-black, then assigned by narrative phase: chartreuse for imagine, pink for research, amber for execution, and green for positive market outcomes.</li><li>Irregular corner-frame SVGs, fine connector lines, particle hands, and subdued grain produce a speculative technical character without conventional rounded marketing cards.</li></ul><p>Evidence: <a href="#evidence-home-desktop">home-desktop</a>, <a href="#evidence-home-mid">home-mid</a>, <a href="#evidence-home-mobile">home-mobile</a></p></article>
+<article id="coverage-layout" class="panel"><h3>Layout</h3><span class="pill">observed</span><p>Desktop and intermediate widths use a viewport-height horizontal sequence; below 1000px the same narrative becomes a 390px-wide vertical stack with full-viewport hero, phase panels, product proof, and closing CTA.</p><ul><li>At 1440x1000 and 1280x900, the full-page screenshots extend horizontally through the narrative instead of creating a conventional vertical document.</li><li>At 390x844, the body measures 390x4479.28px and the hero occupies the first 844px viewport.</li><li>Mobile phase panels are approximately 281–286px wide; the transaction list is 322px wide with 14px card padding.</li><li>The mobile waitlist trigger is bottom-fixed at x=68.5, y=787 with a 253x57px measured hit area.</li></ul><p>Evidence: <a href="#evidence-home-desktop">home-desktop</a>, <a href="#evidence-home-mid">home-mid</a>, <a href="#evidence-home-mobile">home-mobile</a></p></article>
+<article id="coverage-responsive" class="panel"><h3>Responsive behavior</h3><span class="pill">observed</span><p>Readable source media conditions define below-1000px, 1000–1439.98px, and 1440px+ bands; each band was sampled once.</p><ul><li>Below 1000px, sections stack vertically, display type contracts to 32–46px roles, and the primary waitlist trigger becomes a bottom-fixed control.</li><li>The 1000–1439.98px sample at 1280x900 retains the horizontal narrative but scales the composition relative to the 1440px sample.</li><li>At 1440px+, hero display reaches 137px/123.3px and the composition remains horizontal.</li><li>Exact touch behavior and unsampled widths near the 999.98/1000 and 1439.98/1440 boundaries were not interactively tested.</li></ul><p>Evidence: <a href="#evidence-home-desktop">home-desktop</a>, <a href="#evidence-home-mid">home-mid</a>, <a href="#evidence-home-mobile">home-mobile</a></p></article>
+<article id="coverage-motion" class="panel"><h3>Motion</h3><span class="pill">unknown</span><p>Static captures establish animated/canvas-bearing surfaces and state changes, but not motion timing or easing as experienced.</p><ul><li>The root class includes Lenis markers and several canvases expose an accessible name of Unicorn Studio Scene.</li><li>The bounded collector found no nonzero CSS transition or animation durations in the captured mobile nodes; this does not rule out JavaScript, canvas, or transform animation.</li><li>Open-overlay screenshots were taken 350ms after activation, so their dimensions may include transform scaling from the interaction sequence.</li><li>Reduced-motion behavior was not captured; the light/dark preference comparison is not reduced-motion evidence.</li></ul><p>Evidence: None declared</p></article>
+<article id="coverage-accessibility" class="panel"><h3>Accessibility observations</h3><span class="pill">observed</span><p>The public page has keyboard-reachable custom controls and labeled form fields, but several interactive containers lack semantic button/tab roles in the captured accessibility tree.</p><ul><li>The waitlist trigger and performance options are tabindex=0 divs rather than semantic buttons or an explicit tab/radio pattern.</li><li>The waitlist form inputs expose accessible names from their labels, and the submit action is a native button.</li><li>Programmatic focus on the mobile waitlist trigger receives a visible browser outline; the focused email input showed no measured border, shadow, or outline delta.</li><li>WCAG 2.x relative-luminance spot checks on measured solid/composited pairs: cream/page 16.63:1, form text/panel 15.04:1, UI text/card 12.09:1, muted/card 7.11:1, step accents on their 10% badge composites 8.66:1–12.78:1.</li><li>Canvas scenes expose an image role and Unicorn Studio Scene label; many ordinary images have empty alt text and appear decorative in context.</li><li>No focus trap, escape-close behavior, screen-reader announcement, full tab order, or WCAG conformance audit was established.</li></ul><p>Evidence: <a href="#evidence-home-mobile">home-mobile</a>, <a href="#evidence-waitlist-trigger-focus">waitlist-trigger-focus</a>, <a href="#evidence-waitlist-desktop-open">waitlist-desktop-open</a>, <a href="#evidence-waitlist-email-focus">waitlist-email-focus</a>, <a href="#evidence-performance-simulated-selected">performance-simulated-selected</a></p></article>
+<article id="coverage-assets" class="panel"><h3>Assets</h3><span class="pill">observed</span><p>The page mixes Framer-hosted SVG/PNG imagery, inline SVG interface icons, five named webfont families including one variable face, and Unicorn Studio canvases.</p><ul><li>Primary asset families include the Catalyst marks, full-bleed particle/hand textures, thin connector artwork, product-interface illustrations, token/vendor icons, and corner-frame SVG chrome.</li><li>Source font faces observed: FK Raster Grotesk Compact Blended, New Title Bold, Clash Grotesk and Clash Grotesk Variable, IBM Plex Mono, and JetBrains Mono.</li><li>Product-interface assets should remain visually subordinate to the editorial narrative: dark panels, small radii, sparse color, and no bright card backgrounds.</li><li>Font files were loaded during capture, but licensing and permitted redistribution were not established.</li></ul><p>Evidence: <a href="#evidence-home-desktop">home-desktop</a>, <a href="#evidence-home-mobile">home-mobile</a>, <a href="#evidence-waitlist-desktop-open">waitlist-desktop-open</a></p></article>
+<article id="coverage-content" class="panel"><h3>Content voice</h3><span class="pill">inferred</span><p>Copy is terse, declarative, imperative, and technical, moving from a high-level promise into a numbered three-step operating story.</p><ul><li>Use short all-caps statements for major beats: INTELLIGENCE AT YOUR FINGERTIPS, IMAGINE, RESEARCH, EXECUTE &amp; BACKTEST.</li><li>Use mono labels for procedural metadata: STEP NO.1, tickers, venues, timestamps, and action labels.</li><li>Pair confident capability statements with concrete interface evidence rather than explanatory marketing paragraphs.</li><li>The launch page intentionally presents sample trading data; downstream implementations must not imply it is current or live unless connected to a verified source.</li></ul><p>Evidence: <a href="#evidence-home-desktop">home-desktop</a>, <a href="#evidence-home-mobile">home-mobile</a></p></article>
+<article id="coverage-usage" class="panel"><h3>Usage guidance</h3><span class="pill">inferred</span><p>Recreate the system as a tension between oversized speculative editorial layers and precise compact product UI, not as a generic dark fintech dashboard.</p><ul><li>Start with the #0f0e0d page surface, raster-grotesk display type, and one phase accent per narrative beat.</li><li>Use JetBrains Mono for phase labels and compact source/ticker metadata, IBM Plex Mono for waitlist/form chrome, and Clash Grotesk for product-simulation content.</li><li>Keep step panels square and translucent; reserve 6px radii for transaction cards and 18–24px radii for pills/segments.</li><li>Treat particle hands, grain, and line connectors as atmosphere and sequencing support, never as substitutes for readable type or live data.</li><li>For implementation, replace tabindex divs with semantic controls while preserving the observed geometry and visible focus affordance.</li></ul><p>Evidence: <a href="#evidence-home-desktop">home-desktop</a>, <a href="#evidence-home-mobile">home-mobile</a>, <a href="#evidence-waitlist-desktop-open">waitlist-desktop-open</a>, <a href="#evidence-performance-simulated-selected">performance-simulated-selected</a></p></article>
+<article id="coverage-gaps" class="panel"><h3>Known gaps</h3><span class="pill">unknown</span><p>The public launch page is not evidence of the complete Catalyst product system.</p><ul><li>Authenticated product screens, navigation, settings, tables, complete chart behavior, and transaction workflows were not accessed.</li><li>Form submission, validation, loading, error, empty, success, and disabled states remain unknown.</li><li>Canvas animation timing, scroll choreography, touch behavior, reduced-motion support, and a functional theme toggle remain unknown.</li><li>Source component names, semantic token aliases, font licenses, accessibility conformance, and design-system governance remain unknown.</li><li>Desktop raw DOM evidence is capped; rely on the screenshot for late-page appearance and recapture before implementing selector-specific logic.</li></ul><p>Evidence: None declared</p></article>
+</section><section id="agent-rules"><h2>Agent rules</h2><ul><li>Treat this contract as a reconstruction of the public launch page, not the private Catalyst product system.</li><li>Reuse measured roles before introducing new values: #0f0e0d page, #141414 overlay panel, #0c0c0c fields, #171717 cards, and the documented phase accents.</li><li>Preserve the typography split: FK Raster for editorial display, New Title Bold for the alternate statement, IBM Plex Mono for form/action chrome, JetBrains Mono for system metadata, and Clash Grotesk for product UI.</li><li>At 1000px and above, preserve the horizontal narrative model; below 1000px, use the measured vertical stack. Verify boundary widths rather than inventing additional breakpoints.</li><li>Do not turn the source into a rounded-card dashboard. Square step panels, fine connector lines, sparse chrome, and a few small-radius product cards are structural.</li><li>Use semantic buttons, inputs, and a justified tab/radio pattern even where the observed page uses tabindex divs; preserve the visual result and record the semantic adaptation.</li><li>Never present the launch-page transaction values as live data. Use verified data, an honest static illustration label, or an explicit empty state.</li><li>Loading, error, empty, success, disabled, reduced-motion, and authenticated states must remain unknown until separately observed or clearly proposed.</li><li>Do not redistribute the source fonts or imagery without a separate rights check; the local reference only records their rendered use.</li><li>Recapture selectors and screenshots before treating this as current because Framer-generated selectors and hosted assets may drift.</li></ul></section><section id="evidence"><h2>Evidence register</h2>
+<article class="panel" id="evidence-home-desktop"><h3>home-desktop</h3><p><a rel="noreferrer noopener" href="https://catalyst.app/">https://catalyst.app/</a></p><p>1440 × 1000 · default · fixed-dark-light-preference</p><p><a download href="evidence-discovery/c001.json">Raw evidence</a> · <a href="evidence-discovery/c001.png">Screenshot</a></p><img class="evidence-image" loading="lazy" src="evidence-discovery/c001.png" alt="Captured evidence home-desktop: default, fixed-dark-light-preference"><p>Selector: <code>body</code></p><p>Full-width launch narrative. Raw DOM evidence is truncated at 1,800 of 3,124 visible elements; the screenshot includes the full horizontal composition.</p></article>
+<article class="panel" id="evidence-home-desktop-dark-pref"><h3>home-desktop-dark-pref</h3><p><a rel="noreferrer noopener" href="https://catalyst.app/">https://catalyst.app/</a></p><p>1440 × 1000 · default · fixed-dark-dark-preference</p><p><a download href="evidence-discovery/c002.json">Raw evidence</a> · <a href="evidence-discovery/c002.png">Screenshot</a></p><img class="evidence-image" loading="lazy" src="evidence-discovery/c002.png" alt="Captured evidence home-desktop-dark-pref: default, fixed-dark-dark-preference"><p>Selector: <code>body</code></p><p>Dark-preference observation; root class, page surface, and full screenshot match the light-preference fixed-dark presentation.</p></article>
+<article class="panel" id="evidence-home-mid"><h3>home-mid</h3><p><a rel="noreferrer noopener" href="https://catalyst.app/">https://catalyst.app/</a></p><p>1280 × 900 · default · fixed-dark-light-preference</p><p><a download href="evidence-mid/c001.json">Raw evidence</a> · <a href="evidence-mid/c001.png">Screenshot</a></p><img class="evidence-image" loading="lazy" src="evidence-mid/c001.png" alt="Captured evidence home-mid: default, fixed-dark-light-preference"><p>Selector: <code>body</code></p><p>Intermediate authored media band, 1000px through 1439.98px, remains a horizontally sequenced presentation.</p></article>
+<article class="panel" id="evidence-home-mobile"><h3>home-mobile</h3><p><a rel="noreferrer noopener" href="https://catalyst.app/">https://catalyst.app/</a></p><p>390 × 844 · default · fixed-dark-light-preference</p><p><a download href="evidence-discovery/c003.json">Raw evidence</a> · <a href="evidence-discovery/c003.png">Screenshot</a></p><img class="evidence-image" loading="lazy" src="evidence-discovery/c003.png" alt="Captured evidence home-mobile: default, fixed-dark-light-preference"><p>Selector: <code>body</code></p><p>Mobile layout stacks the narrative vertically into a 4,479.28px document and uses a bottom-fixed waitlist trigger.</p></article>
+<article class="panel" id="evidence-home-mobile-dark-pref"><h3>home-mobile-dark-pref</h3><p><a rel="noreferrer noopener" href="https://catalyst.app/">https://catalyst.app/</a></p><p>390 × 844 · default · fixed-dark-dark-preference</p><p><a download href="evidence-discovery/c004.json">Raw evidence</a> · <a href="evidence-discovery/c004.png">Screenshot</a></p><img class="evidence-image" loading="lazy" src="evidence-discovery/c004.png" alt="Captured evidence home-mobile-dark-pref: default, fixed-dark-dark-preference"><p>Selector: <code>body</code></p><p>Mobile dark-preference observation also retains the fixed dark palette.</p></article>
+<article class="panel" id="evidence-waitlist-trigger-hover"><h3>waitlist-trigger-hover</h3><p><a rel="noreferrer noopener" href="https://catalyst.app/">https://catalyst.app/</a></p><p>390 × 844 · hover · fixed-dark-light-preference</p><p><a download href="evidence-states/c002-p1.json">Raw evidence</a> · <a href="evidence-states/c002-p1.png">Screenshot</a></p><img class="evidence-image" loading="lazy" src="evidence-states/c002-p1.png" alt="Captured evidence waitlist-trigger-hover: hover, fixed-dark-light-preference"><p>Selector: <code>.framer-hrdnT</code></p><p>Hover state activated on the mobile bottom-fixed waitlist trigger; no stable outer-node computed-style delta was isolated.</p></article>
+<article class="panel" id="evidence-waitlist-trigger-focus"><h3>waitlist-trigger-focus</h3><p><a rel="noreferrer noopener" href="https://catalyst.app/">https://catalyst.app/</a></p><p>390 × 844 · focus · fixed-dark-light-preference</p><p><a download href="evidence-states/c002-p2.json">Raw evidence</a> · <a href="evidence-states/c002-p2.png">Screenshot</a></p><img class="evidence-image" loading="lazy" src="evidence-states/c002-p2.png" alt="Captured evidence waitlist-trigger-focus: focus, fixed-dark-light-preference"><p>Selector: <code>.framer-hrdnT</code></p><p>Programmatic focus produces a browser outline of rgb(0, 95, 204) auto 1px on the tabindex div trigger.</p></article>
+<article class="panel" id="evidence-waitlist-desktop-open"><h3>waitlist-desktop-open</h3><p><a rel="noreferrer noopener" href="https://catalyst.app/">https://catalyst.app/</a></p><p>1440 × 1000 · open · fixed-dark-light-preference</p><p><a download href="evidence-open/desktop-waitlist-open.json">Raw evidence</a> · <a href="evidence-open/desktop-waitlist-open.png">Screenshot</a></p><img class="evidence-image" loading="lazy" src="evidence-open/desktop-waitlist-open.png" alt="Captured evidence waitlist-desktop-open: open, fixed-dark-light-preference"><p>Selector: <code>form</code></p><p>Read-only open overlay capture. The 423.48x426.66px form uses a #141414 surface, 32px padding, and two #0c0c0c fields.</p></article>
+<article class="panel" id="evidence-waitlist-mobile-open"><h3>waitlist-mobile-open</h3><p><a rel="noreferrer noopener" href="https://catalyst.app/">https://catalyst.app/</a></p><p>390 × 844 · open · fixed-dark-light-preference</p><p><a download href="evidence-open/mobile-waitlist-open.json">Raw evidence</a> · <a href="evidence-open/mobile-waitlist-open.png">Screenshot</a></p><img class="evidence-image" loading="lazy" src="evidence-open/mobile-waitlist-open.png" alt="Captured evidence waitlist-mobile-open: open, fixed-dark-light-preference"><p>Selector: <code>form</code></p><p>Read-only open mobile overlay capture. The 299.57x340.88px form uses 40px block and 10px inline padding at the sampled animation frame.</p></article>
+<article class="panel" id="evidence-waitlist-email-focus"><h3>waitlist-email-focus</h3><p><a rel="noreferrer noopener" href="https://catalyst.app/">https://catalyst.app/</a></p><p>390 × 844 · focus · fixed-dark-light-preference</p><p><a download href="evidence-open/mobile-waitlist-email-focus.json">Raw evidence</a> · <a href="evidence-open/mobile-waitlist-email-focus.png">Screenshot</a></p><img class="evidence-image" loading="lazy" src="evidence-open/mobile-waitlist-email-focus.png" alt="Captured evidence waitlist-email-focus: focus, fixed-dark-light-preference"><p>Selector: <code>input[name=&quot;email address&quot;]</code></p><p>Focused email input. The input itself retained no computed border, shadow, or outline delta in this capture.</p></article>
+<article class="panel" id="evidence-performance-simulated-selected"><h3>performance-simulated-selected</h3><p><a rel="noreferrer noopener" href="https://catalyst.app/">https://catalyst.app/</a></p><p>390 × 844 · selected · fixed-dark-light-preference</p><p><a download href="evidence-selected/mobile-performance-simulated-selected.json">Raw evidence</a> · <a href="evidence-selected/mobile-performance-simulated-selected.png">Screenshot</a></p><img class="evidence-image" loading="lazy" src="evidence-selected/mobile-performance-simulated-selected.png" alt="Captured evidence performance-simulated-selected: selected, fixed-dark-light-preference"><p>Selector: <code>.framer-qe1r5r</code></p><p>Local simulated-performance selection moves the #262626 pill surface from the live segment to the simulated segment.</p></article>
+</section><section id="qa"><h2>Declared QA</h2><p>Visual review: reviewed</p><div class="table-wrap"><table><caption>QA evidence supplied by the author</caption><thead><tr><th scope="col">Check</th><th scope="col">Status</th><th scope="col">Detail</th></tr></thead><tbody><tr><td>Capture completion</td><td>pass</td><td>Four homepage theme/preference captures, one intermediate viewport, eight hover/focus probe captures, four waitlist open/focus captures, and one selected-state capture succeeded; two mobile probes for the desktop-only main CTA were explicitly blocked.</td></tr><tr><td>Source visual review</td><td>pass</td><td>Desktop, intermediate, mobile, open-overlay, and hover captures were visually inspected; the horizontal-to-vertical layout change and fixed dark presentation were confirmed.</td></tr><tr><td>Responsive coverage</td><td>pass</td><td>Samples cover the authored below-1000px, 1000–1439.98px, and 1440px+ media bands.</td></tr><tr><td>State coverage</td><td>pass</td><td>Waitlist trigger hover/focus/open, email focus, and both performance selections were captured without form submission.</td></tr><tr><td>Contrast spot check</td><td>pass</td><td>WCAG 2.x relative-luminance calculations on seven measured solid/composited foreground/background pairs were 7.11:1 or higher; textured and canvas regions were not assessed.</td></tr><tr><td>Reference build and manifest</td><td>pass</td><td>The deterministic emitter built four reference files and --check matched the canonical JSON, evidence hashes, outputs, and manifest.</td></tr><tr><td>Generated reference visual review</td><td>pass</td><td>Desktop and 390px local HTTP checks passed with no document-level horizontal overflow, zero broken evidence images after eager loading, all seven sections present, disclosures opening, and a visible 3px keyboard focus ring.</td></tr><tr><td>Portability composition</td><td>pass</td><td>An independent agent built a responsive Strategy signal card from design.md and tokens.css only. Desktop and 390px visual review passed with no horizontal overflow or external resources; the sample is explicitly static and simulated.</td></tr></tbody></table></div><ul><li>Partial is intentional because the public site exposes one page and several required product/form states remain unknown.</li><li>The HTML specimen must be reviewed with the disclosed fallback fonts; it is not expected to reproduce the proprietary raster display face offline.</li></ul><p class="meta">Schema validation confirms the declaration and evidence files are internally consistent. It does not independently perform the declared visual or accessibility checks.</p></section><details><summary>Complete normalized data</summary><pre>{
+  &quot;schemaVersion&quot;: 1,
+  &quot;name&quot;: &quot;Catalyst public launch site, observed system&quot;,
+  &quot;sourceUrl&quot;: &quot;https://catalyst.app/&quot;,
+  &quot;capturedAt&quot;: &quot;2026-09-29T22:15:48.828Z&quot;,
+  &quot;generatedBy&quot;: &quot;Codex&quot;,
+  &quot;generatedModel&quot;: &quot;gpt-5&quot;,
+  &quot;createdAt&quot;: &quot;2026-09-29T22:16:22Z&quot;,
+  &quot;status&quot;: &quot;partial&quot;,
+  &quot;scope&quot;: {
+    &quot;summary&quot;: &quot;The single public catalyst.app entry page at 1440x1000, 1280x900, and 390x844, including fixed light/dark preference observations, waitlist trigger hover/focus, the open waitlist form, its email-focus state, and the live/simulated performance selection state.&quot;,
+    &quot;pages&quot;: [
+      &quot;https://catalyst.app/&quot;
+    ],
+    &quot;viewports&quot;: [
+      {
+        &quot;width&quot;: 1440,
+        &quot;height&quot;: 1000
+      },
+      {
+        &quot;width&quot;: 1280,
+        &quot;height&quot;: 900
+      },
+      {
+        &quot;width&quot;: 390,
+        &quot;height&quot;: 844
+      }
+    ],
+    &quot;limitations&quot;: [
+      &quot;No same-origin subpages were discovered from the public entry page; authenticated product surfaces were not accessed.&quot;,
+      &quot;The 1440px desktop collector reached its 1,800-node cap out of 3,124 visible elements; screenshots preserve the full rendered page, but some late DOM nodes are absent from raw JSON.&quot;,
+      &quot;Light and dark OS preference captures rendered the same fixed dark presentation; no user-facing theme toggle was found.&quot;,
+      &quot;Canvas scenes, scripted scroll behavior, and animation timing were not measured as motion sequences.&quot;,
+      &quot;Loading, error, empty, success, and disabled form states were not safely reachable without submitting the waitlist form.&quot;,
+      &quot;Font licensing and the private product design system remain unknown.&quot;
+    ]
+  },
+  &quot;evidence&quot;: [
+    {
+      &quot;id&quot;: &quot;home-desktop&quot;,
+      &quot;url&quot;: &quot;https://catalyst.app/&quot;,
+      &quot;viewport&quot;: {
+        &quot;width&quot;: 1440,
+        &quot;height&quot;: 1000
+      },
+      &quot;state&quot;: &quot;default&quot;,
+      &quot;mode&quot;: &quot;fixed-dark-light-preference&quot;,
+      &quot;raw&quot;: &quot;evidence-discovery/c001.json&quot;,
+      &quot;screenshot&quot;: &quot;evidence-discovery/c001.png&quot;,
+      &quot;selector&quot;: &quot;body&quot;,
+      &quot;note&quot;: &quot;Full-width launch narrative. Raw DOM evidence is truncated at 1,800 of 3,124 visible elements; the screenshot includes the full horizontal composition.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;home-desktop-dark-pref&quot;,
+      &quot;url&quot;: &quot;https://catalyst.app/&quot;,
+      &quot;viewport&quot;: {
+        &quot;width&quot;: 1440,
+        &quot;height&quot;: 1000
+      },
+      &quot;state&quot;: &quot;default&quot;,
+      &quot;mode&quot;: &quot;fixed-dark-dark-preference&quot;,
+      &quot;raw&quot;: &quot;evidence-discovery/c002.json&quot;,
+      &quot;screenshot&quot;: &quot;evidence-discovery/c002.png&quot;,
+      &quot;selector&quot;: &quot;body&quot;,
+      &quot;note&quot;: &quot;Dark-preference observation; root class, page surface, and full screenshot match the light-preference fixed-dark presentation.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;home-mid&quot;,
+      &quot;url&quot;: &quot;https://catalyst.app/&quot;,
+      &quot;viewport&quot;: {
+        &quot;width&quot;: 1280,
+        &quot;height&quot;: 900
+      },
+      &quot;state&quot;: &quot;default&quot;,
+      &quot;mode&quot;: &quot;fixed-dark-light-preference&quot;,
+      &quot;raw&quot;: &quot;evidence-mid/c001.json&quot;,
+      &quot;screenshot&quot;: &quot;evidence-mid/c001.png&quot;,
+      &quot;selector&quot;: &quot;body&quot;,
+      &quot;note&quot;: &quot;Intermediate authored media band, 1000px through 1439.98px, remains a horizontally sequenced presentation.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;home-mobile&quot;,
+      &quot;url&quot;: &quot;https://catalyst.app/&quot;,
+      &quot;viewport&quot;: {
+        &quot;width&quot;: 390,
+        &quot;height&quot;: 844
+      },
+      &quot;state&quot;: &quot;default&quot;,
+      &quot;mode&quot;: &quot;fixed-dark-light-preference&quot;,
+      &quot;raw&quot;: &quot;evidence-discovery/c003.json&quot;,
+      &quot;screenshot&quot;: &quot;evidence-discovery/c003.png&quot;,
+      &quot;selector&quot;: &quot;body&quot;,
+      &quot;note&quot;: &quot;Mobile layout stacks the narrative vertically into a 4,479.28px document and uses a bottom-fixed waitlist trigger.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;home-mobile-dark-pref&quot;,
+      &quot;url&quot;: &quot;https://catalyst.app/&quot;,
+      &quot;viewport&quot;: {
+        &quot;width&quot;: 390,
+        &quot;height&quot;: 844
+      },
+      &quot;state&quot;: &quot;default&quot;,
+      &quot;mode&quot;: &quot;fixed-dark-dark-preference&quot;,
+      &quot;raw&quot;: &quot;evidence-discovery/c004.json&quot;,
+      &quot;screenshot&quot;: &quot;evidence-discovery/c004.png&quot;,
+      &quot;selector&quot;: &quot;body&quot;,
+      &quot;note&quot;: &quot;Mobile dark-preference observation also retains the fixed dark palette.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;waitlist-trigger-hover&quot;,
+      &quot;url&quot;: &quot;https://catalyst.app/&quot;,
+      &quot;viewport&quot;: {
+        &quot;width&quot;: 390,
+        &quot;height&quot;: 844
+      },
+      &quot;state&quot;: &quot;hover&quot;,
+      &quot;mode&quot;: &quot;fixed-dark-light-preference&quot;,
+      &quot;raw&quot;: &quot;evidence-states/c002-p1.json&quot;,
+      &quot;screenshot&quot;: &quot;evidence-states/c002-p1.png&quot;,
+      &quot;selector&quot;: &quot;.framer-hrdnT&quot;,
+      &quot;note&quot;: &quot;Hover state activated on the mobile bottom-fixed waitlist trigger; no stable outer-node computed-style delta was isolated.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;waitlist-trigger-focus&quot;,
+      &quot;url&quot;: &quot;https://catalyst.app/&quot;,
+      &quot;viewport&quot;: {
+        &quot;width&quot;: 390,
+        &quot;height&quot;: 844
+      },
+      &quot;state&quot;: &quot;focus&quot;,
+      &quot;mode&quot;: &quot;fixed-dark-light-preference&quot;,
+      &quot;raw&quot;: &quot;evidence-states/c002-p2.json&quot;,
+      &quot;screenshot&quot;: &quot;evidence-states/c002-p2.png&quot;,
+      &quot;selector&quot;: &quot;.framer-hrdnT&quot;,
+      &quot;note&quot;: &quot;Programmatic focus produces a browser outline of rgb(0, 95, 204) auto 1px on the tabindex div trigger.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;waitlist-desktop-open&quot;,
+      &quot;url&quot;: &quot;https://catalyst.app/&quot;,
+      &quot;viewport&quot;: {
+        &quot;width&quot;: 1440,
+        &quot;height&quot;: 1000
+      },
+      &quot;state&quot;: &quot;open&quot;,
+      &quot;mode&quot;: &quot;fixed-dark-light-preference&quot;,
+      &quot;raw&quot;: &quot;evidence-open/desktop-waitlist-open.json&quot;,
+      &quot;screenshot&quot;: &quot;evidence-open/desktop-waitlist-open.png&quot;,
+      &quot;selector&quot;: &quot;form&quot;,
+      &quot;note&quot;: &quot;Read-only open overlay capture. The 423.48x426.66px form uses a #141414 surface, 32px padding, and two #0c0c0c fields.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;waitlist-mobile-open&quot;,
+      &quot;url&quot;: &quot;https://catalyst.app/&quot;,
+      &quot;viewport&quot;: {
+        &quot;width&quot;: 390,
+        &quot;height&quot;: 844
+      },
+      &quot;state&quot;: &quot;open&quot;,
+      &quot;mode&quot;: &quot;fixed-dark-light-preference&quot;,
+      &quot;raw&quot;: &quot;evidence-open/mobile-waitlist-open.json&quot;,
+      &quot;screenshot&quot;: &quot;evidence-open/mobile-waitlist-open.png&quot;,
+      &quot;selector&quot;: &quot;form&quot;,
+      &quot;note&quot;: &quot;Read-only open mobile overlay capture. The 299.57x340.88px form uses 40px block and 10px inline padding at the sampled animation frame.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;waitlist-email-focus&quot;,
+      &quot;url&quot;: &quot;https://catalyst.app/&quot;,
+      &quot;viewport&quot;: {
+        &quot;width&quot;: 390,
+        &quot;height&quot;: 844
+      },
+      &quot;state&quot;: &quot;focus&quot;,
+      &quot;mode&quot;: &quot;fixed-dark-light-preference&quot;,
+      &quot;raw&quot;: &quot;evidence-open/mobile-waitlist-email-focus.json&quot;,
+      &quot;screenshot&quot;: &quot;evidence-open/mobile-waitlist-email-focus.png&quot;,
+      &quot;selector&quot;: &quot;input[name=\&quot;email address\&quot;]&quot;,
+      &quot;note&quot;: &quot;Focused email input. The input itself retained no computed border, shadow, or outline delta in this capture.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;performance-simulated-selected&quot;,
+      &quot;url&quot;: &quot;https://catalyst.app/&quot;,
+      &quot;viewport&quot;: {
+        &quot;width&quot;: 390,
+        &quot;height&quot;: 844
+      },
+      &quot;state&quot;: &quot;selected&quot;,
+      &quot;mode&quot;: &quot;fixed-dark-light-preference&quot;,
+      &quot;raw&quot;: &quot;evidence-selected/mobile-performance-simulated-selected.json&quot;,
+      &quot;screenshot&quot;: &quot;evidence-selected/mobile-performance-simulated-selected.png&quot;,
+      &quot;selector&quot;: &quot;.framer-qe1r5r&quot;,
+      &quot;note&quot;: &quot;Local simulated-performance selection moves the #262626 pill surface from the live segment to the simulated segment.&quot;
+    }
+  ],
+  &quot;tokens&quot;: [
+    {
+      &quot;name&quot;: &quot;color-page&quot;,
+      &quot;category&quot;: &quot;color&quot;,
+      &quot;type&quot;: &quot;color&quot;,
+      &quot;cssValue&quot;: &quot;rgb(15, 14, 13)&quot;,
+      &quot;status&quot;: &quot;observed&quot;,
+      &quot;evidence&quot;: [
+        &quot;home-desktop&quot;,
+        &quot;home-mobile&quot;
+      ],
+      &quot;note&quot;: &quot;Measured body surface; local export name.&quot;,
+      &quot;dtcg&quot;: {
+        &quot;$type&quot;: &quot;color&quot;,
+        &quot;$value&quot;: {
+          &quot;colorSpace&quot;: &quot;srgb&quot;,
+          &quot;components&quot;: [
+            0.058824,
+            0.054902,
+            0.05098
+          ],
+          &quot;alpha&quot;: 1,
+          &quot;hex&quot;: &quot;#0f0e0d&quot;
+        }
+      }
+    },
+    {
+      &quot;name&quot;: &quot;color-frame&quot;,
+      &quot;category&quot;: &quot;color&quot;,
+      &quot;type&quot;: &quot;color&quot;,
+      &quot;cssValue&quot;: &quot;rgb(13, 12, 11)&quot;,
+      &quot;status&quot;: &quot;observed&quot;,
+      &quot;evidence&quot;: [
+        &quot;home-mobile&quot;
+      ],
+      &quot;note&quot;: &quot;Darker 13px edge/frame strips on the mobile hero.&quot;,
+      &quot;dtcg&quot;: {
+        &quot;$type&quot;: &quot;color&quot;,
+        &quot;$value&quot;: {
+          &quot;colorSpace&quot;: &quot;srgb&quot;,
+          &quot;components&quot;: [
+            0.05098,
+            0.047059,
+            0.043137
+          ],
+          &quot;alpha&quot;: 1,
+          &quot;hex&quot;: &quot;#0d0c0b&quot;
+        }
+      }
+    },
+    {
+      &quot;name&quot;: &quot;color-panel&quot;,
+      &quot;category&quot;: &quot;color&quot;,
+      &quot;type&quot;: &quot;color&quot;,
+      &quot;cssValue&quot;: &quot;rgb(20, 20, 20)&quot;,
+      &quot;status&quot;: &quot;observed&quot;,
+      &quot;evidence&quot;: [
+        &quot;waitlist-desktop-open&quot;,
+        &quot;waitlist-mobile-open&quot;
+      ],
+      &quot;note&quot;: &quot;Waitlist form surface.&quot;,
+      &quot;dtcg&quot;: {
+        &quot;$type&quot;: &quot;color&quot;,
+        &quot;$value&quot;: {
+          &quot;colorSpace&quot;: &quot;srgb&quot;,
+          &quot;components&quot;: [
+            0.078431,
+            0.078431,
+            0.078431
+          ],
+          &quot;alpha&quot;: 1,
+          &quot;hex&quot;: &quot;#141414&quot;
+        }
+      }
+    },
+    {
+      &quot;name&quot;: &quot;color-field&quot;,
+      &quot;category&quot;: &quot;color&quot;,
+      &quot;type&quot;: &quot;color&quot;,
+      &quot;cssValue&quot;: &quot;rgb(12, 12, 12)&quot;,
+      &quot;status&quot;: &quot;observed&quot;,
+      &quot;evidence&quot;: [
+        &quot;waitlist-desktop-open&quot;,
+        &quot;waitlist-mobile-open&quot;
+      ],
+      &quot;note&quot;: &quot;Waitlist field wrapper surface.&quot;,
+      &quot;dtcg&quot;: {
+        &quot;$type&quot;: &quot;color&quot;,
+        &quot;$value&quot;: {
+          &quot;colorSpace&quot;: &quot;srgb&quot;,
+          &quot;components&quot;: [
+            0.047059,
+            0.047059,
+            0.047059
+          ],
+          &quot;alpha&quot;: 1,
+          &quot;hex&quot;: &quot;#0c0c0c&quot;
+        }
+      }
+    },
+    {
+      &quot;name&quot;: &quot;color-card&quot;,
+      &quot;category&quot;: &quot;color&quot;,
+      &quot;type&quot;: &quot;color&quot;,
+      &quot;cssValue&quot;: &quot;rgb(23, 23, 23)&quot;,
+      &quot;status&quot;: &quot;observed&quot;,
+      &quot;evidence&quot;: [
+        &quot;home-mobile&quot;
+      ],
+      &quot;note&quot;: &quot;Transaction card surface.&quot;,
+      &quot;dtcg&quot;: {
+        &quot;$type&quot;: &quot;color&quot;,
+        &quot;$value&quot;: {
+          &quot;colorSpace&quot;: &quot;srgb&quot;,
+          &quot;components&quot;: [
+            0.090196,
+            0.090196,
+            0.090196
+          ],
+          &quot;alpha&quot;: 1,
+          &quot;hex&quot;: &quot;#171717&quot;
+        }
+      }
+    },
+    {
+      &quot;name&quot;: &quot;color-selected-pill&quot;,
+      &quot;category&quot;: &quot;color&quot;,
+      &quot;type&quot;: &quot;color&quot;,
+      &quot;cssValue&quot;: &quot;rgb(38, 38, 38)&quot;,
+      &quot;status&quot;: &quot;observed&quot;,
+      &quot;evidence&quot;: [
+        &quot;home-mobile&quot;,
+        &quot;performance-simulated-selected&quot;
+      ],
+      &quot;note&quot;: &quot;Selected segment surface moves between the live and simulated options.&quot;,
+      &quot;dtcg&quot;: {
+        &quot;$type&quot;: &quot;color&quot;,
+        &quot;$value&quot;: {
+          &quot;colorSpace&quot;: &quot;srgb&quot;,
+          &quot;components&quot;: [
+            0.14902,
+            0.14902,
+            0.14902
+          ],
+          &quot;alpha&quot;: 1,
+          &quot;hex&quot;: &quot;#262626&quot;
+        }
+      }
+    },
+    {
+      &quot;name&quot;: &quot;color-display&quot;,
+      &quot;category&quot;: &quot;color&quot;,
+      &quot;type&quot;: &quot;color&quot;,
+      &quot;cssValue&quot;: &quot;rgb(246, 237, 224)&quot;,
+      &quot;status&quot;: &quot;observed&quot;,
+      &quot;evidence&quot;: [
+        &quot;home-desktop&quot;,
+        &quot;home-mobile&quot;
+      ],
+      &quot;note&quot;: &quot;Primary cream display text.&quot;,
+      &quot;dtcg&quot;: {
+        &quot;$type&quot;: &quot;color&quot;,
+        &quot;$value&quot;: {
+          &quot;colorSpace&quot;: &quot;srgb&quot;,
+          &quot;components&quot;: [
+            0.964706,
+            0.929412,
+            0.878431
+          ],
+          &quot;alpha&quot;: 1,
+          &quot;hex&quot;: &quot;#f6ede0&quot;
+        }
+      }
+    },
+    {
+      &quot;name&quot;: &quot;color-ui-primary&quot;,
+      &quot;category&quot;: &quot;color&quot;,
+      &quot;type&quot;: &quot;color&quot;,
+      &quot;cssValue&quot;: &quot;rgb(212, 212, 212)&quot;,
+      &quot;status&quot;: &quot;observed&quot;,
+      &quot;evidence&quot;: [
+        &quot;home-mobile&quot;
+      ],
+      &quot;note&quot;: &quot;Primary product-simulation UI text.&quot;,
+      &quot;dtcg&quot;: {
+        &quot;$type&quot;: &quot;color&quot;,
+        &quot;$value&quot;: {
+          &quot;colorSpace&quot;: &quot;srgb&quot;,
+          &quot;components&quot;: [
+            0.831373,
+            0.831373,
+            0.831373
+          ],
+          &quot;alpha&quot;: 1,
+          &quot;hex&quot;: &quot;#d4d4d4&quot;
+        }
+      }
+    },
+    {
+      &quot;name&quot;: &quot;color-ui-muted&quot;,
+      &quot;category&quot;: &quot;color&quot;,
+      &quot;type&quot;: &quot;color&quot;,
+      &quot;cssValue&quot;: &quot;rgb(163, 163, 163)&quot;,
+      &quot;status&quot;: &quot;observed&quot;,
+      &quot;evidence&quot;: [
+        &quot;home-mobile&quot;
+      ],
+      &quot;note&quot;: &quot;Muted product-simulation metadata.&quot;,
+      &quot;dtcg&quot;: {
+        &quot;$type&quot;: &quot;color&quot;,
+        &quot;$value&quot;: {
+          &quot;colorSpace&quot;: &quot;srgb&quot;,
+          &quot;components&quot;: [
+            0.639216,
+            0.639216,
+            0.639216
+          ],
+          &quot;alpha&quot;: 1,
+          &quot;hex&quot;: &quot;#a3a3a3&quot;
+        }
+      }
+    },
+    {
+      &quot;name&quot;: &quot;color-form-text&quot;,
+      &quot;category&quot;: &quot;color&quot;,
+      &quot;type&quot;: &quot;color&quot;,
+      &quot;cssValue&quot;: &quot;rgb(228, 232, 244)&quot;,
+      &quot;status&quot;: &quot;observed&quot;,
+      &quot;evidence&quot;: [
+        &quot;waitlist-desktop-open&quot;
+      ],
+      &quot;note&quot;: &quot;Waitlist labels and action text.&quot;,
+      &quot;dtcg&quot;: {
+        &quot;$type&quot;: &quot;color&quot;,
+        &quot;$value&quot;: {
+          &quot;colorSpace&quot;: &quot;srgb&quot;,
+          &quot;components&quot;: [
+            0.894118,
+            0.909804,
+            0.956863
+          ],
+          &quot;alpha&quot;: 1,
+          &quot;hex&quot;: &quot;#e4e8f4&quot;
+        }
+      }
+    },
+    {
+      &quot;name&quot;: &quot;color-step-one&quot;,
+      &quot;category&quot;: &quot;color&quot;,
+      &quot;type&quot;: &quot;color&quot;,
+      &quot;cssValue&quot;: &quot;rgb(226, 255, 160)&quot;,
+      &quot;status&quot;: &quot;observed&quot;,
+      &quot;evidence&quot;: [
+        &quot;home-mobile&quot;
+      ],
+      &quot;note&quot;: &quot;Imagine/step-one chartreuse accent.&quot;,
+      &quot;dtcg&quot;: {
+        &quot;$type&quot;: &quot;color&quot;,
+        &quot;$value&quot;: {
+          &quot;colorSpace&quot;: &quot;srgb&quot;,
+          &quot;components&quot;: [
+            0.886275,
+            1,
+            0.627451
+          ],
+          &quot;alpha&quot;: 1,
+          &quot;hex&quot;: &quot;#e2ffa0&quot;
+        }
+      }
+    },
+    {
+      &quot;name&quot;: &quot;color-step-two&quot;,
+      &quot;category&quot;: &quot;color&quot;,
+      &quot;type&quot;: &quot;color&quot;,
+      &quot;cssValue&quot;: &quot;rgb(250, 161, 213)&quot;,
+      &quot;status&quot;: &quot;observed&quot;,
+      &quot;evidence&quot;: [
+        &quot;home-mobile&quot;
+      ],
+      &quot;note&quot;: &quot;Research/step-two pink accent.&quot;,
+      &quot;dtcg&quot;: {
+        &quot;$type&quot;: &quot;color&quot;,
+        &quot;$value&quot;: {
+          &quot;colorSpace&quot;: &quot;srgb&quot;,
+          &quot;components&quot;: [
+            0.980392,
+            0.631373,
+            0.835294
+          ],
+          &quot;alpha&quot;: 1,
+          &quot;hex&quot;: &quot;#faa1d5&quot;
+        }
+      }
+    },
+    {
+      &quot;name&quot;: &quot;color-step-three&quot;,
+      &quot;category&quot;: &quot;color&quot;,
+      &quot;type&quot;: &quot;color&quot;,
+      &quot;cssValue&quot;: &quot;rgb(237, 190, 81)&quot;,
+      &quot;status&quot;: &quot;observed&quot;,
+      &quot;evidence&quot;: [
+        &quot;home-mobile&quot;
+      ],
+      &quot;note&quot;: &quot;Execute/step-three amber accent.&quot;,
+      &quot;dtcg&quot;: {
+        &quot;$type&quot;: &quot;color&quot;,
+        &quot;$value&quot;: {
+          &quot;colorSpace&quot;: &quot;srgb&quot;,
+          &quot;components&quot;: [
+            0.929412,
+            0.745098,
+            0.317647
+          ],
+          &quot;alpha&quot;: 1,
+          &quot;hex&quot;: &quot;#edbe51&quot;
+        }
+      }
+    },
+    {
+      &quot;name&quot;: &quot;color-positive&quot;,
+      &quot;category&quot;: &quot;color&quot;,
+      &quot;type&quot;: &quot;color&quot;,
+      &quot;cssValue&quot;: &quot;rgb(111, 222, 163)&quot;,
+      &quot;status&quot;: &quot;observed&quot;,
+      &quot;evidence&quot;: [
+        &quot;home-mobile&quot;
+      ],
+      &quot;note&quot;: &quot;Positive outcome and chart accent in the product-simulation UI.&quot;,
+      &quot;dtcg&quot;: {
+        &quot;$type&quot;: &quot;color&quot;,
+        &quot;$value&quot;: {
+          &quot;colorSpace&quot;: &quot;srgb&quot;,
+          &quot;components&quot;: [
+            0.435294,
+            0.870588,
+            0.639216
+          ],
+          &quot;alpha&quot;: 1,
+          &quot;hex&quot;: &quot;#6fdea3&quot;
+        }
+      }
+    },
+    {
+      &quot;name&quot;: &quot;color-step-one-wash&quot;,
+      &quot;category&quot;: &quot;color&quot;,
+      &quot;type&quot;: &quot;color&quot;,
+      &quot;cssValue&quot;: &quot;rgba(226, 255, 160, 0.07)&quot;,
+      &quot;status&quot;: &quot;observed&quot;,
+      &quot;evidence&quot;: [
+        &quot;home-mobile&quot;
+      ],
+      &quot;note&quot;: &quot;Large step-one panel fill. Equal rendered colors do not imply source aliases.&quot;
+    },
+    {
+      &quot;name&quot;: &quot;color-step-two-wash&quot;,
+      &quot;category&quot;: &quot;color&quot;,
+      &quot;type&quot;: &quot;color&quot;,
+      &quot;cssValue&quot;: &quot;rgba(250, 161, 213, 0.07)&quot;,
+      &quot;status&quot;: &quot;observed&quot;,
+      &quot;evidence&quot;: [
+        &quot;home-mobile&quot;
+      ],
+      &quot;note&quot;: &quot;Large step-two panel fill.&quot;
+    },
+    {
+      &quot;name&quot;: &quot;color-step-three-wash&quot;,
+      &quot;category&quot;: &quot;color&quot;,
+      &quot;type&quot;: &quot;color&quot;,
+      &quot;cssValue&quot;: &quot;rgba(237, 190, 81, 0.07)&quot;,
+      &quot;status&quot;: &quot;observed&quot;,
+      &quot;evidence&quot;: [
+        &quot;home-mobile&quot;
+      ],
+      &quot;note&quot;: &quot;Large step-three panel fill.&quot;
+    },
+    {
+      &quot;name&quot;: &quot;color-chrome-line&quot;,
+      &quot;category&quot;: &quot;color&quot;,
+      &quot;type&quot;: &quot;color&quot;,
+      &quot;cssValue&quot;: &quot;rgb(214, 217, 230)&quot;,
+      &quot;status&quot;: &quot;observed&quot;,
+      &quot;evidence&quot;: [
+        &quot;waitlist-desktop-open&quot;
+      ],
+      &quot;note&quot;: &quot;Stroke used by the SVG corner-frame treatment around the waitlist action.&quot;,
+      &quot;dtcg&quot;: {
+        &quot;$type&quot;: &quot;color&quot;,
+        &quot;$value&quot;: {
+          &quot;colorSpace&quot;: &quot;srgb&quot;,
+          &quot;components&quot;: [
+            0.839216,
+            0.85098,
+            0.901961
+          ],
+          &quot;alpha&quot;: 1,
+          &quot;hex&quot;: &quot;#d6d9e6&quot;
+        }
+      }
+    },
+    {
+      &quot;name&quot;: &quot;font-display&quot;,
+      &quot;category&quot;: &quot;typography&quot;,
+      &quot;type&quot;: &quot;fontFamily&quot;,
+      &quot;cssValue&quot;: &quot;\&quot;FK Raster Grotesk Compact Blended\&quot;, sans-serif&quot;,
+      &quot;status&quot;: &quot;observed&quot;,
+      &quot;evidence&quot;: [
+        &quot;home-desktop&quot;,
+        &quot;home-mobile&quot;
+      ],
+      &quot;note&quot;: &quot;Primary display face. Font licensing was not established.&quot;,
+      &quot;dtcg&quot;: {
+        &quot;$type&quot;: &quot;fontFamily&quot;,
+        &quot;$value&quot;: [
+          &quot;FK Raster Grotesk Compact Blended&quot;,
+          &quot;sans-serif&quot;
+        ]
+      }
+    },
+    {
+      &quot;name&quot;: &quot;font-display-alt&quot;,
+      &quot;category&quot;: &quot;typography&quot;,
+      &quot;type&quot;: &quot;fontFamily&quot;,
+      &quot;cssValue&quot;: &quot;\&quot;New Title Bold\&quot;, sans-serif&quot;,
+      &quot;status&quot;: &quot;observed&quot;,
+      &quot;evidence&quot;: [
+        &quot;home-desktop&quot;
+      ],
+      &quot;note&quot;: &quot;Secondary editorial display face used for the ON ITS OWN statement.&quot;,
+      &quot;dtcg&quot;: {
+        &quot;$type&quot;: &quot;fontFamily&quot;,
+        &quot;$value&quot;: [
+          &quot;New Title Bold&quot;,
+          &quot;sans-serif&quot;
+        ]
+      }
+    },
+    {
+      &quot;name&quot;: &quot;font-mono-display&quot;,
+      &quot;category&quot;: &quot;typography&quot;,
+      &quot;type&quot;: &quot;fontFamily&quot;,
+      &quot;cssValue&quot;: &quot;\&quot;IBM Plex Mono\&quot;, monospace&quot;,
+      &quot;status&quot;: &quot;observed&quot;,
+      &quot;evidence&quot;: [
+        &quot;waitlist-desktop-open&quot;
+      ],
+      &quot;note&quot;: &quot;Waitlist form labels and actions.&quot;,
+      &quot;dtcg&quot;: {
+        &quot;$type&quot;: &quot;fontFamily&quot;,
+        &quot;$value&quot;: [
+          &quot;IBM Plex Mono&quot;,
+          &quot;monospace&quot;
+        ]
+      }
+    },
+    {
+      &quot;name&quot;: &quot;font-mono-data&quot;,
+      &quot;category&quot;: &quot;typography&quot;,
+      &quot;type&quot;: &quot;fontFamily&quot;,
+      &quot;cssValue&quot;: &quot;\&quot;JetBrains Mono\&quot;, monospace&quot;,
+      &quot;status&quot;: &quot;observed&quot;,
+      &quot;evidence&quot;: [
+        &quot;home-mobile&quot;
+      ],
+      &quot;note&quot;: &quot;Step labels, symbols, and compact metadata.&quot;,
+      &quot;dtcg&quot;: {
+        &quot;$type&quot;: &quot;fontFamily&quot;,
+        &quot;$value&quot;: [
+          &quot;JetBrains Mono&quot;,
+          &quot;monospace&quot;
+        ]
+      }
+    },
+    {
+      &quot;name&quot;: &quot;font-ui&quot;,
+      &quot;category&quot;: &quot;typography&quot;,
+      &quot;type&quot;: &quot;fontFamily&quot;,
+      &quot;cssValue&quot;: &quot;\&quot;Clash Grotesk\&quot;, sans-serif&quot;,
+      &quot;status&quot;: &quot;observed&quot;,
+      &quot;evidence&quot;: [
+        &quot;home-mobile&quot;
+      ],
+      &quot;note&quot;: &quot;Product-simulation interface face.&quot;,
+      &quot;dtcg&quot;: {
+        &quot;$type&quot;: &quot;fontFamily&quot;,
+        &quot;$value&quot;: [
+          &quot;Clash Grotesk&quot;,
+          &quot;sans-serif&quot;
+        ]
+      }
+    },
+    {
+      &quot;name&quot;: &quot;space-6&quot;,
+      &quot;category&quot;: &quot;spacing&quot;,
+      &quot;type&quot;: &quot;dimension&quot;,
+      &quot;cssValue&quot;: &quot;6px&quot;,
+      &quot;status&quot;: &quot;observed&quot;,
+      &quot;evidence&quot;: [
+        &quot;home-mobile&quot;
+      ],
+      &quot;note&quot;: &quot;Step-label block padding.&quot;,
+      &quot;dtcg&quot;: {
+        &quot;$type&quot;: &quot;dimension&quot;,
+        &quot;$value&quot;: {
+          &quot;value&quot;: 6,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    {
+      &quot;name&quot;: &quot;space-8&quot;,
+      &quot;category&quot;: &quot;spacing&quot;,
+      &quot;type&quot;: &quot;dimension&quot;,
+      &quot;cssValue&quot;: &quot;8px&quot;,
+      &quot;status&quot;: &quot;observed&quot;,
+      &quot;evidence&quot;: [
+        &quot;home-mobile&quot;
+      ],
+      &quot;note&quot;: &quot;Common transaction-card gap and step-label inline padding.&quot;,
+      &quot;dtcg&quot;: {
+        &quot;$type&quot;: &quot;dimension&quot;,
+        &quot;$value&quot;: {
+          &quot;value&quot;: 8,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    {
+      &quot;name&quot;: &quot;space-12&quot;,
+      &quot;category&quot;: &quot;spacing&quot;,
+      &quot;type&quot;: &quot;dimension&quot;,
+      &quot;cssValue&quot;: &quot;12px&quot;,
+      &quot;status&quot;: &quot;observed&quot;,
+      &quot;evidence&quot;: [
+        &quot;waitlist-desktop-open&quot;
+      ],
+      &quot;note&quot;: &quot;Waitlist field padding.&quot;,
+      &quot;dtcg&quot;: {
+        &quot;$type&quot;: &quot;dimension&quot;,
+        &quot;$value&quot;: {
+          &quot;value&quot;: 12,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    {
+      &quot;name&quot;: &quot;space-14&quot;,
+      &quot;category&quot;: &quot;spacing&quot;,
+      &quot;type&quot;: &quot;dimension&quot;,
+      &quot;cssValue&quot;: &quot;14px&quot;,
+      &quot;status&quot;: &quot;observed&quot;,
+      &quot;evidence&quot;: [
+        &quot;home-mobile&quot;
+      ],
+      &quot;note&quot;: &quot;Transaction-card padding.&quot;,
+      &quot;dtcg&quot;: {
+        &quot;$type&quot;: &quot;dimension&quot;,
+        &quot;$value&quot;: {
+          &quot;value&quot;: 14,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    {
+      &quot;name&quot;: &quot;space-16&quot;,
+      &quot;category&quot;: &quot;spacing&quot;,
+      &quot;type&quot;: &quot;dimension&quot;,
+      &quot;cssValue&quot;: &quot;16px&quot;,
+      &quot;status&quot;: &quot;observed&quot;,
+      &quot;evidence&quot;: [
+        &quot;home-mobile&quot;
+      ],
+      &quot;note&quot;: &quot;Repeated structural offset in the stacked narrative.&quot;,
+      &quot;dtcg&quot;: {
+        &quot;$type&quot;: &quot;dimension&quot;,
+        &quot;$value&quot;: {
+          &quot;value&quot;: 16,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    {
+      &quot;name&quot;: &quot;space-32&quot;,
+      &quot;category&quot;: &quot;spacing&quot;,
+      &quot;type&quot;: &quot;dimension&quot;,
+      &quot;cssValue&quot;: &quot;32px&quot;,
+      &quot;status&quot;: &quot;observed&quot;,
+      &quot;evidence&quot;: [
+        &quot;waitlist-desktop-open&quot;
+      ],
+      &quot;note&quot;: &quot;Desktop waitlist form padding.&quot;,
+      &quot;dtcg&quot;: {
+        &quot;$type&quot;: &quot;dimension&quot;,
+        &quot;$value&quot;: {
+          &quot;value&quot;: 32,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    {
+      &quot;name&quot;: &quot;radius-card&quot;,
+      &quot;category&quot;: &quot;radius&quot;,
+      &quot;type&quot;: &quot;dimension&quot;,
+      &quot;cssValue&quot;: &quot;6px&quot;,
+      &quot;status&quot;: &quot;observed&quot;,
+      &quot;evidence&quot;: [
+        &quot;home-mobile&quot;
+      ],
+      &quot;note&quot;: &quot;Transaction-card corner radius.&quot;,
+      &quot;dtcg&quot;: {
+        &quot;$type&quot;: &quot;dimension&quot;,
+        &quot;$value&quot;: {
+          &quot;value&quot;: 6,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    {
+      &quot;name&quot;: &quot;radius-segment&quot;,
+      &quot;category&quot;: &quot;radius&quot;,
+      &quot;type&quot;: &quot;dimension&quot;,
+      &quot;cssValue&quot;: &quot;18px&quot;,
+      &quot;status&quot;: &quot;observed&quot;,
+      &quot;evidence&quot;: [
+        &quot;home-mobile&quot;,
+        &quot;performance-simulated-selected&quot;
+      ],
+      &quot;note&quot;: &quot;Performance segment option radius.&quot;,
+      &quot;dtcg&quot;: {
+        &quot;$type&quot;: &quot;dimension&quot;,
+        &quot;$value&quot;: {
+          &quot;value&quot;: 18,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    {
+      &quot;name&quot;: &quot;radius-pill&quot;,
+      &quot;category&quot;: &quot;radius&quot;,
+      &quot;type&quot;: &quot;dimension&quot;,
+      &quot;cssValue&quot;: &quot;24px&quot;,
+      &quot;status&quot;: &quot;observed&quot;,
+      &quot;evidence&quot;: [
+        &quot;home-mobile&quot;
+      ],
+      &quot;note&quot;: &quot;Compact metadata pill radius.&quot;,
+      &quot;dtcg&quot;: {
+        &quot;$type&quot;: &quot;dimension&quot;,
+        &quot;$value&quot;: {
+          &quot;value&quot;: 24,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    {
+      &quot;name&quot;: &quot;size-action-height&quot;,
+      &quot;category&quot;: &quot;size&quot;,
+      &quot;type&quot;: &quot;dimension&quot;,
+      &quot;cssValue&quot;: &quot;44px&quot;,
+      &quot;status&quot;: &quot;observed&quot;,
+      &quot;evidence&quot;: [
+        &quot;waitlist-desktop-open&quot;
+      ],
+      &quot;note&quot;: &quot;Authored waitlist action height before transform scaling.&quot;,
+      &quot;dtcg&quot;: {
+        &quot;$type&quot;: &quot;dimension&quot;,
+        &quot;$value&quot;: {
+          &quot;value&quot;: 44,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    {
+      &quot;name&quot;: &quot;shadow-panel&quot;,
+      &quot;category&quot;: &quot;elevation&quot;,
+      &quot;type&quot;: &quot;shadow&quot;,
+      &quot;cssValue&quot;: &quot;rgba(0, 0, 0, 0.25) 0px 1px 2px 0px&quot;,
+      &quot;status&quot;: &quot;observed&quot;,
+      &quot;evidence&quot;: [
+        &quot;waitlist-desktop-open&quot;,
+        &quot;waitlist-mobile-open&quot;
+      ],
+      &quot;note&quot;: &quot;Waitlist form shadow. Retained in canonical JSON and CSS; no DTCG shadow export is declared.&quot;
+    }
+  ],
+  &quot;typography&quot;: [
+    {
+      &quot;name&quot;: &quot;Hero display, desktop&quot;,
+      &quot;styles&quot;: {
+        &quot;font-family&quot;: &quot;\&quot;FK Raster Grotesk Compact Blended\&quot;, sans-serif&quot;,
+        &quot;font-size&quot;: &quot;137px&quot;,
+        &quot;font-weight&quot;: &quot;400&quot;,
+        &quot;line-height&quot;: &quot;123.3px&quot;,
+        &quot;color&quot;: &quot;rgb(246, 237, 224)&quot;
+      },
+      &quot;preview&quot;: {
+        &quot;backgroundColor&quot;: &quot;rgb(15, 14, 13)&quot;,
+        &quot;fontFamily&quot;: &quot;Arial, sans-serif&quot;
+      },
+      &quot;status&quot;: &quot;observed&quot;,
+      &quot;evidence&quot;: [
+        &quot;home-desktop&quot;
+      ],
+      &quot;note&quot;: &quot;Measured hero role. Preview uses Arial only as an explicit offline fallback; exact raster-grotesk fidelity requires the source font.&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Hero display, mobile&quot;,
+      &quot;styles&quot;: {
+        &quot;font-family&quot;: &quot;\&quot;FK Raster Grotesk Compact Blended\&quot;, sans-serif&quot;,
+        &quot;font-size&quot;: &quot;40px&quot;,
+        &quot;font-weight&quot;: &quot;400&quot;,
+        &quot;line-height&quot;: &quot;36px&quot;,
+        &quot;color&quot;: &quot;rgb(246, 237, 224)&quot;
+      },
+      &quot;preview&quot;: {
+        &quot;backgroundColor&quot;: &quot;rgb(15, 14, 13)&quot;,
+        &quot;fontFamily&quot;: &quot;Arial, sans-serif&quot;
+      },
+      &quot;status&quot;: &quot;observed&quot;,
+      &quot;evidence&quot;: [
+        &quot;home-mobile&quot;
+      ],
+      &quot;note&quot;: &quot;Measured 390px hero role.&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Feature display, desktop&quot;,
+      &quot;styles&quot;: {
+        &quot;font-family&quot;: &quot;\&quot;FK Raster Grotesk Compact Blended\&quot;, sans-serif&quot;,
+        &quot;font-size&quot;: &quot;104px&quot;,
+        &quot;font-weight&quot;: &quot;400&quot;,
+        &quot;line-height&quot;: &quot;93.6px&quot;,
+        &quot;color&quot;: &quot;rgb(222, 237, 196)&quot;
+      },
+      &quot;preview&quot;: {
+        &quot;backgroundColor&quot;: &quot;rgb(15, 14, 13)&quot;,
+        &quot;fontFamily&quot;: &quot;Arial, sans-serif&quot;
+      },
+      &quot;status&quot;: &quot;observed&quot;,
+      &quot;evidence&quot;: [
+        &quot;home-desktop&quot;
+      ],
+      &quot;note&quot;: &quot;Measured FETCH SIGNALS role; other desktop feature statements vary from 98px to 154px.&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Feature display, mobile&quot;,
+      &quot;styles&quot;: {
+        &quot;font-family&quot;: &quot;\&quot;FK Raster Grotesk Compact Blended\&quot;, sans-serif&quot;,
+        &quot;font-size&quot;: &quot;46px&quot;,
+        &quot;font-weight&quot;: &quot;400&quot;,
+        &quot;line-height&quot;: &quot;41.4px&quot;,
+        &quot;color&quot;: &quot;rgb(232, 215, 224)&quot;
+      },
+      &quot;preview&quot;: {
+        &quot;backgroundColor&quot;: &quot;rgb(15, 14, 13)&quot;,
+        &quot;fontFamily&quot;: &quot;Arial, sans-serif&quot;
+      },
+      &quot;status&quot;: &quot;observed&quot;,
+      &quot;evidence&quot;: [
+        &quot;home-mobile&quot;
+      ],
+      &quot;note&quot;: &quot;Measured IMAGINE role; other mobile feature statements use 34px, 43px, and 32px roles.&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Editorial display&quot;,
+      &quot;styles&quot;: {
+        &quot;font-family&quot;: &quot;\&quot;New Title Bold\&quot;, sans-serif&quot;,
+        &quot;font-size&quot;: &quot;160px&quot;,
+        &quot;font-weight&quot;: &quot;700&quot;,
+        &quot;line-height&quot;: &quot;144px&quot;,
+        &quot;color&quot;: &quot;rgb(240, 226, 197)&quot;
+      },
+      &quot;preview&quot;: {
+        &quot;backgroundColor&quot;: &quot;rgb(15, 14, 13)&quot;,
+        &quot;fontFamily&quot;: &quot;Georgia, serif&quot;
+      },
+      &quot;status&quot;: &quot;observed&quot;,
+      &quot;evidence&quot;: [
+        &quot;home-desktop&quot;
+      ],
+      &quot;note&quot;: &quot;Measured ON ITS OWN statement. Georgia is only an explicit offline specimen fallback.&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Step label&quot;,
+      &quot;styles&quot;: {
+        &quot;font-family&quot;: &quot;\&quot;JetBrains Mono\&quot;, monospace&quot;,
+        &quot;font-size&quot;: &quot;12px&quot;,
+        &quot;font-weight&quot;: &quot;400&quot;,
+        &quot;line-height&quot;: &quot;14.4px&quot;
+      },
+      &quot;preview&quot;: {
+        &quot;backgroundColor&quot;: &quot;rgb(15, 14, 13)&quot;,
+        &quot;color&quot;: &quot;rgb(226, 255, 160)&quot;
+      },
+      &quot;status&quot;: &quot;observed&quot;,
+      &quot;evidence&quot;: [
+        &quot;home-mobile&quot;
+      ],
+      &quot;note&quot;: &quot;Step numbering swaps color by narrative phase.&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Product UI body&quot;,
+      &quot;styles&quot;: {
+        &quot;font-family&quot;: &quot;\&quot;Clash Grotesk\&quot;, sans-serif&quot;,
+        &quot;font-size&quot;: &quot;14px&quot;,
+        &quot;font-weight&quot;: &quot;500&quot;,
+        &quot;line-height&quot;: &quot;16.8px&quot;,
+        &quot;letter-spacing&quot;: &quot;0.28px&quot;,
+        &quot;color&quot;: &quot;rgb(212, 212, 212)&quot;
+      },
+      &quot;preview&quot;: {
+        &quot;backgroundColor&quot;: &quot;rgb(23, 23, 23)&quot;,
+        &quot;fontFamily&quot;: &quot;Arial, sans-serif&quot;
+      },
+      &quot;status&quot;: &quot;observed&quot;,
+      &quot;evidence&quot;: [
+        &quot;home-mobile&quot;
+      ],
+      &quot;note&quot;: &quot;Dominant transaction-row type.&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Product UI title&quot;,
+      &quot;styles&quot;: {
+        &quot;font-family&quot;: &quot;\&quot;Clash Grotesk\&quot;, sans-serif&quot;,
+        &quot;font-size&quot;: &quot;16px&quot;,
+        &quot;font-weight&quot;: &quot;500&quot;,
+        &quot;line-height&quot;: &quot;19.2px&quot;,
+        &quot;letter-spacing&quot;: &quot;0.32px&quot;,
+        &quot;color&quot;: &quot;rgb(245, 245, 245)&quot;
+      },
+      &quot;preview&quot;: {
+        &quot;backgroundColor&quot;: &quot;rgb(23, 23, 23)&quot;,
+        &quot;fontFamily&quot;: &quot;Arial, sans-serif&quot;
+      },
+      &quot;status&quot;: &quot;observed&quot;,
+      &quot;evidence&quot;: [
+        &quot;home-mobile&quot;
+      ],
+      &quot;note&quot;: &quot;Measured Transactions heading.&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Form label&quot;,
+      &quot;styles&quot;: {
+        &quot;font-family&quot;: &quot;\&quot;IBM Plex Mono\&quot;, monospace&quot;,
+        &quot;font-size&quot;: &quot;14px&quot;,
+        &quot;font-weight&quot;: &quot;400&quot;,
+        &quot;line-height&quot;: &quot;16.8px&quot;,
+        &quot;letter-spacing&quot;: &quot;-0.28px&quot;,
+        &quot;color&quot;: &quot;rgb(228, 232, 244)&quot;
+      },
+      &quot;preview&quot;: {
+        &quot;backgroundColor&quot;: &quot;rgb(20, 20, 20)&quot;
+      },
+      &quot;status&quot;: &quot;observed&quot;,
+      &quot;evidence&quot;: [
+        &quot;waitlist-desktop-open&quot;
+      ],
+      &quot;note&quot;: &quot;Measured waitlist field label.&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Action label&quot;,
+      &quot;styles&quot;: {
+        &quot;font-family&quot;: &quot;\&quot;IBM Plex Mono\&quot;, monospace&quot;,
+        &quot;font-size&quot;: &quot;15px&quot;,
+        &quot;font-weight&quot;: &quot;600&quot;,
+        &quot;line-height&quot;: &quot;18px&quot;,
+        &quot;letter-spacing&quot;: &quot;-0.15px&quot;,
+        &quot;color&quot;: &quot;rgb(228, 232, 244)&quot;
+      },
+      &quot;preview&quot;: {
+        &quot;backgroundColor&quot;: &quot;rgb(20, 20, 20)&quot;
+      },
+      &quot;status&quot;: &quot;observed&quot;,
+      &quot;evidence&quot;: [
+        &quot;waitlist-desktop-open&quot;
+      ],
+      &quot;note&quot;: &quot;Measured waitlist action label.&quot;
+    }
+  ],
+  &quot;components&quot;: [
+    {
+      &quot;name&quot;: &quot;Framed waitlist action&quot;,
+      &quot;kind&quot;: &quot;button&quot;,
+      &quot;anatomy&quot;: [
+        &quot;Transparent 237x44 hit target&quot;,
+        &quot;195x47 corner-frame SVG segment&quot;,
+        &quot;IBM Plex Mono label&quot;,
+        &quot;46x46 arrow-end SVG segment&quot;
+      ],
+      &quot;variants&quot;: [
+        {
+          &quot;name&quot;: &quot;Default&quot;,
+          &quot;styles&quot;: {
+            &quot;width&quot;: &quot;237px&quot;,
+            &quot;height&quot;: &quot;44px&quot;,
+            &quot;display&quot;: &quot;flex&quot;,
+            &quot;align-items&quot;: &quot;center&quot;,
+            &quot;justify-content&quot;: &quot;center&quot;,
+            &quot;background-color&quot;: &quot;rgba(0, 0, 0, 0)&quot;,
+            &quot;color&quot;: &quot;rgb(228, 232, 244)&quot;,
+            &quot;font-family&quot;: &quot;\&quot;IBM Plex Mono\&quot;, monospace&quot;,
+            &quot;font-size&quot;: &quot;15px&quot;,
+            &quot;font-weight&quot;: &quot;600&quot;,
+            &quot;line-height&quot;: &quot;18px&quot;,
+            &quot;letter-spacing&quot;: &quot;-0.15px&quot;,
+            &quot;border&quot;: &quot;1px solid rgb(214, 217, 230)&quot;,
+            &quot;border-radius&quot;: &quot;0px&quot;
+          },
+          &quot;preview&quot;: {
+            &quot;backgroundColor&quot;: &quot;rgb(15, 14, 13)&quot;
+          },
+          &quot;text&quot;: &quot;JOIN WAITLIST&quot;,
+          &quot;status&quot;: &quot;observed&quot;,
+          &quot;evidence&quot;: [
+            &quot;waitlist-desktop-open&quot;
+          ],
+          &quot;note&quot;: &quot;The static specimen uses a rectangular border approximation; the source frame uses separate SVG corner segments and an arrow cell.&quot;
+        }
+      ],
+      &quot;states&quot;: [
+        {
+          &quot;name&quot;: &quot;Hover&quot;,
+          &quot;status&quot;: &quot;observed&quot;,
+          &quot;description&quot;: &quot;Hover was activated and captured; no stable outer-node computed-style delta was isolated from the dynamic page.&quot;,
+          &quot;evidence&quot;: [
+            &quot;waitlist-trigger-hover&quot;
+          ]
+        },
+        {
+          &quot;name&quot;: &quot;Keyboard focus&quot;,
+          &quot;status&quot;: &quot;observed&quot;,
+          &quot;description&quot;: &quot;The tabindex div trigger receives a browser outline of rgb(0, 95, 204) auto 1px in the mobile capture.&quot;,
+          &quot;evidence&quot;: [
+            &quot;waitlist-trigger-focus&quot;
+          ]
+        },
+        {
+          &quot;name&quot;: &quot;Open&quot;,
+          &quot;status&quot;: &quot;observed&quot;,
+          &quot;description&quot;: &quot;Activating the trigger opens the waitlist overlay without navigation.&quot;,
+          &quot;evidence&quot;: [
+            &quot;waitlist-desktop-open&quot;,
+            &quot;waitlist-mobile-open&quot;
+          ]
+        },
+        {
+          &quot;name&quot;: &quot;Disabled&quot;,
+          &quot;status&quot;: &quot;unknown&quot;,
+          &quot;description&quot;: &quot;No disabled trigger state was exposed.&quot;,
+          &quot;evidence&quot;: []
+        }
+      ],
+      &quot;rules&quot;: [
+        &quot;Preserve the split corner-frame and arrow-cell anatomy when implementing the source treatment.&quot;,
+        &quot;Use a semantic button even though the observed launch-page triggers are tabindex divs.&quot;,
+        &quot;Do not infer loading or success behavior from the decorative frame.&quot;
+      ]
+    },
+    {
+      &quot;name&quot;: &quot;Waitlist field&quot;,
+      &quot;kind&quot;: &quot;input&quot;,
+      &quot;anatomy&quot;: [
+        &quot;IBM Plex Mono label&quot;,
+        &quot;Square #0c0c0c field wrapper&quot;,
+        &quot;Transparent text input&quot;
+      ],
+      &quot;variants&quot;: [
+        {
+          &quot;name&quot;: &quot;Default desktop&quot;,
+          &quot;styles&quot;: {
+            &quot;width&quot;: &quot;366.78px&quot;,
+            &quot;height&quot;: &quot;49.61px&quot;,
+            &quot;padding&quot;: &quot;12px&quot;,
+            &quot;background-color&quot;: &quot;rgb(12, 12, 12)&quot;,
+            &quot;color&quot;: &quot;rgb(255, 255, 255)&quot;,
+            &quot;font-family&quot;: &quot;\&quot;IBM Plex Mono\&quot;, monospace&quot;,
+            &quot;font-size&quot;: &quot;14px&quot;,
+            &quot;font-weight&quot;: &quot;400&quot;,
+            &quot;line-height&quot;: &quot;16.8px&quot;,
+            &quot;border&quot;: &quot;0px solid rgb(0, 0, 0)&quot;,
+            &quot;border-radius&quot;: &quot;0px&quot;
+          },
+          &quot;preview&quot;: {
+            &quot;backgroundColor&quot;: &quot;rgb(20, 20, 20)&quot;
+          },
+          &quot;text&quot;: &quot;&quot;,
+          &quot;status&quot;: &quot;observed&quot;,
+          &quot;evidence&quot;: [
+            &quot;waitlist-desktop-open&quot;
+          ],
+          &quot;note&quot;: &quot;Emitter input specimen represents the wrapper and input as one field.&quot;
+        }
+      ],
+      &quot;states&quot;: [
+        {
+          &quot;name&quot;: &quot;Focus&quot;,
+          &quot;status&quot;: &quot;observed&quot;,
+          &quot;description&quot;: &quot;Programmatic focus was captured; the input itself retained no computed border, shadow, or outline delta.&quot;,
+          &quot;evidence&quot;: [
+            &quot;waitlist-email-focus&quot;
+          ]
+        },
+        {
+          &quot;name&quot;: &quot;Error&quot;,
+          &quot;status&quot;: &quot;unknown&quot;,
+          &quot;description&quot;: &quot;Submission was not attempted, so validation styling is unknown.&quot;,
+          &quot;evidence&quot;: []
+        },
+        {
+          &quot;name&quot;: &quot;Disabled&quot;,
+          &quot;status&quot;: &quot;unknown&quot;,
+          &quot;description&quot;: &quot;No disabled field was exposed.&quot;,
+          &quot;evidence&quot;: []
+        }
+      ],
+      &quot;rules&quot;: [
+        &quot;Keep labels explicit and visible above each field.&quot;,
+        &quot;Do not use the empty appearance as evidence of placeholder behavior.&quot;,
+        &quot;Add an authored focus-visible treatment in a new implementation only as a proposed accessibility improvement, not as an observed source rule.&quot;
+      ]
+    },
+    {
+      &quot;name&quot;: &quot;Waitlist form panel&quot;,
+      &quot;kind&quot;: &quot;card&quot;,
+      &quot;anatomy&quot;: [
+        &quot;Raster-grotesk heading&quot;,
+        &quot;Close mark&quot;,
+        &quot;Two labeled fields&quot;,
+        &quot;Framed submit action&quot;
+      ],
+      &quot;variants&quot;: [
+        {
+          &quot;name&quot;: &quot;Desktop open&quot;,
+          &quot;styles&quot;: {
+            &quot;width&quot;: &quot;423.48px&quot;,
+            &quot;min-height&quot;: &quot;426.66px&quot;,
+            &quot;padding&quot;: &quot;32px&quot;,
+            &quot;display&quot;: &quot;flex&quot;,
+            &quot;flex-direction&quot;: &quot;column&quot;,
+            &quot;gap&quot;: &quot;24px&quot;,
+            &quot;background-color&quot;: &quot;rgb(20, 20, 20)&quot;,
+            &quot;color&quot;: &quot;rgb(228, 232, 244)&quot;,
+            &quot;border-radius&quot;: &quot;0px&quot;,
+            &quot;box-shadow&quot;: &quot;rgba(0, 0, 0, 0.25) 0px 1px 2px 0px&quot;
+          },
+          &quot;preview&quot;: {
+            &quot;backgroundColor&quot;: &quot;rgb(15, 14, 13)&quot;
+          },
+          &quot;text&quot;: &quot;JOIN THE LIST · EMAIL ADDRESS · X / TWITTER USERNAME&quot;,
+          &quot;status&quot;: &quot;observed&quot;,
+          &quot;evidence&quot;: [
+            &quot;waitlist-desktop-open&quot;
+          ],
+          &quot;note&quot;: &quot;Static specimen summarizes content; nested field and action specimens carry measured detail.&quot;
+        },
+        {
+          &quot;name&quot;: &quot;Mobile open&quot;,
+          &quot;styles&quot;: {
+            &quot;width&quot;: &quot;299.57px&quot;,
+            &quot;min-height&quot;: &quot;340.88px&quot;,
+            &quot;padding-block&quot;: &quot;40px&quot;,
+            &quot;padding-inline&quot;: &quot;10px&quot;,
+            &quot;display&quot;: &quot;flex&quot;,
+            &quot;flex-direction&quot;: &quot;column&quot;,
+            &quot;background-color&quot;: &quot;rgb(20, 20, 20)&quot;,
+            &quot;color&quot;: &quot;rgb(228, 232, 244)&quot;,
+            &quot;border-radius&quot;: &quot;0px&quot;,
+            &quot;box-shadow&quot;: &quot;rgba(0, 0, 0, 0.25) 0px 1px 2px 0px&quot;
+          },
+          &quot;preview&quot;: {
+            &quot;backgroundColor&quot;: &quot;rgb(15, 14, 13)&quot;
+          },
+          &quot;text&quot;: &quot;JOIN THE LIST · EMAIL ADDRESS · X / TWITTER USERNAME&quot;,
+          &quot;status&quot;: &quot;observed&quot;,
+          &quot;evidence&quot;: [
+            &quot;waitlist-mobile-open&quot;
+          ],
+          &quot;note&quot;: &quot;Captured after the open transition settled for 350ms; responsive transform scaling affects measured dimensions.&quot;
+        }
+      ],
+      &quot;states&quot;: [
+        {
+          &quot;name&quot;: &quot;Open&quot;,
+          &quot;status&quot;: &quot;observed&quot;,
+          &quot;description&quot;: &quot;The form overlays the current page while preserving the narrative beneath it.&quot;,
+          &quot;evidence&quot;: [
+            &quot;waitlist-desktop-open&quot;,
+            &quot;waitlist-mobile-open&quot;
+          ]
+        },
+        {
+          &quot;name&quot;: &quot;Submitting&quot;,
+          &quot;status&quot;: &quot;unknown&quot;,
+          &quot;description&quot;: &quot;Submission was not attempted.&quot;,
+          &quot;evidence&quot;: []
+        },
+        {
+          &quot;name&quot;: &quot;Success&quot;,
+          &quot;status&quot;: &quot;unknown&quot;,
+          &quot;description&quot;: &quot;Submission was not attempted.&quot;,
+          &quot;evidence&quot;: []
+        }
+      ],
+      &quot;rules&quot;: [
+        &quot;Keep the modal visually subordinate to the page by using a near-black panel instead of a bright modal surface.&quot;,
+        &quot;Preserve square geometry and compact monochrome typography.&quot;,
+        &quot;Verify focus trapping, escape behavior, and close control semantics in implementation; this capture only proves the open visual state.&quot;
+      ]
+    },
+    {
+      &quot;name&quot;: &quot;Step label badge&quot;,
+      &quot;kind&quot;: &quot;badge&quot;,
+      &quot;anatomy&quot;: [
+        &quot;Phase-colored translucent wash&quot;,
+        &quot;JetBrains Mono label&quot;
+      ],
+      &quot;variants&quot;: [
+        {
+          &quot;name&quot;: &quot;Step one&quot;,
+          &quot;styles&quot;: {
+            &quot;padding-block&quot;: &quot;6px&quot;,
+            &quot;padding-inline&quot;: &quot;8px&quot;,
+            &quot;background-color&quot;: &quot;rgba(226, 255, 160, 0.1)&quot;,
+            &quot;color&quot;: &quot;rgb(226, 255, 160)&quot;,
+            &quot;font-family&quot;: &quot;\&quot;JetBrains Mono\&quot;, monospace&quot;,
+            &quot;font-size&quot;: &quot;12px&quot;,
+            &quot;font-weight&quot;: &quot;400&quot;,
+            &quot;line-height&quot;: &quot;14.4px&quot;,
+            &quot;border-radius&quot;: &quot;0px&quot;
+          },
+          &quot;preview&quot;: {
+            &quot;backgroundColor&quot;: &quot;rgb(15, 14, 13)&quot;
+          },
+          &quot;text&quot;: &quot;STEP NO.1&quot;,
+          &quot;status&quot;: &quot;observed&quot;,
+          &quot;evidence&quot;: [
+            &quot;home-mobile&quot;
+          ],
+          &quot;note&quot;: &quot;Step two and three preserve geometry while swapping pink and amber accents.&quot;
+        },
+        {
+          &quot;name&quot;: &quot;Step two&quot;,
+          &quot;styles&quot;: {
+            &quot;padding-block&quot;: &quot;6px&quot;,
+            &quot;padding-inline&quot;: &quot;8px&quot;,
+            &quot;background-color&quot;: &quot;rgba(250, 161, 213, 0.1)&quot;,
+            &quot;color&quot;: &quot;rgb(250, 161, 213)&quot;,
+            &quot;font-family&quot;: &quot;\&quot;JetBrains Mono\&quot;, monospace&quot;,
+            &quot;font-size&quot;: &quot;12px&quot;,
+            &quot;font-weight&quot;: &quot;400&quot;,
+            &quot;line-height&quot;: &quot;14.4px&quot;,
+            &quot;border-radius&quot;: &quot;0px&quot;
+          },
+          &quot;preview&quot;: {
+            &quot;backgroundColor&quot;: &quot;rgb(15, 14, 13)&quot;
+          },
+          &quot;text&quot;: &quot;STEP NO.2&quot;,
+          &quot;status&quot;: &quot;observed&quot;,
+          &quot;evidence&quot;: [
+            &quot;home-mobile&quot;
+          ],
+          &quot;note&quot;: &quot;Measured phase-two treatment.&quot;
+        },
+        {
+          &quot;name&quot;: &quot;Step three&quot;,
+          &quot;styles&quot;: {
+            &quot;padding-block&quot;: &quot;6px&quot;,
+            &quot;padding-inline&quot;: &quot;8px&quot;,
+            &quot;background-color&quot;: &quot;rgba(237, 190, 81, 0.1)&quot;,
+            &quot;color&quot;: &quot;rgb(237, 190, 81)&quot;,
+            &quot;font-family&quot;: &quot;\&quot;JetBrains Mono\&quot;, monospace&quot;,
+            &quot;font-size&quot;: &quot;12px&quot;,
+            &quot;font-weight&quot;: &quot;400&quot;,
+            &quot;line-height&quot;: &quot;14.4px&quot;,
+            &quot;border-radius&quot;: &quot;0px&quot;
+          },
+          &quot;preview&quot;: {
+            &quot;backgroundColor&quot;: &quot;rgb(15, 14, 13)&quot;
+          },
+          &quot;text&quot;: &quot;STEP NO.3&quot;,
+          &quot;status&quot;: &quot;observed&quot;,
+          &quot;evidence&quot;: [
+            &quot;home-mobile&quot;
+          ],
+          &quot;note&quot;: &quot;Measured phase-three treatment.&quot;
+        }
+      ],
+      &quot;states&quot;: [],
+      &quot;rules&quot;: [
+        &quot;Use the accent family as narrative sequencing, not as generic success, warning, and error semantics.&quot;,
+        &quot;Keep the badge square and low-contrast except for the phase label.&quot;
+      ]
+    },
+    {
+      &quot;name&quot;: &quot;Performance segmented control&quot;,
+      &quot;kind&quot;: &quot;button&quot;,
+      &quot;anatomy&quot;: [
+        &quot;#171717 rounded rail&quot;,
+        &quot;Live option&quot;,
+        &quot;Simulated option&quot;,
+        &quot;Movable #262626 selected pill&quot;
+      ],
+      &quot;variants&quot;: [
+        {
+          &quot;name&quot;: &quot;Live selected&quot;,
+          &quot;styles&quot;: {
+            &quot;height&quot;: &quot;42px&quot;,
+            &quot;padding&quot;: &quot;3px&quot;,
+            &quot;display&quot;: &quot;flex&quot;,
+            &quot;align-items&quot;: &quot;center&quot;,
+            &quot;gap&quot;: &quot;3px&quot;,
+            &quot;background-color&quot;: &quot;rgb(23, 23, 23)&quot;,
+            &quot;color&quot;: &quot;rgb(245, 245, 245)&quot;,
+            &quot;font-family&quot;: &quot;\&quot;Clash Grotesk\&quot;, sans-serif&quot;,
+            &quot;font-size&quot;: &quot;11px&quot;,
+            &quot;font-weight&quot;: &quot;500&quot;,
+            &quot;line-height&quot;: &quot;13.2px&quot;,
+            &quot;letter-spacing&quot;: &quot;0.22px&quot;,
+            &quot;border-radius&quot;: &quot;24px&quot;
+          },
+          &quot;preview&quot;: {
+            &quot;backgroundColor&quot;: &quot;rgb(15, 14, 13)&quot;,
+            &quot;fontFamily&quot;: &quot;Arial, sans-serif&quot;
+          },
+          &quot;text&quot;: &quot;Live performance · Simulated performance&quot;,
+          &quot;status&quot;: &quot;observed&quot;,
+          &quot;evidence&quot;: [
+            &quot;home-mobile&quot;
+          ],
+          &quot;note&quot;: &quot;The source uses separate tabindex div options inside the rail.&quot;
+        }
+      ],
+      &quot;states&quot;: [
+        {
+          &quot;name&quot;: &quot;Live selected&quot;,
+          &quot;status&quot;: &quot;observed&quot;,
+          &quot;description&quot;: &quot;The 138.39x36px live segment has the #262626 selected surface; simulated text is #a3a3a3.&quot;,
+          &quot;evidence&quot;: [
+            &quot;home-mobile&quot;
+          ]
+        },
+        {
+          &quot;name&quot;: &quot;Simulated selected&quot;,
+          &quot;status&quot;: &quot;observed&quot;,
+          &quot;description&quot;: &quot;After safe local activation, the live segment becomes transparent and the 169.11x36px simulated segment receives the #262626 surface.&quot;,
+          &quot;evidence&quot;: [
+            &quot;performance-simulated-selected&quot;
+          ]
+        },
+        {
+          &quot;name&quot;: &quot;Keyboard focus&quot;,
+          &quot;status&quot;: &quot;unknown&quot;,
+          &quot;description&quot;: &quot;The options are tabindex divs, but focus-visible styling was not independently captured for this control.&quot;,
+          &quot;evidence&quot;: []
+        }
+      ],
+      &quot;rules&quot;: [
+        &quot;Move the selected surface with the selected option and keep the rail stable.&quot;,
+        &quot;Implement as an accessible tablist or radio group after verifying product semantics; the launch page does not declare a semantic role.&quot;
+      ]
+    },
+    {
+      &quot;name&quot;: &quot;Transaction card&quot;,
+      &quot;kind&quot;: &quot;card&quot;,
+      &quot;anatomy&quot;: [
+        &quot;Operation label&quot;,
+        &quot;Primary values and asset&quot;,
+        &quot;Mono ticker/source metadata&quot;,
+        &quot;Muted timestamp&quot;
+      ],
+      &quot;variants&quot;: [
+        {
+          &quot;name&quot;: &quot;Standard row&quot;,
+          &quot;styles&quot;: {
+            &quot;width&quot;: &quot;322px&quot;,
+            &quot;min-height&quot;: &quot;88px&quot;,
+            &quot;padding&quot;: &quot;14px&quot;,
+            &quot;display&quot;: &quot;flex&quot;,
+            &quot;flex-direction&quot;: &quot;column&quot;,
+            &quot;gap&quot;: &quot;8px&quot;,
+            &quot;background-color&quot;: &quot;rgb(23, 23, 23)&quot;,
+            &quot;color&quot;: &quot;rgb(212, 212, 212)&quot;,
+            &quot;font-family&quot;: &quot;\&quot;Clash Grotesk\&quot;, sans-serif&quot;,
+            &quot;font-size&quot;: &quot;14px&quot;,
+            &quot;font-weight&quot;: &quot;500&quot;,
+            &quot;line-height&quot;: &quot;16.8px&quot;,
+            &quot;letter-spacing&quot;: &quot;0.28px&quot;,
+            &quot;border-radius&quot;: &quot;6px&quot;
+          },
+          &quot;preview&quot;: {
+            &quot;backgroundColor&quot;: &quot;rgb(15, 14, 13)&quot;,
+            &quot;fontFamily&quot;: &quot;Arial, sans-serif&quot;
+          },
+          &quot;text&quot;: &quot;LONG · 6.7 CRUDE OIL · $CL · @ $86.66&quot;,
+          &quot;status&quot;: &quot;observed&quot;,
+          &quot;evidence&quot;: [
+            &quot;home-mobile&quot;
+          ],
+          &quot;note&quot;: &quot;Rows vary to 98px when secondary market content is present.&quot;
+        }
+      ],
+      &quot;states&quot;: [
+        {
+          &quot;name&quot;: &quot;Default&quot;,
+          &quot;status&quot;: &quot;observed&quot;,
+          &quot;description&quot;: &quot;Dense dark transaction rows are visible in the product-simulation panel.&quot;,
+          &quot;evidence&quot;: [
+            &quot;home-mobile&quot;
+          ]
+        },
+        {
+          &quot;name&quot;: &quot;Loading&quot;,
+          &quot;status&quot;: &quot;unknown&quot;,
+          &quot;description&quot;: &quot;The public page exposes only a filled simulated data state.&quot;,
+          &quot;evidence&quot;: []
+        },
+        {
+          &quot;name&quot;: &quot;Empty&quot;,
+          &quot;status&quot;: &quot;unknown&quot;,
+          &quot;description&quot;: &quot;The public page exposes only a filled simulated data state.&quot;,
+          &quot;evidence&quot;: []
+        },
+        {
+          &quot;name&quot;: &quot;Error&quot;,
+          &quot;status&quot;: &quot;unknown&quot;,
+          &quot;description&quot;: &quot;No error state was exposed.&quot;,
+          &quot;evidence&quot;: []
+        }
+      ],
+      &quot;rules&quot;: [
+        &quot;Use Clash Grotesk for values and descriptive labels, JetBrains Mono for tickers and compact system metadata.&quot;,
+        &quot;Preserve the 14px padding, 8px internal rhythm, and 6px corner radius before adding more density.&quot;,
+        &quot;Do not treat the launch-page sample values as live product data.&quot;
+      ]
+    }
+  ],
+  &quot;sections&quot;: [
+    {
+      &quot;id&quot;: &quot;identity&quot;,
+      &quot;title&quot;: &quot;Identity&quot;,
+      &quot;status&quot;: &quot;inferred&quot;,
+      &quot;summary&quot;: &quot;A dark, cinematic trading narrative combines rasterized display type, near-black surfaces, monochrome particle imagery, sparse neon phase accents, and dense product-simulation UI.&quot;,
+      &quot;items&quot;: [
+        &quot;The visual grammar alternates oversized editorial statements with compact mono system labels and believable trading-interface fragments.&quot;,
+        &quot;Color is mostly restrained to cream/gray on near-black, then assigned by narrative phase: chartreuse for imagine, pink for research, amber for execution, and green for positive market outcomes.&quot;,
+        &quot;Irregular corner-frame SVGs, fine connector lines, particle hands, and subdued grain produce a speculative technical character without conventional rounded marketing cards.&quot;
+      ],
+      &quot;evidence&quot;: [
+        &quot;home-desktop&quot;,
+        &quot;home-mid&quot;,
+        &quot;home-mobile&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;layout&quot;,
+      &quot;title&quot;: &quot;Layout&quot;,
+      &quot;status&quot;: &quot;observed&quot;,
+      &quot;summary&quot;: &quot;Desktop and intermediate widths use a viewport-height horizontal sequence; below 1000px the same narrative becomes a 390px-wide vertical stack with full-viewport hero, phase panels, product proof, and closing CTA.&quot;,
+      &quot;items&quot;: [
+        &quot;At 1440x1000 and 1280x900, the full-page screenshots extend horizontally through the narrative instead of creating a conventional vertical document.&quot;,
+        &quot;At 390x844, the body measures 390x4479.28px and the hero occupies the first 844px viewport.&quot;,
+        &quot;Mobile phase panels are approximately 281–286px wide; the transaction list is 322px wide with 14px card padding.&quot;,
+        &quot;The mobile waitlist trigger is bottom-fixed at x=68.5, y=787 with a 253x57px measured hit area.&quot;
+      ],
+      &quot;evidence&quot;: [
+        &quot;home-desktop&quot;,
+        &quot;home-mid&quot;,
+        &quot;home-mobile&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;responsive&quot;,
+      &quot;title&quot;: &quot;Responsive behavior&quot;,
+      &quot;status&quot;: &quot;observed&quot;,
+      &quot;summary&quot;: &quot;Readable source media conditions define below-1000px, 1000–1439.98px, and 1440px+ bands; each band was sampled once.&quot;,
+      &quot;items&quot;: [
+        &quot;Below 1000px, sections stack vertically, display type contracts to 32–46px roles, and the primary waitlist trigger becomes a bottom-fixed control.&quot;,
+        &quot;The 1000–1439.98px sample at 1280x900 retains the horizontal narrative but scales the composition relative to the 1440px sample.&quot;,
+        &quot;At 1440px+, hero display reaches 137px/123.3px and the composition remains horizontal.&quot;,
+        &quot;Exact touch behavior and unsampled widths near the 999.98/1000 and 1439.98/1440 boundaries were not interactively tested.&quot;
+      ],
+      &quot;evidence&quot;: [
+        &quot;home-desktop&quot;,
+        &quot;home-mid&quot;,
+        &quot;home-mobile&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;motion&quot;,
+      &quot;title&quot;: &quot;Motion&quot;,
+      &quot;status&quot;: &quot;unknown&quot;,
+      &quot;summary&quot;: &quot;Static captures establish animated/canvas-bearing surfaces and state changes, but not motion timing or easing as experienced.&quot;,
+      &quot;items&quot;: [
+        &quot;The root class includes Lenis markers and several canvases expose an accessible name of Unicorn Studio Scene.&quot;,
+        &quot;The bounded collector found no nonzero CSS transition or animation durations in the captured mobile nodes; this does not rule out JavaScript, canvas, or transform animation.&quot;,
+        &quot;Open-overlay screenshots were taken 350ms after activation, so their dimensions may include transform scaling from the interaction sequence.&quot;,
+        &quot;Reduced-motion behavior was not captured; the light/dark preference comparison is not reduced-motion evidence.&quot;
+      ],
+      &quot;evidence&quot;: []
+    },
+    {
+      &quot;id&quot;: &quot;accessibility&quot;,
+      &quot;title&quot;: &quot;Accessibility observations&quot;,
+      &quot;status&quot;: &quot;observed&quot;,
+      &quot;summary&quot;: &quot;The public page has keyboard-reachable custom controls and labeled form fields, but several interactive containers lack semantic button/tab roles in the captured accessibility tree.&quot;,
+      &quot;items&quot;: [
+        &quot;The waitlist trigger and performance options are tabindex=0 divs rather than semantic buttons or an explicit tab/radio pattern.&quot;,
+        &quot;The waitlist form inputs expose accessible names from their labels, and the submit action is a native button.&quot;,
+        &quot;Programmatic focus on the mobile waitlist trigger receives a visible browser outline; the focused email input showed no measured border, shadow, or outline delta.&quot;,
+        &quot;WCAG 2.x relative-luminance spot checks on measured solid/composited pairs: cream/page 16.63:1, form text/panel 15.04:1, UI text/card 12.09:1, muted/card 7.11:1, step accents on their 10% badge composites 8.66:1–12.78:1.&quot;,
+        &quot;Canvas scenes expose an image role and Unicorn Studio Scene label; many ordinary images have empty alt text and appear decorative in context.&quot;,
+        &quot;No focus trap, escape-close behavior, screen-reader announcement, full tab order, or WCAG conformance audit was established.&quot;
+      ],
+      &quot;evidence&quot;: [
+        &quot;home-mobile&quot;,
+        &quot;waitlist-trigger-focus&quot;,
+        &quot;waitlist-desktop-open&quot;,
+        &quot;waitlist-email-focus&quot;,
+        &quot;performance-simulated-selected&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;assets&quot;,
+      &quot;title&quot;: &quot;Assets&quot;,
+      &quot;status&quot;: &quot;observed&quot;,
+      &quot;summary&quot;: &quot;The page mixes Framer-hosted SVG/PNG imagery, inline SVG interface icons, five named webfont families including one variable face, and Unicorn Studio canvases.&quot;,
+      &quot;items&quot;: [
+        &quot;Primary asset families include the Catalyst marks, full-bleed particle/hand textures, thin connector artwork, product-interface illustrations, token/vendor icons, and corner-frame SVG chrome.&quot;,
+        &quot;Source font faces observed: FK Raster Grotesk Compact Blended, New Title Bold, Clash Grotesk and Clash Grotesk Variable, IBM Plex Mono, and JetBrains Mono.&quot;,
+        &quot;Product-interface assets should remain visually subordinate to the editorial narrative: dark panels, small radii, sparse color, and no bright card backgrounds.&quot;,
+        &quot;Font files were loaded during capture, but licensing and permitted redistribution were not established.&quot;
+      ],
+      &quot;evidence&quot;: [
+        &quot;home-desktop&quot;,
+        &quot;home-mobile&quot;,
+        &quot;waitlist-desktop-open&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;content&quot;,
+      &quot;title&quot;: &quot;Content voice&quot;,
+      &quot;status&quot;: &quot;inferred&quot;,
+      &quot;summary&quot;: &quot;Copy is terse, declarative, imperative, and technical, moving from a high-level promise into a numbered three-step operating story.&quot;,
+      &quot;items&quot;: [
+        &quot;Use short all-caps statements for major beats: INTELLIGENCE AT YOUR FINGERTIPS, IMAGINE, RESEARCH, EXECUTE &amp; BACKTEST.&quot;,
+        &quot;Use mono labels for procedural metadata: STEP NO.1, tickers, venues, timestamps, and action labels.&quot;,
+        &quot;Pair confident capability statements with concrete interface evidence rather than explanatory marketing paragraphs.&quot;,
+        &quot;The launch page intentionally presents sample trading data; downstream implementations must not imply it is current or live unless connected to a verified source.&quot;
+      ],
+      &quot;evidence&quot;: [
+        &quot;home-desktop&quot;,
+        &quot;home-mobile&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;usage&quot;,
+      &quot;title&quot;: &quot;Usage guidance&quot;,
+      &quot;status&quot;: &quot;inferred&quot;,
+      &quot;summary&quot;: &quot;Recreate the system as a tension between oversized speculative editorial layers and precise compact product UI, not as a generic dark fintech dashboard.&quot;,
+      &quot;items&quot;: [
+        &quot;Start with the #0f0e0d page surface, raster-grotesk display type, and one phase accent per narrative beat.&quot;,
+        &quot;Use JetBrains Mono for phase labels and compact source/ticker metadata, IBM Plex Mono for waitlist/form chrome, and Clash Grotesk for product-simulation content.&quot;,
+        &quot;Keep step panels square and translucent; reserve 6px radii for transaction cards and 18–24px radii for pills/segments.&quot;,
+        &quot;Treat particle hands, grain, and line connectors as atmosphere and sequencing support, never as substitutes for readable type or live data.&quot;,
+        &quot;For implementation, replace tabindex divs with semantic controls while preserving the observed geometry and visible focus affordance.&quot;
+      ],
+      &quot;evidence&quot;: [
+        &quot;home-desktop&quot;,
+        &quot;home-mobile&quot;,
+        &quot;waitlist-desktop-open&quot;,
+        &quot;performance-simulated-selected&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;gaps&quot;,
+      &quot;title&quot;: &quot;Known gaps&quot;,
+      &quot;status&quot;: &quot;unknown&quot;,
+      &quot;summary&quot;: &quot;The public launch page is not evidence of the complete Catalyst product system.&quot;,
+      &quot;items&quot;: [
+        &quot;Authenticated product screens, navigation, settings, tables, complete chart behavior, and transaction workflows were not accessed.&quot;,
+        &quot;Form submission, validation, loading, error, empty, success, and disabled states remain unknown.&quot;,
+        &quot;Canvas animation timing, scroll choreography, touch behavior, reduced-motion support, and a functional theme toggle remain unknown.&quot;,
+        &quot;Source component names, semantic token aliases, font licenses, accessibility conformance, and design-system governance remain unknown.&quot;,
+        &quot;Desktop raw DOM evidence is capped; rely on the screenshot for late-page appearance and recapture before implementing selector-specific logic.&quot;
+      ],
+      &quot;evidence&quot;: []
+    }
+  ],
+  &quot;agentRules&quot;: [
+    &quot;Treat this contract as a reconstruction of the public launch page, not the private Catalyst product system.&quot;,
+    &quot;Reuse measured roles before introducing new values: #0f0e0d page, #141414 overlay panel, #0c0c0c fields, #171717 cards, and the documented phase accents.&quot;,
+    &quot;Preserve the typography split: FK Raster for editorial display, New Title Bold for the alternate statement, IBM Plex Mono for form/action chrome, JetBrains Mono for system metadata, and Clash Grotesk for product UI.&quot;,
+    &quot;At 1000px and above, preserve the horizontal narrative model; below 1000px, use the measured vertical stack. Verify boundary widths rather than inventing additional breakpoints.&quot;,
+    &quot;Do not turn the source into a rounded-card dashboard. Square step panels, fine connector lines, sparse chrome, and a few small-radius product cards are structural.&quot;,
+    &quot;Use semantic buttons, inputs, and a justified tab/radio pattern even where the observed page uses tabindex divs; preserve the visual result and record the semantic adaptation.&quot;,
+    &quot;Never present the launch-page transaction values as live data. Use verified data, an honest static illustration label, or an explicit empty state.&quot;,
+    &quot;Loading, error, empty, success, disabled, reduced-motion, and authenticated states must remain unknown until separately observed or clearly proposed.&quot;,
+    &quot;Do not redistribute the source fonts or imagery without a separate rights check; the local reference only records their rendered use.&quot;,
+    &quot;Recapture selectors and screenshots before treating this as current because Framer-generated selectors and hosted assets may drift.&quot;
+  ],
+  &quot;qa&quot;: {
+    &quot;checks&quot;: [
+      {
+        &quot;name&quot;: &quot;Capture completion&quot;,
+        &quot;status&quot;: &quot;pass&quot;,
+        &quot;detail&quot;: &quot;Four homepage theme/preference captures, one intermediate viewport, eight hover/focus probe captures, four waitlist open/focus captures, and one selected-state capture succeeded; two mobile probes for the desktop-only main CTA were explicitly blocked.&quot;
+      },
+      {
+        &quot;name&quot;: &quot;Source visual review&quot;,
+        &quot;status&quot;: &quot;pass&quot;,
+        &quot;detail&quot;: &quot;Desktop, intermediate, mobile, open-overlay, and hover captures were visually inspected; the horizontal-to-vertical layout change and fixed dark presentation were confirmed.&quot;
+      },
+      {
+        &quot;name&quot;: &quot;Responsive coverage&quot;,
+        &quot;status&quot;: &quot;pass&quot;,
+        &quot;detail&quot;: &quot;Samples cover the authored below-1000px, 1000–1439.98px, and 1440px+ media bands.&quot;
+      },
+      {
+        &quot;name&quot;: &quot;State coverage&quot;,
+        &quot;status&quot;: &quot;pass&quot;,
+        &quot;detail&quot;: &quot;Waitlist trigger hover/focus/open, email focus, and both performance selections were captured without form submission.&quot;
+      },
+      {
+        &quot;name&quot;: &quot;Contrast spot check&quot;,
+        &quot;status&quot;: &quot;pass&quot;,
+        &quot;detail&quot;: &quot;WCAG 2.x relative-luminance calculations on seven measured solid/composited foreground/background pairs were 7.11:1 or higher; textured and canvas regions were not assessed.&quot;
+      },
+      {
+        &quot;name&quot;: &quot;Reference build and manifest&quot;,
+        &quot;status&quot;: &quot;pass&quot;,
+        &quot;detail&quot;: &quot;The deterministic emitter built four reference files and --check matched the canonical JSON, evidence hashes, outputs, and manifest.&quot;
+      },
+      {
+        &quot;name&quot;: &quot;Generated reference visual review&quot;,
+        &quot;status&quot;: &quot;pass&quot;,
+        &quot;detail&quot;: &quot;Desktop and 390px local HTTP checks passed with no document-level horizontal overflow, zero broken evidence images after eager loading, all seven sections present, disclosures opening, and a visible 3px keyboard focus ring.&quot;
+      },
+      {
+        &quot;name&quot;: &quot;Portability composition&quot;,
+        &quot;status&quot;: &quot;pass&quot;,
+        &quot;detail&quot;: &quot;An independent agent built a responsive Strategy signal card from design.md and tokens.css only. Desktop and 390px visual review passed with no horizontal overflow or external resources; the sample is explicitly static and simulated.&quot;
+      }
+    ],
+    &quot;visualReview&quot;: &quot;reviewed&quot;,
+    &quot;notes&quot;: [
+      &quot;Partial is intentional because the public site exposes one page and several required product/form states remain unknown.&quot;,
+      &quot;The HTML specimen must be reviewed with the disclosed fallback fonts; it is not expected to reproduce the proprietary raster display face offline.&quot;
+    ]
+  }
+}</pre></details></main></body></html>

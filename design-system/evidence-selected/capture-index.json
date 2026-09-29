@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-09-29T22:15:48.828Z",
+  "browser": "chromium",
+  "channel": "chrome",
+  "page": "https://catalyst.app/",
+  "records": [
+    {
+      "id": "mobile-performance-simulated-selected",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "state": "selected",
+      "status": "captured"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-09-29T22:13:37.942Z",
+  "browser": "chromium",
+  "browserVersion": "152.0.7977.83",
+  "collectorSha256": "3ba3448546c8fd0b289c8023cbde38e3dc4fe0b946e47fdcb612237bc7ec9d90",
+  "channel": "chrome",
+  "plan": {
+    "pages": [
+      {
+        "url": "https://catalyst.app/"
+      }
+    ],
+    "viewports": [
+      {
+        "width": 1280,
+        "height": 900
+      }
+    ],
+    "colorSchemes": [
+      "light"
+    ],
+    "reducedMotion": "no-preference"
+  },
+  "captures": [
+    {
+      "id": "c001",
+      "requestedUrl": "https://catalyst.app/",
+      "finalUrl": "https://catalyst.app/",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "colorScheme": "light",
+      "state": "default",
+      "status": "captured",
+      "json": "c001.json",
+      "screenshot": "c001.png",
+      "httpStatus": 200
+    }
+  ]
+}

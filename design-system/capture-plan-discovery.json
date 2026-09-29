@@ -1,0 +1,22 @@
+{
+  "pages": [
+    {
+      "url": "https://catalyst.app/"
+    }
+  ],
+  "viewports": [
+    {
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "width": 390,
+      "height": 844
+    }
+  ],
+  "colorSchemes": [
+    "light",
+    "dark"
+  ],
+  "reducedMotion": "no-preference"
+}

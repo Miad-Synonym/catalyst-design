@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-09-29T22:08:56.623Z",
+  "browser": "chromium",
+  "browserVersion": "152.0.7977.83",
+  "collectorSha256": "3ba3448546c8fd0b289c8023cbde38e3dc4fe0b946e47fdcb612237bc7ec9d90",
+  "channel": "chrome",
+  "plan": {
+    "pages": [
+      {
+        "url": "https://catalyst.app/",
+        "probes": [
+          {
+            "selector": ".framer-hrdnT",
+            "action": "hover"
+          },
+          {
+            "selector": ".framer-hrdnT",
+            "action": "focus"
+          },
+          {
+            "selector": ".framer-KOpNN",
+            "action": "hover"
+          },
+          {
+            "selector": ".framer-KOpNN",
+            "action": "focus"
+          }
+        ]
+      }
+    ],
+    "viewports": [
+      {
+        "width": 1440,
+        "height": 1000
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "colorSchemes": [
+      "light"
+    ],
+    "reducedMotion": "no-preference"
+  },
+  "captures": [
+    {
+      "id": "c001",
+      "requestedUrl": "https://catalyst.app/",
+      "finalUrl": "https://catalyst.app/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "colorScheme": "light",
+      "state": "default",
+      "status": "captured",
+      "json": "c001.json",
+      "screenshot": "c001.png",
+      "httpStatus": 200
+    },
+    {
+      "id": "c001-p1",
+      "requestedUrl": "https://catalyst.app/",
+      "finalUrl": "https://catalyst.app/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "colorScheme": "light",
+      "state": "hover",
+      "status": "captured",
+      "json": "c001-p1.json",
+      "screenshot": "c001-p1.png",
+      "httpStatus": 200
+    },
+    {
+      "id": "c001-p2",
+      "requestedUrl": "https://catalyst.app/",
+      "finalUrl": "https://catalyst.app/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "colorScheme": "light",
+      "state": "focus",
+      "status": "captured",
+      "json": "c001-p2.json",
+      "screenshot": "c001-p2.png",
+      "httpStatus": 200
+    },
+    {
+      "id": "c001-p3",
+      "requestedUrl": "https://catalyst.app/",
+      "finalUrl": "https://catalyst.app/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "colorScheme": "light",
+      "state": "hover",
+      "status": "captured",
+      "json": "c001-p3.json",
+      "screenshot": "c001-p3.png",
+      "httpStatus": 200
+    },
+    {
+      "id": "c001-p4",
+      "requestedUrl": "https://catalyst.app/",
+      "finalUrl": "https://catalyst.app/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "colorScheme": "light",
+      "state": "focus",
+      "status": "captured",
+      "json": "c001-p4.json",
+      "screenshot": "c001-p4.png",
+      "httpStatus": 200
+    },
+    {
+      "id": "c002",
+      "requestedUrl": "https://catalyst.app/",
+      "finalUrl": "https://catalyst.app/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "colorScheme": "light",
+      "state": "default",
+      "status": "captured",
+      "json": "c002.json",
+      "screenshot": "c002.png",
+      "httpStatus": 200
+    },
+    {
+      "id": "c002-p1",
+      "requestedUrl": "https://catalyst.app/",
+      "finalUrl": "https://catalyst.app/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "colorScheme": "light",
+      "state": "hover",
+      "status": "captured",
+      "json": "c002-p1.json",
+      "screenshot": "c002-p1.png",
+      "httpStatus": 200
+    },
+    {
+      "id": "c002-p2",
+      "requestedUrl": "https://catalyst.app/",
+      "finalUrl": "https://catalyst.app/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "colorScheme": "light",
+      "state": "focus",
+      "status": "captured",
+      "json": "c002-p2.json",
+      "screenshot": "c002-p2.png",
+      "httpStatus": 200
+    },
+    {
+      "id": "c002-p3",
+      "requestedUrl": "https://catalyst.app/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "colorScheme": "light",
+      "state": "hover",
+      "status": "blocked",
+      "error": "Probe selector must resolve exactly one element"
+    },
+    {
+      "id": "c002-p4",
+      "requestedUrl": "https://catalyst.app/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "colorScheme": "light",
+      "state": "focus",
+      "status": "blocked",
+      "error": "Probe selector must resolve exactly one element"
+    }
+  ]
+}

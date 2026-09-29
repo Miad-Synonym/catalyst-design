@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Catalyst portability test: Strategy signal</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --color-page: rgb(15, 14, 13);
+      --color-card: rgb(23, 23, 23);
+      --color-selected-pill: rgb(38, 38, 38);
+      --color-display: rgb(246, 237, 224);
+      --color-ui-primary: rgb(212, 212, 212);
+      --color-ui-muted: rgb(163, 163, 163);
+      --color-step-two: rgb(250, 161, 213);
+      --color-step-two-wash: rgba(250, 161, 213, 0.07);
+      --color-positive: rgb(111, 222, 163);
+      --font-display: "FK Raster Grotesk Compact Blended", sans-serif;
+      --font-mono-data: "JetBrains Mono", monospace;
+      --font-ui: "Clash Grotesk", sans-serif;
+      --space-6: 6px;
+      --space-8: 8px;
+      --space-12: 12px;
+      --space-14: 14px;
+      --space-16: 16px;
+      --space-32: 32px;
+      --radius-card: 6px;
+      --radius-pill: 24px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      padding: var(--space-16);
+      background: var(--color-page);
+      color: var(--color-display);
+    }
+
+    .signal {
+      width: min(100%, 390px);
+      display: grid;
+      gap: var(--space-16);
+      padding: var(--space-16);
+      background: var(--color-step-two-wash);
+      border-top: 1px solid var(--color-step-two);
+    }
+
+    .signal__intro,
+    .signal__evidence {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-16);
+    }
+
+    .signal__badge {
+      align-self: flex-start;
+      padding: var(--space-6) var(--space-8);
+      background: rgba(250, 161, 213, 0.1);
+      color: var(--color-step-two);
+      font: 400 12px/14.4px var(--font-mono-data);
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 9ch;
+      color: var(--color-display);
+      font: 400 46px/41.4px var(--font-display);
+      text-transform: uppercase;
+    }
+
+    .signal__summary {
+      margin: 0;
+      max-width: 34ch;
+      color: var(--color-ui-primary);
+      font: 500 14px/16.8px var(--font-ui);
+      letter-spacing: 0.28px;
+    }
+
+    .signal__meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-8);
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .signal__meta li {
+      padding: var(--space-6) var(--space-12);
+      border-radius: var(--radius-pill);
+      background: var(--color-selected-pill);
+      color: var(--color-ui-muted);
+      font: 400 12px/14.4px var(--font-mono-data);
+    }
+
+    .signal__card {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-8);
+      min-height: 88px;
+      padding: var(--space-14);
+      border-radius: var(--radius-card);
+      background: var(--color-card);
+      color: var(--color-ui-primary);
+      font: 500 14px/16.8px var(--font-ui);
+      letter-spacing: 0.28px;
+    }
+
+    .signal__card-head,
+    .signal__card-foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-8);
+    }
+
+    .signal__card-head strong {
+      color: var(--color-display);
+      font-size: 16px;
+      line-height: 19.2px;
+      font-weight: 500;
+      letter-spacing: 0.32px;
+    }
+
+    .signal__confidence {
+      color: var(--color-positive);
+      font-family: var(--font-mono-data);
+      font-size: 12px;
+      line-height: 14.4px;
+      font-weight: 400;
+      letter-spacing: 0;
+    }
+
+    .signal__chart {
+      width: 100%;
+      height: 44px;
+      overflow: visible;
+    }
+
+    .signal__chart .baseline {
+      stroke: var(--color-selected-pill);
+      stroke-width: 1;
+    }
+
+    .signal__chart .trend {
+      fill: none;
+      stroke: var(--color-positive);
+      stroke-width: 2;
+      stroke-linecap: square;
+      stroke-linejoin: bevel;
+    }
+
+    .signal__ticker,
+    .signal__stamp {
+      margin: 0;
+      color: var(--color-ui-muted);
+      font: 400 12px/14.4px var(--font-mono-data);
+      letter-spacing: 0;
+    }
+
+    .signal__static-note {
+      margin: 0;
+      padding-top: var(--space-8);
+      border-top: 1px solid var(--color-selected-pill);
+      color: var(--color-ui-muted);
+      font: 400 12px/14.4px var(--font-mono-data);
+    }
+
+    @media (min-width: 1000px) {
+      body { padding: var(--space-32); }
+
+      .signal {
+        width: min(100%, 960px);
+        grid-template-columns: 1fr 1fr;
+        align-items: end;
+        gap: var(--space-32);
+        padding: var(--space-32);
+      }
+
+      h1 {
+        font-size: 104px;
+        line-height: 93.6px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <article class="signal" aria-labelledby="signal-title">
+      <header class="signal__intro">
+        <span class="signal__badge">RESEARCH / SIGNAL 02</span>
+        <h1 id="signal-title">Strategy signal</h1>
+        <p class="signal__summary">Momentum and volatility agree across the selected market window.</p>
+        <ul class="signal__meta" aria-label="Signal metadata">
+          <li>4H WINDOW</li>
+          <li>SIMULATED</li>
+          <li>MODEL V.03</li>
+        </ul>
+      </header>
+
+      <section class="signal__evidence" aria-label="Illustrative strategy evidence">
+        <div class="signal__card">
+          <div class="signal__card-head">
+            <strong>POSITIVE MOMENTUM</strong>
+            <span class="signal__confidence">78% ALIGNMENT</span>
+          </div>
+          <svg class="signal__chart" viewBox="0 0 320 44" role="img" aria-label="Illustrative upward trend line">
+            <path class="baseline" d="M0 37.5H320" />
+            <path class="trend" d="M0 34 L44 32 L80 35 L118 27 L158 29 L198 19 L236 21 L278 11 L320 7" />
+          </svg>
+          <div class="signal__card-foot">
+            <p class="signal__ticker">$SAMPLE · MULTI-FACTOR</p>
+            <p class="signal__stamp">T−04:00</p>
+          </div>
+        </div>
+        <p class="signal__static-note">STATIC ILLUSTRATION · NOT LIVE MARKET DATA</p>
+      </section>
+    </article>
+  </main>
+</body>
+</html>
