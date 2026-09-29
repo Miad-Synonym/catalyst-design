@@ -1,6 +1,6 @@
-# Catalyst Design Take-Home
+# Catalyst Design
 
-Working repository for the Catalyst design take-home.
+Working repository for the Catalyst design project.
 
 ## Reference
 
