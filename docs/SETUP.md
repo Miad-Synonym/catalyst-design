@@ -2,7 +2,11 @@
 
 Requires Node 22+, Python 3.10+, and a fal API key with access to the configured endpoints. Generation incurs fal charges. No credential is bundled.
 
+The commands below target macOS/Linux. Packaging has been checked on macOS; Windows has not been tested.
+
 ```sh
+git clone https://github.com/Miad-Synonym/catalyst-design.git
+cd catalyst-design
 npm ci
 npx playwright install chromium
 python3 -m venv .venv
@@ -30,3 +34,11 @@ cd backend
 ```
 
 To run HTTP security checks, start a separate server with `PORT=8773 FAL_KEY=test-only npm start`, then run `node backend/test_api.mjs`. These checks reject malformed requests and do not submit valid generation jobs.
+
+## Reviewer checklist
+
+Use your own fal key in the private config; keys are not included in GitHub. The key must have access to OpenRouter planning, ElevenLabs speech and Creatify Aurora. Your fal account is charged for new generations. The public presenter reference needs network access and can be replaced with `CATALYST_PRESENTER_IMAGE_URL` if unavailable.
+
+The browser UI, graphics and final assembly run on your machine. fal runs the model requests remotely. Keep the local server running until generation finishes. First requests can take minutes; speed varies by provider and queue. Do not expect the Vercel demo to launch this local worker.
+
+On Linux, Playwright may require system packages; use its browser installation instructions if Chromium reports missing libraries. On Windows, the Python executable override would be needed because the default virtual-environment path assumes macOS/Linux; Windows support has not been verified.

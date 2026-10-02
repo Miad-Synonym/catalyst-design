@@ -54,6 +54,7 @@ Next, I’d measure time to the first useful answer, follow-up usage, and whethe
 - [Local setup and architecture](docs/SETUP.md)
 - [Current generation prompts](docs/PROMPTS.md)
 - [Selected development decisions](docs/TRACE-GUIDE.md)
+- [Selected LLM development traces](docs/SELECTED-TRACES.md)
 - [Measured tests and limitations](docs/BENCHMARKS.md)
 
-The live prototype runs locally. No API key or private development transcripts are included.
+The live prototype runs locally. No API key is included. Selected development excerpts are provided; the full private conversation is excluded.
