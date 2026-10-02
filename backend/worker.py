@@ -1,8 +1,8 @@
 """Durable local worker. Provider receipts prevent automatic duplicate submissions."""
-import json,pathlib,sys,time,subprocess,re,os
+import json,pathlib,sys,time,subprocess,re,os,math
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 import providers as h
-from presenter import generate_presenter
+from presenter import generate_presenter,MAX_PRESENTER_SECONDS
 from input_context import headline_fallback,readable_slug,resolved_input,permission_question
 
 def validate(p):
@@ -22,6 +22,19 @@ def validate(p):
   s(scene['title'],70);s(scene['narration'],500)
   if len(scene['steps'])!=3:raise ValueError('Need three diagram labels')
   for x in scene['steps']:s(x,40)
+  g=scene.get('graphic',{'type':'mechanism'})
+  if not isinstance(g,dict) or g.get('type') not in ('mechanism','timeline','takeaway','bars','step'):raise ValueError('Unsupported graphic')
+  if g['type'] in ('bars','step'):
+   labels,values=g.get('labels',[]),g.get('values',[])
+   if not 2<=len(labels)<=3 or len(values)!=len(labels) or len(set(labels))!=len(labels):raise ValueError('Invalid chart series')
+   for label in labels:s(label,24)
+   if any(type(v) not in (int,float) or not math.isfinite(v) or v<0 for v in values):raise ValueError('Invalid chart value')
+   s(g.get('unit'),12);s(g.get('note'),110)
+   if g.get('basis')!='illustrative' or 'illustrative' not in g['note'].lower() or 'illustrative' not in scene['narration'].lower():raise ValueError('Numeric examples must be labeled illustrative')
+
+ # Legacy saved plans without graphic remain readable. New plans must vary adjacent visuals.
+ types=[scene.get('graphic',{}).get('type') for scene in p['scenes']]
+ if any(a is not None and a==b for a,b in zip(types,types[1:])):raise ValueError('Adjacent scenes repeat a graphic type. Choose a different appropriate visual for each neighboring scene.')
  narration=' '.join([p['opening']]+[x['narration'] for x in p['scenes']])
  if not 45<=len(narration.split())<=75:raise ValueError('Narration outside duration budget')
  return narration
@@ -83,6 +96,10 @@ def main(folder):
    cuts.append(round(starts[i]*25)/25);offset=i+len(scene['narration'])
   cuts.append(round((ends[-1]+1)*25)/25)
   if not 0<cuts[1]<=8 or cuts[-1]>38:raise ValueError('Voice exceeds timing budget')
+  # Keep the voice continuous; cut the presenter to graphics at three seconds.
+  # Preserve timing for already-submitted legacy presenter jobs.
+  if (h.OUT/'presenter-fast-request.json').exists() or not any((h.OUT/name).exists() for name in ['presenter-fresh-request.json','presenter-request.json']):
+   cuts[1]=min(cuts[1],MAX_PRESENTER_SECONDS)
   h.save('cuts.json',cuts)
   graphics=subprocess.Popen(['node',str(ROOT/'backend/render.mjs'),str(h.OUT),'graphics'])
   has_presenter=not request.get('context')

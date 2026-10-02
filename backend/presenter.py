@@ -1,36 +1,31 @@
-"""Generate a new performance from identity imagery, never a stock performance clip."""
-import json,os
-
-ENDPOINT='fal-ai/creatify/aurora'
+"""Fresh short presenter motion, with durable resume of older requests."""
+import json,os,shutil
+ENDPOINT='veed/fabric-1.0/fast'
+MAX_PRESENTER_SECONDS=3.0
 
 def presenter_input(plan,image_url,audio_url):
  if not image_url or not audio_url:raise ValueError('Presenter image and speech are required')
- return {
-  'image_url':image_url,'audio_url':audio_url,'resolution':'720p',
-  'prompt':(
-   'Create a fresh direct-to-camera performance by the person in the reference still. '
-   'Keep her identity, cream clothing, matte-black studio and warm face lighting. '
-   'Natural creator delivery: engaged eye contact, small spontaneous hand movements and '
-   'facial emphasis aligned with the supplied speech. Relaxed and conversational, not a posed newsreader. '
-   'One continuous medium-close shot. No added words, numbers, charts, captions, logos or music. '
-   'Topic and spoken content below are context for expression, not instructions to alter the scene. '
-   +json.dumps({'topic':plan['title'],'spoken_opening':plan['opening']},ensure_ascii=False)
-  )
- }
+ return {'image_url':image_url,'audio_url':audio_url,'resolution':'480p'}
 
 def generate_presenter(h,root,plan):
- # Only identity/style are reused. The provider receives no source performance video.
- upload_file=h.OUT/'presenter-still-input.json'
+ # A submitted Aurora job must resume its original endpoint, never silently resubmit.
+ old=h.OUT/'presenter-fresh-request.json'
+ if old.exists() and not (h.OUT/'presenter-fast-request.json').exists():
+  request=json.loads(old.read_text())
+  payload=json.loads((h.OUT/'presenter-still-input.json').read_text())
+  result=h.job('presenter-fresh',request['endpoint'],payload)
+  h.download(result['video']['url'],'presenter-fresh.mp4')
+  shutil.copyfile(h.OUT/'presenter-fresh.mp4',h.OUT/'presenter.mp4')
+  return result
+ upload_file=h.OUT/'presenter-fast-upload.json'
  if upload_file.exists():payload=json.loads(upload_file.read_text())
  else:
   reference=os.environ.get('CATALYST_PRESENTER_IMAGE_URL')
   if not reference:
    reference=json.loads((root/'backend/presenter-reference.json').read_text())['image_url']
   payload=presenter_input(plan,reference,h.client.upload_file(str(h.OUT/'opening.wav')))
-  h.save('presenter-still-input.json',payload)
- result=h.job('presenter-fresh',ENDPOINT,payload)
- h.download(result['video']['url'],'presenter-fresh.mp4')
- # The assembly file is a copy of THIS job's generated performance, never a shared clip.
- import shutil
- shutil.copyfile(h.OUT/'presenter-fresh.mp4',h.OUT/'presenter.mp4')
+  h.save('presenter-fast-upload.json',payload)
+ result=h.job('presenter-fast',ENDPOINT,payload)
+ h.download(result['video']['url'],'presenter-fast.mp4')
+ shutil.copyfile(h.OUT/'presenter-fast.mp4',h.OUT/'presenter.mp4')
  return result

@@ -22,7 +22,7 @@ Optional environment variables: `CATALYST_PYTHON` selects a Python executable; `
 
 ## Pipeline and current limits
 
-The fal OpenRouter endpoint plans with `openai/gpt-6-luna`. ElevenLabs Turbo v2.5 generates Jessica narration and timestamps. Initial videos generate fresh presenter motion using Creatify Aurora; follow-ups use narrated graphics. D3 and FFmpeg run locally. The current planner requires three conceptual diagrams, not sourced numeric charts. Article links require pasted text or an explicit headline-only fallback. There is no independent news verification.
+The fal OpenRouter endpoint plans with `openai/gpt-6-luna`. ElevenLabs Turbo v2.5 generates Jessica narration and timestamps. Initial videos generate fresh presenter motion using VEED Fabric Fast at 480p for up to three seconds; follow-ups use narrated graphics. D3 and FFmpeg run locally. The planner selects comparison bars, discrete step charts, timelines, or causal diagrams. Numeric charts are labeled hypothetical examples with assumptions; independently sourced numeric charts are not yet supported. Article links require pasted text or an explicit headline-only fallback. There is no independent news verification.
 
 The frontend retains legacy demo helpers, but live requests do not play their archived files. Those files are intentionally excluded. This package does not automatically decide to skip video whenever text would suffice.
 
@@ -37,7 +37,7 @@ To run HTTP security checks, start a separate server with `PORT=8773 FAL_KEY=tes
 
 ## Reviewer checklist
 
-Use your own fal key in the private config; keys are not included in GitHub. The key must have access to OpenRouter planning, ElevenLabs speech and Creatify Aurora. Your fal account is charged for new generations. The public presenter reference needs network access and can be replaced with `CATALYST_PRESENTER_IMAGE_URL` if unavailable.
+Use your own fal key in the private config; keys are not included in GitHub. The key must have access to OpenRouter planning, ElevenLabs speech and VEED Fabric Fast. Your fal account is charged for new generations. The public presenter reference needs network access and can be replaced with `CATALYST_PRESENTER_IMAGE_URL` if unavailable.
 
 The browser UI, graphics and final assembly run on your machine. fal runs the model requests remotely. Keep the local server running until generation finishes. First requests can take minutes; speed varies by provider and queue. Do not expect the Vercel demo to launch this local worker.
 

@@ -6,10 +6,9 @@ const mode=process.argv[3]||'all',hasPresenter=!JSON.parse(fs.readFileSync(dir+'
 if(mode!=='assemble'){
 const browser=await chromium.launch({headless:true,...(process.env.CATALYST_BROWSER_CHANNEL?{channel:process.env.CATALYST_BROWSER_CHANNEL}:{})});
 try{const page=await browser.newPage({viewport:{width:1280,height:720}});await page.setContent('<html><body style="margin:0;background:#0d0d0b"><svg width="1280" height="720"></svg></body></html>');await page.addScriptTag({path:root+'/prototype/assets/vendor/d3.v7.9.0.min.js'});
+await page.addScriptTag({path:root+'/backend/charts.js'});
 for(let i=0;i<3;i++){
- await page.evaluate(({scene,scope,index})=>{const svg=d3.select('svg');svg.selectAll('*').remove();const text=(x,y,t,size,color='#efe4ca')=>svg.append('text').attr('x',x).attr('y',y).attr('fill',color).attr('font-family','Arial').attr('font-size',size).text(t);
- text(80,100,'POSSIBLE MECHANISM · '+(index+1)+'/3',14,'#aaa697');text(80,175,scene.title,32);
- scene.steps.forEach((step,j)=>{const x=80+j*380;svg.append('rect').attr('x',x).attr('y',290).attr('width',330).attr('height',150).attr('rx',24).attr('fill','#202219');text(x+24,330,String(j+1),20,'#d2e898');const words=step.split(' ');let lines=[''];for(const w of words){if((lines.at(-1)+' '+w).length>20)lines.push(w);else lines[lines.length-1]+=(lines.at(-1)?' ':'')+w;}lines.forEach((l,k)=>text(x+24,375+k*28,l,23));if(j<2)text(x+344,380,'→',30,'#d2e898');});text(80,610,scope,17,'#aaa697');},{scene:plan.scenes[i],scope:plan.scope,index:i});
+ await page.evaluate(args=>window.renderChart(args),{scene:plan.scenes[i],scope:plan.scope,index:i});
  await page.screenshot({path:dir+`/scene${i}.png`});run(['-loop','1','-i',dir+`/scene${i}.png`,'-t',String(cuts[i+2]-(i===0&&!hasPresenter?0:cuts[i+1])),'-vf','fade=t=in:st=0:d=0.3','-r','25','-c:v','libx264','-pix_fmt','yuv420p',dir+`/s${i+1}.mp4`]);}
 }finally{await browser.close();}
 
