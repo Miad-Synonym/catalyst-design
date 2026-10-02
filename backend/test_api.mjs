@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';
+const base='http://127.0.0.1:8773';const status=await(await fetch(base+'/api/status')).json();assert(status.available);const headers={'Content-Type':'application/json','X-Catalyst-Token':status.token};
+assert.equal((await fetch(base+'/api/jobs',{method:'POST',body:'{}'})).status,403);
+assert.equal((await fetch(base+'/api/jobs',{method:'POST',headers:{...headers,Origin:'https://evil.example'},body:'{}'})).status,403);
+assert.equal((await fetch(base+'/api/jobs',{method:'POST',headers,body:JSON.stringify({id:'../../etc',input:'hello'})})).status,400);
+assert.equal((await fetch(base+'/api/jobs',{method:'POST',headers,body:'x'.repeat(19000)})).status,413);
+assert.equal((await fetch(base+'/.env.catalyst.local')).status,404);
+assert.equal((await fetch(base+'/.runtime/jobs/test/status.json')).status,404);
+assert.equal((await fetch(base+'/backend/planner.txt')).status,404);
+console.log('PASS: auth, origin, path validation, input cap, private files');

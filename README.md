@@ -48,3 +48,12 @@ Next, I’d measure time to the first useful answer, follow-up usage, and whethe
 
 - `design-system/` contains the evidence-backed design-system reference derived from the public Catalyst site.
 - `design-system/index.html` is the visual reference entry point.
+
+## Run and review
+
+- [Local setup and architecture](docs/SETUP.md)
+- [Current generation prompts](docs/PROMPTS.md)
+- [Selected development decisions](docs/TRACE-GUIDE.md)
+- [Measured tests and limitations](docs/BENCHMARKS.md)
+
+The live prototype runs locally. No API key or private development transcripts are included.

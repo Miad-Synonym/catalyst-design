@@ -1,0 +1,14 @@
+{
+  "name": "catalyst-explainer",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node prototype/server.mjs"
+  },
+  "dependencies": {
+    "playwright": "1.62.1"
+  }
+}

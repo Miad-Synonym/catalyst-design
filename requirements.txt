@@ -1,0 +1,2 @@
+fal-client==1.0.3
+imageio-ffmpeg==0.6.0

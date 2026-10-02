@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090909">
+  <title>Catalyst · Understand the move</title>
+  <link rel="icon" href="assets/catalyst.svg">
+  <link rel="stylesheet" href="../design-system/tokens.css">
+  <link rel="stylesheet" href="assets/fonts.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#composer">Skip to chat</a>
+<div class="app-shell">
+  <nav class="rail" aria-label="Main navigation">
+    <button class="brand" title="Catalyst home" aria-label="Catalyst home" data-action="home"><img src="assets/catalyst.svg" alt=""></button>
+    <div class="rail-main">
+      <button class="icon-button selected" aria-label="Current conversation" title="Home" data-action="home"><img src="assets/icons/house.svg" alt=""></button>
+    </div>
+    <div class="rail-bottom">
+      <button class="icon-button" aria-label="New conversation" title="New conversation" data-action="new"><img src="assets/icons/log-out.svg" alt=""></button>
+      <span class="avatar" title="Miad" aria-label="Miad"></span>
+    </div>
+  </nav>
+  <div class="workspace">
+    <span id="thread-title" hidden></span>
+    <main class="split-workspace">
+      <svg class="connections" aria-hidden="true"></svg>
+      <section class="conversation" aria-label="Conversation">
+        <h1 class="chat-heading">What’s the play?</h1>
+        <div class="messages" id="messages" role="log" aria-label="Chat messages" aria-live="polite" aria-relevant="additions text"></div>
+        <div class="composer-area">
+          <form id="composer" class="composer">
+            <label class="sr-only" for="prompt">Ask Catalyst or paste an article</label>
+            <textarea id="prompt" rows="2" placeholder="Paste a headline or ask about a market move…"></textarea>
+            <div class="composer-actions"><span></span><button id="send" class="send-button" type="submit" aria-label="Send message"><img src="assets/icons/send.svg" alt=""></button></div>
+          </form>
+          <div id="chat-suggestions" class="landing-suggestions" aria-label="Suggested next steps"></div>
+        </div>
+      </section>
+      <section class="canvas" aria-label="Video workspace" hidden>
+        <div hidden><span id="canvas-kicker"></span><h2 id="video-title"></h2></div>
+        <div class="canvas-content" id="canvas-content"></div>
+
+      </section>
+    </main>
+  </div>
+</div>
+<dialog id="dialog"><div class="dialog-heading"><h2 id="dialog-title"></h2><button class="icon-button" data-action="close-dialog" aria-label="Close dialog"><img src="assets/icons/x.svg" alt=""></button></div><div id="dialog-content"></div></dialog>
+<div class="toast" id="toast" role="status"></div>
+<input type="file" id="video-file" accept="video/*" hidden>
+<script src="app.js"></script>
+</body>
+</html>
