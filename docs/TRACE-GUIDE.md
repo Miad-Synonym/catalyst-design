@@ -1,6 +1,6 @@
 # Selected development decisions
 
-This is a curated decision guide, not a complete LLM transcript. Full development traces are not included in this public repository. This guide alone does not satisfy a request for complete traces; relevant redacted traces can be supplied separately after review.
+This is a curated decision guide, not a complete LLM transcript. Full development traces are not included in this public repository. Relevant redacted traces can be supplied separately after review.
 
 - Directed: defined an everyday audience with basic market knowledge and a familiar conversation flow.
 - Pushed back: rejected disconnected narration, synthetic delivery, repeated footage, and video that repeated the chat.
