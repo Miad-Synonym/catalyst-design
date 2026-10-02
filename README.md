@@ -2,6 +2,8 @@
 
 A conversational explainer that helps people understand market news before they form a view and decide what to do.
 
+[Watch the walkthrough](https://www.loom.com/share/01ae1e91b41842c2aab513e02c6f0d99) · [Run locally](docs/SETUP.md) · [Selected LLM traces](docs/SELECTED-TRACES.md)
+
 ## 1. Context
 
 I built the “understand” layer of the Catalyst experience for everyday consumers with basic market knowledge.

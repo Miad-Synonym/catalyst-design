@@ -1,5 +1,7 @@
 # Local prototype Loom guide
 
+Latest recording: [Building an AI Video Explainer Pipeline](https://www.loom.com/share/01ae1e91b41842c2aab513e02c6f0d99) (4:57). The two-minute outline below is recording guidance.
+
 Aim for two minutes. Record the local prototype the team will run, rather than the static deployment. Prepare a completed example so generation does not consume the recording; clearly say when you skip ahead.
 
 ## 0:00–0:20 · What I built

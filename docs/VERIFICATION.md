@@ -2,7 +2,8 @@
 
 Checked October 2, 2026 in an isolated checkout:
 
-- 14 Python tests passed (context, validation, quota and presenter payload).
+- 19 Python tests passed (context, validation, quota, presenter payload, numeric chart constraints and adjacent visual variety).
+- Five D3 visual formats rendered in Chrome without clipped labels: bars, step, timeline, mechanism and takeaway.
 - HTTP checks passed for session token, origin, input limits and private-file denial.
 - Browser smoke check passed: composer loads without script errors and sidebar is hidden on mobile.
 - D3 rendering and complete FFmpeg assembly passed with existing test media. No paid generation was submitted for packaging verification.
