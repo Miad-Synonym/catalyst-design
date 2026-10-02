@@ -9,4 +9,4 @@ Checked October 2, 2026 in an isolated checkout:
 - Supplied credential, its long components and base64 representation were checked against staged files and reachable Git history with no matches. Additional common credential patterns had no findings.
 - Private configuration, runtime jobs, experiments and Figma are excluded by ignore rules. Only a blank environment example is included.
 
-The trace guide is a selected account of decisions, not a complete development transcript. Source verification and visual-quality limitations remain documented in the setup and summary.
+SELECTED-TRACES.md contains selected conversation excerpts, not a complete development transcript. Source verification and visual-quality limitations remain documented in the setup and summary.
